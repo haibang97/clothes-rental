@@ -1,7 +1,0 @@
-/getall -> Get all clothes but won't have duplicates if have same ClassID
-
-/getSpecificClothes/{ClassID} -> Get all clothes with the same ClassID
-
-/getClothesByGender/{Gender} -> Get all clothes based on Gender but won't have duplicates if have same ClassID
-
-/getClothesByMood/{Mood} -> Get all clothes based on Mood but won't have duplicates if have same ClassID
