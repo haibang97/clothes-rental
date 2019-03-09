@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 08, 2019 at 09:30 AM
+-- Generation Time: Mar 08, 2019 at 09:29 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `clothesclass`
+-- Database: `clothes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clothesclass`
+-- Table structure for table `clothes`
 --
 
 DROP TABLE IF EXISTS `clothesclass`;
@@ -41,8 +41,9 @@ CREATE TABLE IF NOT EXISTS `clothesclass` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `clothesclass`
+-- Dumping data for table `clothes`
 --
+
 
 INSERT INTO `clothesclass` (`ClassID`, `Gender`, `Type`, `Function`, `Image_link`, `Mood`, `Count`) VALUES
 (1, 'F', 'Dress', 'weekend', 'https://d41eu4npam9w0.cloudfront.net/900x1350/cameo-light-up-long-sleeve-dress-1.jpg', 'cool', 5),
@@ -53,10 +54,9 @@ INSERT INTO `clothesclass` (`ClassID`, `Gender`, `Type`, `Function`, `Image_link
 (6, 'F', 'Midi Dress', 'party', 'https://d41eu4npam9w0.cloudfront.net/900x1350/keepsake-translate-midi-dress-1.jpg', 'gorgeous', 3),
 (7, 'F', 'Stand Still Dress', 'party', 'https://d41eu4npam9w0.cloudfront.net/900x1350/keepsake-stand-still-dress-3.jpg', 'happy', 3),
 (8, 'M', 'Jacket', 'travel', 'https://sc01.alicdn.com/kf/HTB1ezB0pQSWBuNjSszdq6zeSpXas/Custom-Mens-Denim-Jacket-Hoody-Mens-Jean.jpg', 'cool', 3),
-(9, 'M', 'Tshirt', 'travel', 'https://sc01.alicdn.com/kf/HTB1mL.nAQKWBuNjy1zjq6AOypXa6/wholesale-no-moq-blank-bluk-180gsm-cheap.jpg', 'low-key', 3),
+(9, 'M', 'Tshirt', 'travel', 'https://sc01.alicdn.com/kf/HTB1mL.nAQKWBuNjy1zjq6AOypXa6/wholesale-no-moq-blank-bluk-180gsm-cheap.jpg', 'low-key', 3);
 
 COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
