@@ -45,9 +45,16 @@ CREATE TABLE IF NOT EXISTS `clothesclass` (
 --
 
 INSERT INTO `clothesclass` (`ClassID`, `Gender`, `Type`, `Function`, `Image_link`, `Mood`, `Count`) VALUES
-(1, 'F', 'jacket', 'funeral', 'hasdkfj.com', 'angry', 5),
-(2, 'M', 'jacky', 'wedding', 'd;lkj.com', 'happy', 2),
-(3, 'F', 'kk', 'aas', 'asdfa', 'happy', 5);
+(1, 'F', 'Dress', 'weekend', 'https://d41eu4npam9w0.cloudfront.net/900x1350/cameo-light-up-long-sleeve-dress-1.jpg', 'cool', 5),
+(2, 'F', 'Dress', 'weekend', 'https://d41eu4npam9w0.cloudfront.net/900x1350/yumi-kim-city-lights-midi-dress-1.jpg', 'happy', 2),
+(3, 'F', 'Blazer', 'work', 'https://d41eu4npam9w0.cloudfront.net/900x1350/keepsake-darkest-light-blazer-1.jpg', 'gorgeous', 5),
+(4, 'F', 'Playsuit', 'weekend', 'https://d41eu4npam9w0.cloudfront.net/900x1350/juillet-valencia-front-knot-playsuit-3.jpg', 'gorgeous', 5),
+(5, 'F', 'Dress', 'party', 'https://d41eu4npam9w0.cloudfront.net/900x1350/ray-and-luna-mandarin-collar-button-down-dress-1.jpg', 'relaxed', 3),
+(6, 'F', 'Midi Dress', 'party', 'https://d41eu4npam9w0.cloudfront.net/900x1350/keepsake-translate-midi-dress-1.jpg', 'gorgeous', 3),
+(7, 'F', 'Stand Still Dress', 'party', 'https://d41eu4npam9w0.cloudfront.net/900x1350/keepsake-stand-still-dress-3.jpg', 'happy', 3),
+(8, 'M', 'Jacket', 'travel', 'https://sc01.alicdn.com/kf/HTB1ezB0pQSWBuNjSszdq6zeSpXas/Custom-Mens-Denim-Jacket-Hoody-Mens-Jean.jpg', 'cool', 3),
+(9, 'M', 'Tshirt', 'travel', 'https://sc01.alicdn.com/kf/HTB1mL.nAQKWBuNjy1zjq6AOypXa6/wholesale-no-moq-blank-bluk-180gsm-cheap.jpg', 'low-key', 3),
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
