@@ -175,3 +175,73 @@ body {
               filter: brightness(1.1);
       cursor: -webkit-zoom-in;
       cursor: zoom-in; }
+
+/* CLOTHES FILTERS */
+.dropdown-toggle, .dropdown-toggle:hover, .dropdown-toggle:focus, .show .dropdown-toggle {
+    background-color: transparent !important;
+    color: #81894e;
+	font-size:30px;
+    border-radius: 0;
+    border-color: transparent transparent #81894e transparent !important;
+    border-width: 2px;
+    padding-bottom: 12px;
+    margin-left: 5px;
+	margin-right: 5px;
+    margin-top: 0px;
+    box-shadow: none;
+}
+
+.dropdown-toggle:focus{
+    box-shadow: none !important;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 1.255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .4em solid;
+    border-right: .4em solid transparent;
+    border-left: .4em solid transparent;
+}
+
+.filters-text-row1 {
+	display:inline-block;
+	margin-top:40px;
+}
+
+.filters-text-row2 {
+	display:inline-block;
+	margin-top:25px;
+}
+
+.filters-text-row3 {
+	display:inline-block;
+	margin-top:25px;
+}
+
+.gender {
+	display:inline-block;
+	margin-top:40px;
+}
+
+.event {
+	display:inline-block;
+	margin-top:25px;
+}
+
+.mood {
+	display:inline-block;
+	margin-top:25px;
+}
+
+.clothesfilterheadline {
+	font-size:33px;
+}
+
+.clothesfiltersubheadline {
+	font-size:20px;
+	margin-right:10px;
+}
