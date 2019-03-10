@@ -268,50 +268,61 @@
 <!-- FOOTER END -->
 
 
+<!-- 
+appId      : "555376054961251",
+cookie     : true,
+xfbml      : true,
+version    : "v3.2" -->
 
-<script type="text/javascript">
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : "555376054961251",
-      cookie     : true,
-      xfbml      : true,
-      version    : "v3.2"
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-
-
-   FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-
-
-</script>
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : "555376054961251",
+        cookie     : true,
+        xfbml      : true,
+        version    : "v3.2"
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
 
 
-<fb:login-button id="FBLOGINBUTTON"
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
-
-<script type="text/javascript">
-    function checkLoginState() {
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
     });
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
     }
+
 </script>
+
+
+<!-- {
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+} -->
+
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 
 
 </body>
