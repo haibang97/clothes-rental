@@ -3,10 +3,10 @@
 <schema xmlns:tns="http://www.amazing.com/Books" elementFormDefault="qualified" targetNamespace="http://www.amazing.com/Books" xmlns="http://www.w3.org/2001/XMLSchema">
     <complexType name="Clothes">
         <sequence>
-            <element name="ClothesID" type="integer" minOccurs="1" />
-            <element name="ClassID" type="integer" minOccurs="1" />
-            <element name="Status" type="string" minOccurs="1" />
-            <element name="Size" type="string" minOccurs="1" />
+            <element name="clothesid" type="integer" minOccurs="1" />
+            <element name="classid" type="integer" minOccurs="1" />
+            <element name="status" type="string" minOccurs="1" />
+            <element name="size" type="string" minOccurs="1" />
         </sequence>
     </complexType>
     <element name="Clothes" type="tns:Clothes" />
@@ -18,15 +18,38 @@
     </complexType>
     <element name="Clotheses" type="tns:Clotheses" />
 
+    <complexType name="CombinedClothes">
+        <sequence>
+            <element name="clothesid" type="integer" minOccurs="1" />
+            <element name="classid" type="integer" minOccurs="1" />
+            <element name="status" type="string" minOccurs="1" />
+            <element name="size" type="string" minOccurs="1" />
+            <element name="gender" type="string" minOccurs="1" />
+            <element name="type" type="string" minOccurs="1" />
+            <element name="function" type="string" minOccurs="1" />
+            <element name="image_link" type="string" minOccurs="1" />
+            <element name="mood" type="string" minOccurs="1" />
+            <element name="description" type="string" minOccurs="1" />
+        </sequence>
+    </complexType>
+    <element name="CombinedClothes" type="tns:CombinedClothes" />
+
+    <complexType name="CombinedClotheses">
+        <sequence>
+            <element ref="tns:CombinedClothes" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="CombinedClotheses" type="tns:CombinedClotheses" />
+
     <complexType name="ClothesClass">
         <sequence>
-            <element name="ClassID" type="integer" minOccurs="1" />
-            <element name="Gender" type="string" minOccurs="1" />
-            <element name="Type" type="string" minOccurs="1" />
-            <element name="Function" type="string" minOccurs="1" />
-            <element name="Image_link" type="string" minOccurs="1" />
-            <element name="Mood" type="string" minOccurs="1" />
-            <element name="Count" type="integer" minOccurs="1" />
+            <element name="classid" type="integer" minOccurs="1" />
+            <element name="gender" type="string" minOccurs="1" />
+            <element name="type" type="string" minOccurs="1" />
+            <element name="function" type="string" minOccurs="1" />
+            <element name="image_link" type="string" minOccurs="1" />
+            <element name="mood" type="string" minOccurs="1" />
+            <element name="description" type="string" minOccurs="1" />
         </sequence>
     </complexType>
     <element name="ClothesClass" type="tns:ClothesClass" />
