@@ -1,1 +1,0 @@
-# clothes-rental
