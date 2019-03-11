@@ -66,8 +66,8 @@ function fillForm() {
         document.getElementById("email").value = response.email;
         document.getElementById("birthday").value = "24/12/1996";
         document.getElementById("maleRadioButton").checked = "checked";
-        document.getElementById("address").value = "25A zuo lin road";
-        document.getElementById("postal_code").value = "123456";
+        // document.getElementById("address").value = "25A zuo lin road";
+        // document.getElementById("postal_code").value = "123456";
     });
 
 
