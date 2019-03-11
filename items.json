@@ -1,0 +1,22 @@
+{
+  "tiers": [
+    {
+      "id": 1,
+      "name": "Tier 1",
+      "price": 4999,
+      "imgName": "Album 1.png"
+    },
+    {
+      "id": 2,
+      "name": "Tier 2",
+      "price": 6999,
+      "imgName": "Album 2.png"
+    }
+    {
+      "id": 3,
+      "name": "Tier 3",
+      "price": 6999,
+      "imgName": "Album 2.png"
+    }
+  ]
+}
