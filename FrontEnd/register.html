@@ -97,12 +97,13 @@
 									<button type="submit" class="btn btn-primary">Sign in</button>
 								</form>
 								<hr class="dropdown-divider">
-								<!-- FACEBOOK LOGIN START -->
+								<!-- FACEBOOK & GOOGLE LOGIN START -->
 								<a class="dropdown-item" href="http://www.facebook.com"><img class="logo" src="images/facebooklogin.png" width="80%"></a>
-								<!-- FACEBOOK LOGIN END -->
+								<a class="dropdown-item" href="http://www.google.com"><img class="logo" src="images/googlesignin.png" width="75%"></a>
+								<!-- FACEBOOK & GOOGLE LOGIN END -->
 								<hr class="dropdown-divider">
-								<a class="dropdown-item" href="register.html">Not yet a member? Sign up.</a>
-								<a class="dropdown-item" href="home.html">Forgot password?</a>
+								<a class="dropdown-item" href="#">Not yet a member? Sign up.</a>
+								<a class="dropdown-item" href="#">Forgot password?</a>
 							</div>
 						</div>
 						<!-- ACCOUNT END -->
@@ -144,6 +145,98 @@
 </header>
 <!-- HEADER END -->
 
+<script>
+
+    window.fbAsyncInit = function() {
+          FB.init({
+            appId      : "555376054961251",
+            cookie     : true,
+            xfbml      : true,
+            version    : "v3.2"
+          });
+            
+          FB.AppEvents.logPageView();   
+            
+        };
+    
+        function onBodyLoad() { //on body onload
+            FB.init({
+            appId: window.appID,
+            status: true,
+            xfbml: true,
+            cookie: true,
+            oauth: true,
+            channelUrl: 'http://localhost/git/stylease/FrontEnd/register.html'
+            });     
+        }
+    
+        function statusChangeCallback(response) {
+                    console.log('statusChangeCallback');
+                    console.log(response);
+                    // The response object is returned with a status field that lets the
+                    // app know the current login status of the person.
+                    // Full docs on the response object can be found in the documentation
+                    // for FB.getLoginStatus().
+                    if (response.status === 'connected') {
+                        // Logged into your app and Facebook.
+                        console.log('Welcome!  Fetching your information.... ');
+                        FB.api('/me', function (response) {
+                            console.log('Successful login for: ' + response.name);
+                            document.getElementById('status').innerHTML =
+                              'Thanks for logging in, ' + response.name + '!   ' + response.email + "     " + FB.getAuthResponse()['accessToken'];
+                        });
+                    } else {
+                        // The person is not logged into your app or we are unable to tell.
+                        document.getElementById('status').innerHTML = 'Please log ' +
+                          'into this app.';
+                    }
+                }
+    
+    function login() {
+        FB.login(function(response) {
+            if (response.authResponse) {
+                // connected
+            testAPI();
+            } else {
+                // cancelled
+            }
+        }, { scope: 'email' });
+    }
+    
+    
+    function magic() {
+        FB.api('/me', {fields: 'name,email,first_name,last_name'}, (response) => {
+            document.getElementById("first_name").value = response.first_name;
+            document.getElementById("last_name").value = response.last_name;
+            document.getElementById("email").value = response.email;
+        });
+    }
+    
+    
+    //#####################################################################################
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+    
+    
+        // FB.getLoginStatus(function(response) {
+        //     statusChangeCallback(response);
+        // });
+    
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+            magic();
+        }
+    
+    </script>
+    
 	
 <!-- SIGN UP START -->
 	<section class="section-content">
@@ -155,11 +248,15 @@
 						<h4 class="card-title mt-2">Sign up as a Stylease member today</h4>
 					</header>
 					<article class="card-body">
-						<!-- FACEBOOK START -->
+						<!-- FACEBOOK & GOOGLE START -->
 						<p>
-							<a href="http://www.facebook.com"><img src="images/facebooklogin.png" width="28%"></a>
+                            <!-- <a onclick="checkLoginState()"><img src="images/facebooklogin.png" width="28%"></a> -->
+                            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                                <img src="images/facebooklogin.png" width="28%">
+                            </fb:login-button>
+							<a href="http://www.google.com"><img src="images/googlesignin.png" width="25%"></a>
 						</p>
-						<!-- FACEBOOK END -->
+						<!-- FACEBOOK & GOOGLE END -->
 						<hr>
 						<!-- FORM START -->
 						<form>		
@@ -176,21 +273,13 @@
 							</div>
 							<!-- NAME END -->
 							
-							<!-- EMAIL & MOBILE START -->
-							<div class="form-row">
-								<div class="col form-group">
-									<div class="form-group">
-										<label>Email address:</label>
-										<input type="email" class="form-control" placeholder="" id="email">
-										<small class="form-text text-muted">We'll never share your email with anyone else.</small>
-									</div>
-								</div>
-								<div class="col form-group">
-									<label>Mobile:</label>
-									<input type="text" class="form-control" placeholder="" id="mobile">
-								</div>
+							<!-- EMAIL START -->
+							<div class="form-group">
+								<label>Email address:</label>
+								<input type="email" class="form-control" placeholder="" id="email">
+								<small class="form-text text-muted">We'll never share your email with anyone else.</small>
 							</div>
-							<!-- EMAIL & MOBILE END -->
+							<!-- EMAIL END -->
 							
 							<!-- PASSWORD START -->
 							<div class="form-row">
@@ -267,111 +356,6 @@
 </footer>
 <!-- FOOTER END -->
 
-<script>
-
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : "555376054961251",
-        cookie     : true,
-        xfbml      : true,
-        version    : "v3.2"
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-
-    function onBodyLoad() { //on body onload
-        FB.init({
-        appId: window.appID,
-        status: true,
-        xfbml: true,
-        cookie: true,
-        oauth: true,
-        channelUrl: 'http://localhost/git/stylease/FrontEnd/register.html'
-        });     
-    }
-
-    function statusChangeCallback(response) {
-                console.log('statusChangeCallback');
-                console.log(response);
-                // The response object is returned with a status field that lets the
-                // app know the current login status of the person.
-                // Full docs on the response object can be found in the documentation
-                // for FB.getLoginStatus().
-                if (response.status === 'connected') {
-                    // Logged into your app and Facebook.
-                    console.log('Welcome!  Fetching your information.... ');
-                    FB.api('/me', function (response) {
-                        console.log('Successful login for: ' + response.name);
-                        document.getElementById('status').innerHTML =
-                          'Thanks for logging in, ' + response.name + '!   ' + response.email + "     " + FB.getAuthResponse()['accessToken'];
-                    });
-                } else {
-                    // The person is not logged into your app or we are unable to tell.
-                    document.getElementById('status').innerHTML = 'Please log ' +
-                      'into this app.';
-                }
-            }
-
-function login() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-            // connected
-        testAPI();
-        } else {
-            // cancelled
-        }
-    }, { scope: 'email' });
-    }
-
-
-function magic() {
-    FB.api('/me', {fields: 'name,email,first_name,last_name'}, (response) => {
-        document.getElementById("first_name").value = response.first_name;
-        document.getElementById("last_name").value = response.last_name;
-        document.getElementById("email").value = response.email;
-    });
-}
-
-
-//#####################################################################################
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-
-
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-
-    function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
-    }
-
-</script>
-
-<fb:login-button 
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
-
-<!-- checkLoginState -->
-
-<br><br>
-
-<button onclick="getEmail()">Email</button>
-
-<button onclick="magic()">magic</button>
-
-<div id="status"><h1>status</h1></div>
 
 </body>
 </html>
