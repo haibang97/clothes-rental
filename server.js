@@ -22,6 +22,10 @@ app.get('/home-user', function (req, res) {
   res.render('home-user.html')
 })
 
+app.get('/clothes-detail', function (req, res) {
+  res.render('clothesdetails.html')
+})
+
 app.get('/register', function (req, res) {
   res.render('register.html')
 })
