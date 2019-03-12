@@ -173,49 +173,49 @@
 						<h2 class="headline">Discover your style</h2>
 						<p class="subheadline">Find the right outfit based on your needs.</p>
 					</header>
-
-					<div class="filters-text-row1">
-						<h2 class="clothesfilterheadline text-grey">I'm a</h2>
-					</div>
-
-					<div class="gender">
-						<div class="dropdown">
-							<select class="btn btn-secondary dropdown-toggle">
-								<option value="" disabled selected hidden>select your gender</option>
-								<option>male</option>
-								<option>female</option>
-							</select>
+					<form class="searchDetails" method="POST">
+						<div class="filters-text-row1">
+							<h2 class="clothesfilterheadline text-grey">I'm a</h2>
 						</div>
-					</div>
 
-					<div class="filters-text-row1">
-						<h2 class="clothesfilterheadline text-grey">looking for an</h2>
-					</div>
-
-					<br />
-
-					<div class="filters-text-row2">
-						<h2 class="clothesfilterheadline text-grey">outfit for</h2>
-					</div>
-
-					<div class="event">
-						<div class="dropdown">
-							<select class="btn btn-secondary dropdown-toggle">
-								<option value="" disabled selected hidden>select your event</option>
-								<option>date night</option>
-								<option>work</option>
-								<option>party</option>
-							</select>
+						<div class="gender">
+							<div class="dropdown">
+								<select class="btn btn-secondary dropdown-toggle" id='gender'>
+									<option value="" disabled selected hidden>select your gender</option>
+									<option value="M">male</option>
+									<option value="F">female</option>
+								</select>
+							</div>
 						</div>
-					</div>
 
-					<br />
+						<div class="filters-text-row1">
+							<h2 class="clothesfilterheadline text-grey">looking for an</h2>
+						</div>
 
-					<div class="filters-text-row3">
+						<br />
+
+						<div class="filters-text-row2">
+							<h2 class="clothesfilterheadline text-grey">outfit for</h2>
+						</div>
+
+						<div class="event">
+							<div class="dropdown">
+								<select class="btn btn-secondary dropdown-toggle" id='event'>
+									<option value="" disabled selected hidden>select your event</option>
+									<option>work wear</option>
+									<option>date night</option>
+									<option>party</option>
+								</select>
+							</div>
+						</div>
+
+						<br />
+
+						<!-- <div class="filters-text-row3">
 						<h6 class="clothesfiltersubheadline text-grey">I'm feeling</h6>
-					</div>
+					</div> -->
 
-					<!-- <div class="mood">
+						<!-- <div class="mood">
 						<select id="inputState" class="form-control-mood">
 							<option selected="">shiok</option>
 							<option>lupsup</option>
@@ -224,9 +224,13 @@
 						</select>
 					</div> -->
 
-					<br /><br />
-					<a href="#" class="btn btn-green">Let us help you</a>
-					<br /><br /><br />
+						<br /><br />
+						<button type="submit" class="btn btn-green"">Let us help
+							you</button>
+
+						<br /><br /><br />
+
+					</form>
 
 				</div>
 
@@ -237,319 +241,10 @@
 
 
 	<!-- CLOTHES START -->
-	<section class="section-content">
-		<div class="container">
-			<!-- CLOTHES ROW #1 START -->
-			<div class="row">
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_1.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #1</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_2.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #2</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_3.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #3</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_4.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #4</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-			</div>
-			<!-- CLOTHES ROW #1 END -->
-			<br />
-			<!-- CLOTHES ROW #2 START -->
-			<div class="row">
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_5.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #5</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_6.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #6</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_7.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #7</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_1.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #8</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-			</div>
-			<!-- CLOTHES ROW #2 END -->
-			<br />
-			<!-- CLOTHES ROW #3 START -->
-			<div class="row">
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_2.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #9</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_3.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #10</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_4.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #11</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-md-3">
-					<figure class="card card-product">
-						<div class="img-wrap"><img src="images/clothes/datenight/datenight_5.jpg"></div>
-						<figcaption class="info-wrap text-center">
-							<h5 class="title text-truncate"><a href="clothesdetails.html">Date night #12</a></h5>
-						</figcaption>
-					</figure>
-				</div>
-			</div>
-			<!-- CLOTHES ROW #3 END -->
-			<br />
-			<div align="center">
-				<a href="#" class="btn btn-green">View more</a>
-			</div>
-			<br /><br />
-		</div>
+	<section class=" section-content">
+							<div class="container clothes-result"></div>
 	</section>
 	<!-- CLOTHES END -->
-
-
-	<!-- CLOTHES SLIDER
-<section class="section-content">
-	<div class="container">
-	
-
-	<h4 class="title-text">Date Night</h4>
-		<div class="slick-slider" data-slick='{"slidesToShow": 5, "slidesToScroll": 1}'>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_1.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Date night #1</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_2.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Date night #2</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_3.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Date night #3</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_4.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Date night #4</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_5.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Date night #5</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_6.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Date night #6</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_7.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Date night #7</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-
-		
-	<h4 class="title-text">Workwear</h4>
-		<div class="slick-slider" data-slick='{"slidesToShow": 5, "slidesToScroll": 1}'>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_1.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Workwear #1</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_2.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Workwear #2</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_3.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Workwear #3</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_4.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Workwear #4</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_5.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Workwear #5</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_6.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Workwear #6</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_7.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Workwear #7</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-	
-	<h4 class="title-text">Party</h4>
-		<div class="slick-slider" data-slick='{"slidesToShow": 5, "slidesToScroll": 1}'>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_1.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Party #1</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_2.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Party #2</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_3.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Party #3</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_4.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Party #4</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_5.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Party #5</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_6.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Party #6</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_7.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails.html">Party #7</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-
-	</div>
-</section>
-<p></p>
--->
-
 
 	<!-- FOOTER START -->
 	<footer class="section-footer bg-green">
@@ -564,6 +259,63 @@
 		</div>
 	</footer>
 	<!-- FOOTER END -->
+
+	<script type="text/javascript">
+		var clothesContent = "";
+		var items = []
+		$(document).ready(function () {
+			$('.searchDetails').submit(function (event) {
+
+				event.preventDefault();
+
+				var gender = $('#gender option:selected').val();
+				var event = $('#event option:selected').val();
+
+
+				var host = "http://10.124.13.237:8080"
+				var body = "/Clothes/getClothesByGender/"
+				var url = host + body + gender
+
+				$.getJSON(url, function (data) {
+					var clothes = data.ClothesClass
+					clothes.forEach(function (item) {
+						if (item.function == event) {
+							items.push(item)
+						}
+					})
+					console.log(items)
+					for (row = 0; row < 3; row++) {
+						clothesContent += `<div class="row">`
+						for (col = 0; col < 4; col++) {
+							var index = 4 * row + col
+							console.log(items[index])
+							clothesContent += `<div class="col-md-3">
+						<figure class="card card-product">
+							<div class="img-wrap"><img src="${items[index].image_link}"></div>
+								<figcaption class="info-wrap text-center">
+									<h5 class="title text-truncate"><a href="clothesdetails.html">${items[index].function} #${index + 1}</a></h5>
+								</figcaption>
+						</figure>
+					</div>`
+						}
+						clothesContent += `</div>`
+					}
+					clothesContent += `
+						<div align="center">
+							<a href="#" class="btn btn-green">View more</a>
+						</div>
+						<br /><br />`
+					$(".clothes-result").html(clothesContent);
+					clothesContent = "";
+				});
+
+			})
+		});
+
+		// $("button").click(function () {
+		// 	$("#filters").hide();
+		// });
+	</script>
 
 </body>
 

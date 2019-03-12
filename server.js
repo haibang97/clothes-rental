@@ -49,6 +49,7 @@ app.get('/orders-success', function (req, res) {
 })
 
 app.post('/purchase', function (req, res) {
+  res.redirect('/home-user')
   total = req.body.price;
   stripe.charges.create({
     amount: total,
