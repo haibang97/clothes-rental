@@ -18,17 +18,37 @@ app.get('/', function (req, res) {
   res.render('home.html')
 })
 
+app.get("/home", function (req, res) {
+    res.render("home.html")
+})
+
+app.get("/home.html", function (req, res) {
+    res.render("home.html")
+})
+
 app.get('/home-user', function (req, res) {
   res.render('home-user.html')
 })
 
-app.get('/clothes-detail', function (req, res) {
+app.get('/home-user.html', function (req, res) {
+    res.render('home-user.html')
+  })
+
+app.get('/clothes-details', function (req, res) {
   res.render('clothesdetails.html')
 })
+
+app.get('/clothes-details.html', function (req, res) {
+    res.render('clothesdetails.html')
+  })
 
 app.get('/register', function (req, res) {
   res.render('register.html')
 })
+
+app.get('/register.html', function (req, res) {
+    res.render('register.html')
+  })
 
 app.get('/payment', function (req, res) {
   res.render('payment.ejs', {
@@ -40,13 +60,25 @@ app.get('/payment-success', function (req, res) {
   res.render('payment-success.html')
 })
 
+app.get('/payment-success.html', function (req, res) {
+    res.render('payment-success.html')
+  })
+
 app.get('/orders', function (req, res) {
   res.render('orders.html')
 })
 
+app.get('/orders.html', function (req, res) {
+    res.render('orders.html')
+  })
+
 app.get('/orders-success', function (req, res) {
   res.render('orders-success.html')
 })
+
+app.get('/orders-success.html', function (req, res) {
+    res.render('orders-success.html')
+  })
 
 app.post('/purchase', function (req, res) {
   total = req.body.price;
@@ -66,3 +98,4 @@ app.post('/purchase', function (req, res) {
 })
 
 app.listen(3000)
+
