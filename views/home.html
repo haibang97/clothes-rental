@@ -30,7 +30,7 @@
 </head>
 
 <body>
-
+    
 	<!-- HEADER START -->
 	<header class="section-header">
 		<section class="header-main">
@@ -283,20 +283,21 @@
 							items.push(item)
 						}
 					})
-					console.log(items)
+                    console.log(items)
+                    
 					for (row = 0; row < 3; row++) {
 						clothesContent += `<div class="row">`
 						for (col = 0; col < 4; col++) {
 							var index = 4 * row + col
 							console.log(items[index])
 							clothesContent += `<div class="col-md-3">
-						<figure class="card card-product">
-							<div class="img-wrap"><img src="${items[index].image_link}"></div>
-								<figcaption class="info-wrap text-center">
-									<h5 class="title text-truncate"><a href="clothesdetails.html">${items[index].function} #${index + 1}</a></h5>
-								</figcaption>
-						</figure>
-					</div>`
+                                                    <figure class="card card-product">
+                                                        <div class="img-wrap"><img src="${items[index].image_link}"></div>
+                                                            <figcaption class="info-wrap text-center">
+                                                                <h5 class="title text-truncate"><a href="clothesdetails.html">${items[index].function} #${index + 1}</a></h5>
+                                                            </figcaption>
+                                                    </figure>
+                                                </div>`
 						}
 						clothesContent += `</div>`
 					}
