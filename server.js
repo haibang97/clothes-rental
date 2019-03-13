@@ -80,6 +80,14 @@ app.get('/orders-success.html', function (req, res) {
     res.render('orders-success.html')
   })
 
+app.get("/.well-known/acme-challenge/ltGuyEpJh9n6SbpDiZfMKbtwlO9jyyPvQ2P7FqUfYyE", function (res, req) {
+    res.render(".well-known/acme-challenge/ltGuyEpJh9n6SbpDiZfMKbtwlO9jyyPvQ2P7FqUfYyE")
+})
+
+app.get("/.well-known/acme-challenge/ItgnYX-isXUfuXSIvga3o4QrR_c-eddT5l48ai0cLT4", function (res, req){
+    res.render(".well-known/acme-challenge/ItgnYX-isXUfuXSIvga3o4QrR_c-eddT5l48ai0cLT4")
+})
+ 
 app.post('/purchase', function (req, res) {
   res.redirect('/home-user')
   total = req.body.price;
