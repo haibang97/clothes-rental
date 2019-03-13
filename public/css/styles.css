@@ -139,42 +139,15 @@ body {
 .gallery-wrap .img-big-wrap {
   margin-bottom: 10px;
   overflow: hidden;
-  background-color: #fff; }
-  .gallery-wrap .img-big-wrap a {
-    text-align: center;
-    display: block; }
+  text-align: center;
+   }
   .gallery-wrap .img-big-wrap img {
-    height: 450px;
+    height: 400px;
 	margin-top: 30px;
     width: auto;
     display: inline-block;
-    cursor: -webkit-zoom-in;
-    cursor: zoom-in; }
-.gallery-wrap .img-small-wrap {
-  text-align: center; 
-  margin-bottom: 15px;
 }
-  .gallery-wrap .img-small-wrap .item-gallery {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #ddd;
-    margin: 7px 2px;
-    display: inline-block;
-    overflow: hidden; }
-  .gallery-wrap .img-small-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    border-radius: 4px;
-    cursor: -webkit-zoom-in;
-    cursor: zoom-in;
-	}
-    .gallery-wrap .img-small-wrap img:hover {
-      -webkit-filter: brightness(1.1);
-              filter: brightness(1.1);
-      cursor: -webkit-zoom-in;
-      cursor: zoom-in; }
+
 
 /* CLOTHES FILTERS */
 .dropdown-toggle, .dropdown-toggle:hover, .dropdown-toggle:focus, .show .dropdown-toggle {
@@ -305,4 +278,19 @@ section.pricing {
   .pricing .card:hover .btn {
     opacity: 1;
   }
+}
+
+/* LOCATION OUTFIT */
+.location {
+	position:relative;
+}
+
+.model{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
 }
