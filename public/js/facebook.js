@@ -74,5 +74,10 @@ function fillForm() {
         // document.getElementById("postal_code").value = "123456";
     });
 
+}
 
+function logout() {
+    FB.logout(function(response) {
+        getLoginStatus();
+    })
 }
