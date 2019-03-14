@@ -27,10 +27,31 @@
 	<script src="slickslider/slick.min.js"></script>
 	<script src="slickslider/script.js"></script>
 
+	<script src="js/facebook.js"></script>
+	<script src="js/location.js"></script>
+	<!-- 131327448649-0hrhs5j0tnp0ujk8b8p0fjvcob4out5f.apps.googleusercontent.com -->
+
+	<!-- clientID: 131327448649-tn5fbm9j9l6813bobvi4mnrch8qjutju.apps.googleusercontent.com -->
+	<!-- client secret: wrPljhVylHOm3eezJ1gr1UBu-->
+
+
 </head>
 
-<body>
-    
+<body onload="initFB()">
+
+	<script>
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: 'your-app-id',
+				autoLogAppEvents: true,
+				xfbml: true,
+				version: 'v3.2'
+			});
+		};
+	</script>
+	<script async defer src="https://connect.facebook.net/en_US/sdk.js">
+	</script>
+
 	<!-- HEADER START -->
 	<header class="section-header">
 		<section class="header-main">
@@ -67,8 +88,7 @@
 							<!-- CART START -->
 							<div class="widget-header">
 								<a href="#" class="icontext">
-									<div class="icon-wrap icon-xs bg2 text-secondary"><i
-											class="fa fa-shopping-cart"></i></div>
+									<div class="icon-wrap icon-xs bg2 text-secondary"><i class="fa fa-shopping-cart"></i></div>
 									<div class="text-wrap">
 										<small>My Bag</small>
 										<span>4 items</span>
@@ -99,10 +119,12 @@
 										<button type="submit" class="btn btn-primary">Sign in</button>
 									</form>
 									<hr class="dropdown-divider">
-									<!-- FACEBOOK LOGIN START -->
-									<a class="dropdown-item" href="http://www.facebook.com"><img class="logo"
-											src="images/facebooklogin.png" width="80%"></a>
-									<!-- FACEBOOK LOGIN END -->
+									<!-- FACEBOOK & GOOGLE LOGIN START -->
+									<a class="dropdown-item" href="http://www.facebook.com"></a><img class="logo"
+										src="images/facebooklogin.png" width="80%"></a>
+									<a class="dropdown-item" href="http://www.google.com"><img class="logo" src="images/googlesignin.png"
+											width="75%"></a>
+									<!-- FACEBOOK & GOOGLE LOGIN END -->
 									<hr class="dropdown-divider">
 									<a class="dropdown-item" href="#">Not yet a member? Sign up.</a>
 									<a class="dropdown-item" href="#">Forgot password?</a>
@@ -147,104 +169,109 @@
 	</header>
 	<!-- HEADER END -->
 
-
-	<!-- INTRO SECTION START -->
-	<section id="intro" class="section-intro bg-img">
+	<!-- SIGN UP START -->
+	<section class="section-content">
 		<div class="container">
-			<div class="row d-flex" style="min-height:500px;">
-				<div class="col-sm-6 d-flex align-items-center-main">
-					<header class="intro-wrap text-grey">
-						<h2 class="headline">A new style every <br />week awaits you.</h2>
-						<p class="subheadline">Rent an unlimited number of outfits from just $49/month.</p>
-						<a href="register.html" class="btn btn-green">Become a member today</a>
+			<div class="col-sm-8" style="float: none; margin: 0 auto;">
+				<div class="card" style="margin-top:50px; margin-bottom:50px;">
+					<header class="card-header">
+						<a href="" class="float-right btn btn-green mt-1">Log in</a>
+						<h4 class="card-title mt-2">Sign up as a Stylease member today</h4>
 					</header>
+					<article class="card-body">
+						<!-- FACEBOOK & GOOGLE START -->
+						<p>
+							<a onclick="fbLogin()"><img src="images/facebooklogin.png" width="28%"></a>
+							<img src="images/googlesignin.png" width="25%">
+						</p>
+						<!-- FACEBOOK & GOOGLE END -->
+						<hr>
+						<!-- FORM START -->
+						<form>
+							<!-- NAME START -->
+							<div class="form-row">
+								<div class="col form-group">
+									<label>First name:</label>
+									<input type="text" class="form-control" placeholder="" id="first_name">
+								</div>
+								<div class="col form-group">
+									<label>Last name:</label>
+									<input type="text" class="form-control" placeholder="" id="last_name">
+								</div>
+							</div>
+							<!-- NAME END -->
+
+							<!-- EMAIL START -->
+							<div class="form-group">
+								<label>Email address:</label>
+								<input type="email" class="form-control" placeholder="" id="email">
+								<small class="form-text text-muted">We'll never share your email with anyone else.</small>
+							</div>
+							<!-- EMAIL END -->
+
+							<!-- PASSWORD START -->
+							<div class="form-row">
+								<div class="col form-group">
+									<label>New Password:</label>
+									<input class="form-control" type="password">
+									<small class="form-text text-muted">Must be 8-20 characters long.</small>
+								</div>
+								<div class="col form-group">
+									<label>Confirm Password:</label>
+									<input class="form-control" type="password">
+								</div>
+							</div>
+							<!-- PASSWORD END -->
+
+							<!-- BIRTHDAY START -->
+							<div class="form-row">
+								<div class="col form-group">
+									<label>Birthday (DD/MM/YYYY):</label>
+									<input class="form-control" type="text" , id="birthday">
+								</div>
+								<div class="col form-group">
+									<label>Gender:</label><br />
+									<label class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="gender" value="option1" id="maleRadioButton"
+											checked>
+										<span class="form-check-label"> Male </span>
+									</label>
+									<label class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="gender" value="option2" id="femaleRadioButton"
+											checked>
+										<span class="form-check-label"> Female</span>
+									</label>
+								</div>
+							</div>
+							<!-- BIRTHDAY END -->
+
+							<!-- ADDRESS START -->
+							<div class="form-row">
+								<div class="col form-group">
+									<label>Address:</label>
+									<input class="form-control" type="text" , id="address" onblur="fillPostal()" value="">
+								</div>
+								<div class="col form-group">
+									<label>Postal Code:</label>
+									<input class="form-control" type="text" , id="postal_code" onblur="fillAddress()" value="">
+								</div>
+							</div>
+							<!-- ADDRESS END -->
+
+							<div class="form-group">
+								<button type="submitgit initdd" class="btn btn-green">Register</button>
+							</div>
+							<small class="text-muted">By clicking the 'Register' button, you confirm that you accept our <br>Terms of
+								use and Privacy Policy.</small>
+						</form>
+						<!-- FORM END -->
+					</article>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- INTRO SECTION END -->
+	<!-- SIGN UP END -->
 
-	<!-- FILTERS START -->
-	<section id="filters" class="section-intro">
-		<div class="container">
-			<div class="col-sm-8" style="float: none; margin: 0 auto; margin-top:80px;">
-				<div align="center">
-					<header class="filters-wrap text-grey">
-						<h2 class="headline">Discover your style</h2>
-						<p class="subheadline">Find the right outfit based on your needs.</p>
-					</header>
-					<form class="searchDetails" method="POST">
-						<div class="filters-text-row1">
-							<h2 class="clothesfilterheadline text-grey">I'm a</h2>
-						</div>
-
-						<div class="gender">
-							<div class="dropdown">
-								<select class="btn btn-secondary dropdown-toggle" id='gender'>
-									<option value="" disabled selected hidden>select your gender</option>
-									<option value="M">male</option>
-									<option value="F">female</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="filters-text-row1">
-							<h2 class="clothesfilterheadline text-grey">looking for an</h2>
-						</div>
-
-						<br />
-
-						<div class="filters-text-row2">
-							<h2 class="clothesfilterheadline text-grey">outfit for</h2>
-						</div>
-
-						<div class="event">
-							<div class="dropdown">
-								<select class="btn btn-secondary dropdown-toggle" id='event'>
-									<option value="" disabled selected hidden>select your event</option>
-									<option>work wear</option>
-									<option>date night</option>
-									<option>party</option>
-								</select>
-							</div>
-						</div>
-
-						<br />
-
-						<!-- <div class="filters-text-row3">
-						<h6 class="clothesfiltersubheadline text-grey">I'm feeling</h6>
-					</div> -->
-
-						<!-- <div class="mood">
-						<select id="inputState" class="form-control-mood">
-							<option selected="">shiok</option>
-							<option>lupsup</option>
-							<option>rabak</option>
-							<option>sian</option>
-						</select>
-					</div> -->
-
-						<br /><br />
-						<button type="submit" class="btn btn-green"">Let us help
-							you</button>
-
-						<br /><br /><br />
-
-					</form>
-
-				</div>
-
-			</div>
-		</div>
-	</section>
-	<!-- FILTERS END -->
-
-
-	<!-- CLOTHES START -->
-	<section class=" section-content">
-							<div class="container clothes-result"></div>
-	</section>
-	<!-- CLOTHES END -->
 
 	<!-- FOOTER START -->
 	<footer class="section-footer bg-green">
@@ -260,59 +287,8 @@
 	</footer>
 	<!-- FOOTER END -->
 
-	<script type="text/javascript">
-		var clothesContent = "";
-		var items = []
-		$(document).ready(function () {
-			$('.searchDetails').submit(function (event) {
+	<!-- <button onclick="fillForm()">LZL TESTING</button> -->
 
-				event.preventDefault();
-
-				var gender = $('#gender option:selected').val();
-				var event = $('#event option:selected').val();
-
-
-				var host = "http://LAPTOP-M5IE8VM3:8080"
-				var body = "/Clothes/getClothesByGender/"
-				var url = host + body + gender
-
-				$.getJSON(url, function (data) {
-					var clothes = data.ClothesClass
-					clothes.forEach(function (item) {
-						if (item.function == event) {
-							items.push(item)
-						}
-					})
-					for (row = 0; row < 3; row++) {
-						clothesContent += `<div class="row">`
-						for (col = 0; col < 4; col++) {
-							var index = 4 * row + col
-							clothesContent += `<div class="col-md-3">
-						<figure class="card card-product">
-							<div class="img-wrap"><img src="${items[index].image_link}"></div>
-								<figcaption class="info-wrap text-center">
-									<h5 class="title text-truncate"><a href="/clothes-details?clothesid=${items[index].classid}">
-										${items[index].function} #${index + 1}</a>
-									</h5>
-								</figcaption>
-						</figure>
-					</div>`
-						}
-						clothesContent += `</div>`
-					}
-					clothesContent += `
-						<div align="center">
-							<a href="#" class="btn btn-green">View more</a>
-						</div>
-						<br /><br />`
-					$(".clothes-result").html(clothesContent);
-					clothesContent = "";
-				});
-
-			})
-		});
-
-	</script>
 
 </body>
 

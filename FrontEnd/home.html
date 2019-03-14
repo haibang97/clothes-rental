@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    
+
 	<!-- HEADER START -->
 	<header class="section-header">
 		<section class="header-main">
@@ -272,7 +272,7 @@
 				var event = $('#event option:selected').val();
 
 
-				var host = "http://LAPTOP-M5IE8VM3:8080"
+				var host = "http://10.124.13.237:8080"
 				var body = "/Clothes/getClothesByGender/"
 				var url = host + body + gender
 
@@ -283,17 +283,17 @@
 							items.push(item)
 						}
 					})
+					console.log(items)
 					for (row = 0; row < 3; row++) {
 						clothesContent += `<div class="row">`
 						for (col = 0; col < 4; col++) {
 							var index = 4 * row + col
+							console.log(items[index])
 							clothesContent += `<div class="col-md-3">
 						<figure class="card card-product">
 							<div class="img-wrap"><img src="${items[index].image_link}"></div>
 								<figcaption class="info-wrap text-center">
-									<h5 class="title text-truncate"><a href="/clothes-details?clothesid=${items[index].classid}">
-										${items[index].function} #${index + 1}</a>
-									</h5>
+									<h5 class="title text-truncate"><a href="clothesdetails.html">${items[index].function} #${index + 1}</a></h5>
 								</figcaption>
 						</figure>
 					</div>`
@@ -312,6 +312,9 @@
 			})
 		});
 
+		// $("button").click(function () {
+		// 	$("#filters").hide();
+		// });
 	</script>
 
 </body>
