@@ -16,21 +16,23 @@ function test() {
 }
 
 function fbLogin() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
-        });
-        } else {
-        console.log('User cancelled login or did not fully authorize.');
-        }
-    }, {scope: "email,first_name,last_name,gender,birthday",
-        return_scopes: true});
+    // FB.login(function(response) {
+    //     if (response.authResponse) {
+    //     console.log('Welcome!  Fetching your information.... ');
+    //     FB.api('/me', function(response) {
+    //     console.log('Good to see you, ' + response.name + '.');
+    //     });
+    //     } else {
+    //     console.log('User cancelled login or did not fully authorize.');
+    //     }
+    // }, {scope: "email,first_name,last_name,gender,birthday",
+    //     return_scopes: true});
     fillForm();
+    getLoginStatus();
 }
 
 function getLoginStatus() {
+    // alert("get login status called");
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             // The user is logged in and has authenticated your
@@ -42,6 +44,7 @@ function getLoginStatus() {
             var accessToken = response.authResponse.accessToken;
             console.log(uid);
             console.log(accessToken);
+            console.log("you are connected to facebook");
 
         } else if (response.status === 'not_authorized') {
             // The user hasn't authorized your application.  They
