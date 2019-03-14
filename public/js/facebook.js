@@ -45,6 +45,7 @@ function getLoginStatus() {
             console.log(uid);
             console.log(accessToken);
             console.log("you are connected to facebook");
+            fillForm();
 
         } else if (response.status === 'not_authorized') {
             // The user hasn't authorized your application.  They
