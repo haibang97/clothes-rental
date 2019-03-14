@@ -19,36 +19,41 @@ app.get('/', function (req, res) {
 })
 
 app.get("/home", function (req, res) {
-    res.render("home.html")
-})
-
-app.get("/home.html", function (req, res) {
-    res.render("home.html")
+  res.render("home.html")
 })
 
 app.get('/home-user', function (req, res) {
   res.render('home-user.html')
 })
 
-app.get('/home-user.html', function (req, res) {
-    res.render('home-user.html')
-  })
+// get query parameter from ..../clothes-details?clothesid
+app.get('/clothes-details', async function (req, res) {
+  var clothesid = req.query.clothesid
+  var host = 'http://LAPTOP-M5IE8VM3:8080'
+  var body = '/Clothes/getSpecificClothes/'
+  var url = host + body + clothesid
+  var clothesDetails = await getClothesDetails(url)
+  res.render('clothesdetails.ejs', {data : JSON.parse(clothesDetails)})
 
-app.get('/clothes-details', function (req, res) {
-  res.render('clothesdetails.html')
 })
 
-app.get('/clothes-details.html', function (req, res) {
-    res.render('clothesdetails.html')
+function getClothesDetails (url) {
+  return new Promise((resolve, reject) => {
+    try {
+      const request = require('request')
+      request(url, function (err, res, body) {
+        if (err) reject(err)
+        resolve(body)
+      })
+    } catch (error) {
+      reject(error)
+    }
   })
+}
 
 app.get('/register', function (req, res) {
   res.render('register.html')
 })
-
-app.get('/register.html', function (req, res) {
-    res.render('register.html')
-  })
 
 app.get('/payment', function (req, res) {
   res.render('payment.ejs', {
@@ -60,28 +65,16 @@ app.get('/payment-success', function (req, res) {
   res.render('payment-success.html')
 })
 
-app.get('/payment-success.html', function (req, res) {
-    res.render('payment-success.html')
-  })
 
 app.get('/orders', function (req, res) {
   res.render('orders.html')
 })
 
-app.get('/orders.html', function (req, res) {
-    res.render('orders.html')
-  })
-
 app.get('/orders-success', function (req, res) {
   res.render('orders-success.html')
 })
 
-app.get('/orders-success.html', function (req, res) {
-    res.render('orders-success.html')
-  })
-
 app.post('/purchase', function (req, res) {
-  res.redirect('/home-user')
   total = req.body.price;
   stripe.charges.create({
     amount: total,
