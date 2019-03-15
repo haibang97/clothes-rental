@@ -311,15 +311,15 @@
 						for (col = 0; col < 4; col++) {
 							var index = 4 * row + col
 							clothesContent += `<div class="col-md-3">
-						<figure class="card card-product">
-							<div class="img-wrap"><img src="${items[index].image_link}"></div>
-								<figcaption class="info-wrap text-center">
-									<h5 class="title text-truncate"><a href="/clothes-details?clothesid=${items[index].classid}">
-										${items[index].function} #${index + 1}</a>
-									</h5>
-								</figcaption>
-						</figure>
-					</div>`
+                                                    <figure class="card card-product">
+                                                        <div class="img-wrap"><img src="${items[index].image_link}"></div>
+                                                            <figcaption class="info-wrap text-center">
+                                                                <h5 class="title text-truncate"><a href="/clothes-details?clothesid=${items[index].classid}">
+                                                                    ${items[index].function} #${index + 1}</a>
+                                                                </h5>
+                                                            </figcaption>
+                                                    </figure>
+                                                </div>`
 						}
 						clothesContent += `</div>`
 					}
