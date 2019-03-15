@@ -285,7 +285,23 @@ section.pricing {
 	position:relative;
 }
 
-.model{
+.model_location{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+	margin-bottom: 20px;
+}
+
+/* CLOTHES IMAGE*/
+.model_background {
+	position:relative;
+}
+
+.model_clothes{
 	position: absolute;
     left: 0;
     top: 0;
