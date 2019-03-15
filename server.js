@@ -82,9 +82,10 @@ app.post('/purchase', function (req, res) {
     currency: 'sgd'
   }).then(function () {
     console.log('Charge Successful')
-    res.json({
-      message: 'Successfully purchased items'
-    })
+    // res.json({
+    //   message: 'Successfully purchased items'
+    // })
+    res,redirect('/payment-success')
   }).catch(function () {
     console.log('Charge Fail')
     res.status(500).end()

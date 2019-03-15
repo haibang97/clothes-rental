@@ -38,7 +38,7 @@
 					<!-- LOGO START -->
 					<div class="col-lg-3">
 						<div class="brand-wrap">
-							<a href="home.html"><img class="logo" src="images/logo.png"></a>
+							<a href="/home"><img class="logo" src="images/logo.png"></a>
 						</div>
 					</div>
 					<!-- LOGO END -->
@@ -85,10 +85,10 @@
 									</div>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-									<a class="dropdown-item" href="home-user.html">Manage my account</a>
-									<a class="dropdown-item" href="home-user.html">My orders</a>
-									<a class="dropdown-item" href="home-user.html">My reviews</a>
-									<a class="dropdown-item" href="home.html">Logout</a>
+									<a class="dropdown-item" href="/home-user">Manage my account</a>
+									<a class="dropdown-item" href="/home-user">My orders</a>
+									<a class="dropdown-item" href="/home-user">My reviews</a>
+									<a class="dropdown-item" href="/home">Logout</a>
 								</div>
 							</div>
 							<!-- ACCOUNT END -->
@@ -215,9 +215,9 @@
 												Your item has been successfully added into your bag.
 											</div>
 											<div class="modal-footer">
-												<a href="home-user.html#filters" class="btn btn-secondary">Add another
+												<a href="/home-user#filters" class="btn btn-secondary">Add another
 													outfit</a>
-												<a href="orders.html" class="btn btn-green">Proceed to checkout</a>
+												<a href="/orders" class="btn btn-green">Proceed to checkout</a>
 											</div>
 										</div>
 									</div>
@@ -307,6 +307,62 @@
 		</div>
 	</footer>
 	<!-- FOOTER END -->
+
 </body>
+
+<script type="text/javascript">
+	// var clothesContent = "";
+	// var items = []
+	// $(document).ready(function () {
+	// 	$('.searchDetails').submit(function (event) {
+
+	// 		event.preventDefault();
+
+	// 		var location = $('#location option:selected').val();
+
+	// 		var host = "http://LAPTOP-M5IE8VM3:8080"
+	// 		var body = "/Clothes/getClothesByGender/"
+	// 		var url = host + body + location
+
+	// 		$.getJSON(url, function (data) {
+	// 			var clothes = data.ClothesClass
+	// 			clothes.forEach(function (item) {
+	// 				if (item.function == event) {
+	// 					items.push(item)
+	// 				}
+	// 			})
+	// 			for (row = 0; row < 3; row++) {
+	// 				clothesContent += `<div class="row">`
+	// 				for (col = 0; col < 4; col++) {
+	// 					var index = 4 * row + col
+	// 					clothesContent += `<div class="col-md-3">
+	// 				<figure class="card card-product">
+	// 					<div class="img-wrap"><img src="${items[index].image_link}"></div>
+	// 						<figcaption class="info-wrap text-center">
+	// 							<h5 class="title text-truncate"><a href="/clothes-details?clothesid=${items[index].classid}">
+	// 								${items[index].function} #${index + 1}</a>
+	// 							</h5>
+	// 						</figcaption>
+	// 				</figure>
+	// 			</div>`
+	// 				}
+	// 				clothesContent += `</div>`
+	// 			}
+	// 			clothesContent += `
+	// 				<div align="center">
+	// 					<a href="#" class="btn btn-green">View more</a>
+	// 				</div>
+	// 				<br /><br />`
+	// 			$(".clothes-result").html(clothesContent);
+	// 			clothesContent = "";
+	// 		});
+
+	// 	})
+	// });
+
+	// var rows = "<%=data%>"
+	var rows = JSON.stringtify("<%=data%>")
+	console.log(JSON.parse(rows))
+</script>
 
 </html>
