@@ -293,16 +293,16 @@ section.pricing {
     bottom: 0;
     display: block;
     margin: auto;
-	margin-bottom: 20px;
+	  margin-bottom: 10px;
 }
 
 /* CLOTHES IMAGE*/
 .model_background {
-	position:relative;
+  position:relative;
 }
 
 .model_clothes{
-	position: absolute;
+  position: absolute;
     left: 0;
     top: 0;
     right: 0;

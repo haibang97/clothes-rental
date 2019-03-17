@@ -29,12 +29,14 @@ app.get('/home-user', function (req, res) {
 // get query parameter from ..../clothes-details?clothesid
 app.get('/clothes-details', async function (req, res) {
   var clothesid = req.query.clothesid
+
+  // var host = 'http://10.124.13.237:8080'
   var host = 'http://LAPTOP-M5IE8VM3:8080'
+  
   var body = '/Clothes/getSpecificClothes/'
   var url = host + body + clothesid
   var clothesDetails = await getClothesDetails(url)
   res.render('clothesdetails.ejs', {data : JSON.parse(clothesDetails)})
-
 })
 
 function getClothesDetails (url) {
@@ -85,7 +87,7 @@ app.post('/purchase', function (req, res) {
     // res.json({
     //   message: 'Successfully purchased items'
     // })
-    res,redirect('/payment-success')
+    res.redirect('/payment-success')
   }).catch(function () {
     console.log('Charge Fail')
     res.status(500).end()

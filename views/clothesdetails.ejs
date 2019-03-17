@@ -67,9 +67,8 @@
 								<a href="#" class="icontext">
 									<div class="icon-wrap icon-xs bg2 text-secondary"><i
 											class="fa fa-shopping-cart"></i></div>
-									<div class="text-wrap">
-										<small>My Bag</small>
-										<span>4 items</span>
+									<div class="text-wrap cart-size">
+										
 									</div>
 								</a>
 							</div>
@@ -139,7 +138,10 @@
 					<aside class="col-sm-3">
 						<article class="gallery-wrap">
 							<div class="img-big-wrap">
-								<div> <img src="<%= data.CombinedClothes[0].image_link %>"></div>
+								<div class="model_background">
+									<img src="<%= data.CombinedClothes[0].image_link %>" class="model_clothes" />
+									<img src="images/clothes/greybg.jpg" />
+								</div>
 							</div>
 						</article>
 					</aside>
@@ -154,9 +156,6 @@
 								</dd>
 							</dl>
 							<dl class="row">
-								<dt class="col-sm-2">Category:</dt>
-								<dd class="col-sm-10">Overlap Top</dd>
-
 								<dt class="col-sm-2">Perfect for:</dt>
 								<dd class="col-sm-10"><%= data.CombinedClothes[0].function %></dd>
 
@@ -164,14 +163,15 @@
 								<dd class="col-sm-10"><%= data.CombinedClothes[0].status %></dd>
 
 								<dt class="col-sm-2">Size:</dt>
+
 								<dd class="col-sm-10">
 									<dl class="dlist-inline">
 										<dd>
-											<label class="form-check form-check-inline">
+											<!-- <label class="form-check form-check-inline">
 												<input class="form-check-input" name="size" id="XS" value="XS"
 													type="radio">
 												<span class="form-check-label">XS</span>
-											</label>
+											</label> -->
 											<label class="form-check form-check-inline">
 												<input class="form-check-input" name="size" id="S" value="S"
 													type="radio">
@@ -187,18 +187,20 @@
 													type="radio">
 												<span class="form-check-label">L</span>
 											</label>
-											<label class="form-check form-check-inline">
+											<!-- <label class="form-check form-check-inline">
 												<input class="form-check-input" name="size" id="XL" value="XL"
 													type="radio">
 												<span class="form-check-label">XL</span>
-											</label>
+											</label> -->
 										</dd>
 									</dl>
 								</dd>
 								<dt class="col-sm-2">
 									<button type="button" class="btn btn-primary" data-toggle="modal"
-										data-target="#popup">Add to bag</button>
+										data-target="#popup" id="addtobag">Add to bag</button>
 								</dt>
+								</form>
+
 								<!-- POPUP START -->
 								<div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="popup"
 									aria-hidden="true">
@@ -234,15 +236,17 @@
 				<div class="row">
 					<div class="col-sm-8" style="float: none; margin: 0 auto; margin-top:30px; margin-bottom: 10px;">
 						<div align="center">
+
 							<div class="row">
 								<div class="col text-center">
-									<h2 class="clothesfilterheadline text-grey">How does this outfit look like in</h2>
+									<h2 class="clothesfilterheadline text-grey">How does this outfit look like in
+									</h2>
 									<div class="dropdown">
 										<select class="btn btn-secondary dropdown-toggle" id="location">
 											<option value="" disabled selected hidden>select a location</option>
-											<option value="orchardroad">Orchard Road</option>
-											<option value="zouk">Zouk</option>
-											<option value="smu">SMU</option>
+											<option value="Orchard Road">Orchard Road</option>
+											<option value="Zouk">Zouk</option>
+											<option value="SMU">SMU</option>
 										</select>
 									</div>
 								</div>
@@ -251,36 +255,9 @@
 							<div align="center">
 								<button type="submit" class="btn btn-green">Check it out</button>
 							</div>
-
 							<br /><br />
 
-							<!-- SMU START -->
-							<p class="subheadline">This is how this outfit would look like in <strong>Singapore
-									Management University</strong>.</p>
-							<div class="location">
-								<img src="images/locations/outfit1.png" width="80%" class="model" />
-								<img src="images/locations/smu.jpg" width="80%" />
-							</div>
-							<!-- SMU END -->
-							<br /><br />
-
-							<!-- ORCHARD ROAD START -->
-							<p class="subheadline">This is how this outfit would look like in <strong>Orchard
-									Road</strong>.</p>
-							<div class="location">
-								<img src="images/locations/outfit1.png" width="80%" class="model" />
-								<img src="images/locations/orchard.jpg" width="80%" />
-							</div>
-							<!-- ORCHARD ROAD END -->
-							<br /><br />
-
-							<!-- ZOUK START -->
-							<p class="subheadline">This is how this outfit would look like in <strong>Zouk</strong>.</p>
-							<div class="location">
-								<img src="images/locations/outfit1.png" width="80%" class="model" />
-								<img src="images/locations/zouk.jpg" width="80%" />
-							</div>
-							<!-- ZOUK END -->
+							<div class="result"></div>
 
 							<br />
 						</div>
@@ -311,58 +288,67 @@
 </body>
 
 <script type="text/javascript">
-	// var clothesContent = "";
-	// var items = []
-	// $(document).ready(function () {
-	// 	$('.searchDetails').submit(function (event) {
 
-	// 		event.preventDefault();
+	$(document).ready(function () {
 
-	// 		var location = $('#location option:selected').val();
+		var rows = <%- JSON.stringify(data) %>
+		
+		console.log("Start adding items and add in localStorage")
 
-	// 		var host = "http://LAPTOP-M5IE8VM3:8080"
-	// 		var body = "/Clothes/getClothesByGender/"
-	// 		var url = host + body + location
+		var clothesBySize = []
+		var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+		localStorage.setItem('items', JSON.stringify(itemsArray))
 
-	// 		$.getJSON(url, function (data) {
-	// 			var clothes = data.ClothesClass
-	// 			clothes.forEach(function (item) {
-	// 				if (item.function == event) {
-	// 					items.push(item)
-	// 				}
-	// 			})
-	// 			for (row = 0; row < 3; row++) {
-	// 				clothesContent += `<div class="row">`
-	// 				for (col = 0; col < 4; col++) {
-	// 					var index = 4 * row + col
-	// 					clothesContent += `<div class="col-md-3">
-	// 				<figure class="card card-product">
-	// 					<div class="img-wrap"><img src="${items[index].image_link}"></div>
-	// 						<figcaption class="info-wrap text-center">
-	// 							<h5 class="title text-truncate"><a href="/clothes-details?clothesid=${items[index].classid}">
-	// 								${items[index].function} #${index + 1}</a>
-	// 							</h5>
-	// 						</figcaption>
-	// 				</figure>
-	// 			</div>`
-	// 				}
-	// 				clothesContent += `</div>`
-	// 			}
-	// 			clothesContent += `
-	// 				<div align="center">
-	// 					<a href="#" class="btn btn-green">View more</a>
-	// 				</div>
-	// 				<br /><br />`
-	// 			$(".clothes-result").html(clothesContent);
-	// 			clothesContent = "";
-	// 		});
+		// Display cart size
+		var cart_size = `<small>My Bag</small>
+						<span>${itemsArray.length} items</span>`
+		$(".cart-size").html(cart_size);
 
-	// 	})
-	// });
+		$('#addtobag').click(function () {
+			var size = $("input[name='size']:checked").val();
+			rows.CombinedClothes.forEach(function (clothe) {
+				if (clothe.size == size) {
+					clothesBySize.push(clothe)
+				}
+			})
 
-	// var rows = "<%=data%>"
-	var rows = JSON.stringtify("<%=data%>")
-	console.log(JSON.parse(rows))
+			itemsArray.push(clothesBySize[0])
+			localStorage.setItem('items', JSON.stringify(itemsArray))
+		})
+
+		$('.outfit').submit(function (event) {
+
+			event.preventDefault();
+
+			var location = $('#location option:selected').val();
+			console.log(location)
+			var host = "http://LAPTOP-M5IE8VM3:8080"
+			var body = "/background/"
+			var url = host + body + location
+
+			var result = ''
+			$.getJSON(url, function (data) {
+				var place = data.location
+				if (place == "SMU") {
+					place = "Singapore Management University"
+				}
+
+				var image = data.image
+
+				result += `				
+							<p class="subheadline">This is how this outfit would look like in <strong>${place}</strong>.</p>
+							<div class="location">
+								<img src="https://stylease.me/images/locations/model.png" width="15%" class="model_location" />
+								<img src="${image}" width="80%"/>
+							</div>	`
+
+				$(".result").html(result);
+				result = "";
+
+			})
+		})
+	});
+
 </script>
 
 </html>

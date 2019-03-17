@@ -66,12 +66,11 @@
 
 							<!-- CART START -->
 							<div class="widget-header">
-								<a href="#" class="icontext">
+								<a href="/orders" class="icontext">
 									<div class="icon-wrap icon-xs bg2 text-secondary"><i
 											class="fa fa-shopping-cart"></i></div>
-									<div class="text-wrap">
-										<small>My Bag</small>
-										<span>4 items</span>
+									<div class="text-wrap cart-size">
+										
 									</div>
 								</a>
 							</div>
@@ -211,19 +210,6 @@
 
 						<br />
 
-						<!-- <div class="filters-text-row3">
-						<h6 class="clothesfiltersubheadline text-grey">I'm feeling</h6>
-					</div> -->
-
-						<!-- <div class="mood">
-						<select id="inputState" class="form-control-mood">
-							<option selected="">shiok</option>
-							<option>lupsup</option>
-							<option>rabak</option>
-							<option>sian</option>
-						</select>
-					</div> -->
-
 						<br /><br />
 						<button type="submit" class="btn btn-green"">Let us help
 							you</button>
@@ -262,7 +248,8 @@
 			js = d.createElement(s); js.id = id;
 			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
 			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat" attribution=setup_tool page_id="1930206990625698" theme_color="#81894e">
@@ -286,15 +273,32 @@
 		var clothesContent = "";
 		var items = []
 		$(document).ready(function () {
+
+			localStorage.clear();
+
+			// Display cart size
+			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+			var cart_size = `<small>My Bag</small>
+							<span>${itemsArray.length} items</span>`
+			$(".cart-size").html(cart_size);
+
+			// Display cart size
+			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+			var cart_size = `<small>My Bag</small>
+							<span>${itemsArray.length} items</span>`
+			$(".cart-size").html(cart_size);
+
 			$('.searchDetails').submit(function (event) {
 
 				event.preventDefault();
 
 				var gender = $('#gender option:selected').val();
 				var event = $('#event option:selected').val();
+				
 
-
+				// var host = "http://10.124.13.237:8080"
 				var host = "http://LAPTOP-M5IE8VM3:8080"
+
 				var body = "/Clothes/getClothesByGender/"
 				var url = host + body + gender
 
@@ -327,10 +331,9 @@
 							<a href="#" class="btn btn-green">View more</a>
 						</div>
 						<br /><br />`
-					$(".clothes-result")(clothesContent);
+					$(".clothes-result").html(clothesContent);
 					clothesContent = "";
 				});
-
 			})
 		});
 

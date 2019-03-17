@@ -1,85 +1,66 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
 
-<title>Stylease - an outfit rental platform</title>
-<meta name="Description" CONTENT="Stylease is a clothes rental platform based in Singapore.">
-<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<title>Stylease - an outfit rental platform</title>
+	<meta name="Description" CONTENT="Stylease is a clothes rental platform based in Singapore.">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 
-<!-- jQuery -->
-<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+	<!-- jQuery -->
+	<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
 
-<!-- Bootstrap -->
-<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-<link href="css/bootstrap.css?v=1.0" rel="stylesheet" type="text/css"/>
-	
-<!-- Styles -->
-<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+	<link href="css/bootstrap.css?v=1.0" rel="stylesheet" type="text/css" />
 
-<!-- Font Awesome -->
-<link href="fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
+	<!-- Styles -->
+	<link href="css/styles.css" rel="stylesheet" type="text/css" />
 
-<!-- Slickslider -->
-<link href="slickslider/slick.css" rel="stylesheet" type="text/css" />
-<link href="slickslider/slick-theme.css" rel="stylesheet" type="text/css" />
-<script src="slickslider/slick.min.js"></script>
-<script src="slickslider/script.js"></script>
-	
-<!-- Smooth Scrolling Effect -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("a").on('click', function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      var hash = this.hash;
+	<!-- Font Awesome -->
+	<link href="fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
 
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-  
-        window.location.hash = hash;
-      });
-    }
-  });
-});
-</script>
+	<!-- Slickslider -->
+	<link href="slickslider/slick.css" rel="stylesheet" type="text/css" />
+	<link href="slickslider/slick-theme.css" rel="stylesheet" type="text/css" />
+	<script src="slickslider/slick.min.js"></script>
+	<script src="slickslider/script.js"></script>
 
 </head>
-	
+
 <body>
-	
-<!-- HEADER START -->
-<header class="section-header">
-	<section class="header-main">
-		<div class="container">
-			<div class="row align-items-center">
-				
-				<!-- LOGO START -->
-				<div class="col-lg-3">
-					<div class="brand-wrap">
-						<a href="home"><img class="logo" src="images/logo.png"></a>
-					</div>
-				</div>
-				<!-- LOGO END -->
-				
-				<!-- SEARCH BAR START -->
-				<div class="col-lg-6 col-sm-6">
-					<form action="#" class="search-wrap">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="I am looking for...">
-							<div class="input-group-append">
-							  <button class="btn btn-primary" type="submit">
-								<i class="fa fa-search"></i>
-							  </button>
-							</div>
+
+	<!-- HEADER START -->
+	<header class="section-header">
+		<section class="header-main">
+			<div class="container">
+				<div class="row align-items-center">
+
+					<!-- LOGO START -->
+					<div class="col-lg-3">
+						<div class="brand-wrap">
+							<a href="/home"><img class="logo" src="images/logo.png"></a>
 						</div>
-					</form>
-				</div>
-				<!-- SEARCH BAR END -->
-				
-				<!-- CART / ACCOUNT START -->
+					</div>
+					<!-- LOGO END -->
+
+					<!-- SEARCH BAR START -->
+					<div class="col-lg-6 col-sm-6">
+						<form action="#" class="search-wrap">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="I am looking for...">
+								<div class="input-group-append">
+									<button class="btn btn-primary" type="submit">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- SEARCH BAR END -->
+
+					<!-- CART / ACCOUNT START -->
 				<div class="col-lg-3 col-sm-6">
 					<div class="widgets-wrap d-flex justify-content-end">
 						
@@ -87,9 +68,8 @@ $(document).ready(function(){
 						<div class="widget-header">
 							<a href="#" class="icontext">
 								<div class="icon-wrap icon-xs bg2 text-secondary"><i class="fa fa-shopping-cart"></i></div>
-								<div class="text-wrap">
-									<small>My Bag</small>
-									<span>4 items</span>
+								<div class="text-wrap cart-size">
+								
 								</div>
 							</a>
 						</div>
@@ -105,52 +85,50 @@ $(document).ready(function(){
 								</div>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right">
-								<a class="dropdown-item" href="home-user">Manage my account</a>
-								<a class="dropdown-item" href="home-user">My orders</a>
-								<a class="dropdown-item" href="home-user">My reviews</a>
-								<a class="dropdown-item" href="home">Logout</a>
+								<a class="dropdown-item" href="/home-user">Manage my account</a>
+								<a class="dropdown-item" href="/orders">My orders</a>
+								<a class="dropdown-item" href="/home">Logout</a>
 							</div>
 						</div>
 						<!-- ACCOUNT END -->
 					</div>
 				</div>
 				<!-- CART / ACCOUNT END -->
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- NAV BAR START -->
-	<nav class="navbar navbar-expand navbar-dark bg-green">
-	  <div class="container">
+		<!-- NAV BAR START -->
+		<nav class="navbar navbar-expand navbar-dark bg-green">
+			<div class="container">
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
-		  <span class="navbar-toggler-icon"></span>
-		</button>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-		<div class="collapse navbar-collapse" id="main_nav">
-		  <ul class="navbar-nav">
-			<li class="nav-item">
-			  <a class="nav-link" href="#">NAV #1</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="#">NAV #2</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="#">NAV #3</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="#">NAV #4</a>
-			</li>
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-	<!-- NAV BAR END -->
+				<div class="collapse navbar-collapse" id="main_nav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">NAV #1</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">NAV #2</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">NAV #3</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">NAV #4</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- NAV BAR END -->
 
-</header>
-<!-- HEADER END -->
+	</header>
+	<!-- HEADER END -->
 
-	
 <!-- INTRO SECTION START -->
 <section id="intro" class="section-intro bg-img">
 	<div class="container">
@@ -166,407 +144,176 @@ $(document).ready(function(){
 	</div>
 </section>
 <!-- INTRO SECTION END -->
-	
-<!-- FILTERS START -->
-<section id="filters" class="section-intro">
-	<div class="container">
+
+
+	<!-- FILTERS START -->
+	<section id="filters" class="section-intro">
+		<div class="container">
 			<div class="col-sm-8" style="float: none; margin: 0 auto; margin-top:80px;">
 				<div align="center">
-				<header class="filters-wrap text-grey">
-					<h2 class="headline">Discover your style</h2>
-					<p class="subheadline">Find the right outfit based on your needs.</p>
-				</header>
-				
-				<div class="filters-text-row1">
-					<h2 class="clothesfilterheadline text-grey">I'm a</h2>
+					<header class="filters-wrap text-grey">
+						<h2 class="headline">Discover your style</h2>
+						<p class="subheadline">Find the right outfit based on your needs.</p>
+					</header>
+					<form class="searchDetails" method="POST">
+						<div class="filters-text-row1">
+							<h2 class="clothesfilterheadline text-grey">I'm a</h2>
+						</div>
+
+						<div class="gender">
+							<div class="dropdown">
+								<select class="btn btn-secondary dropdown-toggle" id='gender'>
+									<option value="" disabled selected hidden>select your gender</option>
+									<option value="M">male</option>
+									<option value="F">female</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="filters-text-row1">
+							<h2 class="clothesfilterheadline text-grey">looking for an</h2>
+						</div>
+
+						<br />
+
+						<div class="filters-text-row2">
+							<h2 class="clothesfilterheadline text-grey">outfit for</h2>
+						</div>
+
+						<div class="event">
+							<div class="dropdown">
+								<select class="btn btn-secondary dropdown-toggle" id='event'>
+									<option value="" disabled selected hidden>select your event</option>
+									<option>work wear</option>
+									<option>date night</option>
+									<option>party</option>
+								</select>
+							</div>
+						</div>
+
+						<br />
+
+						<br /><br />
+						<button type="submit" class="btn btn-green"">Let us help
+							you</button>
+
+						<br /><br /><br />
+
+					</form>
+
 				</div>
-				
-				<div class="gender">
-					<div class="dropdown">
-						<select class="btn btn-secondary dropdown-toggle">
-							<option value="" disabled selected hidden>select your gender</option>
-							<option>male</option>
-							<option>female</option>
-						</select>
-					</div>
-				</div>
-					
-				<div class="filters-text-row1">
-					<h2 class="clothesfilterheadline text-grey">looking for an</h2>
-				</div>
-					
-				<br/>
-					
-				<div class="filters-text-row2">
-					<h2 class="clothesfilterheadline text-grey">outfit for</h2>
-				</div>
-				
-				<div class="event">
-					<div class="dropdown">
-						<select class="btn btn-secondary dropdown-toggle">
-							<option value="" disabled selected hidden>select your event</option>
-							<option>date night</option>
-							<option>work</option>
-							<option>party</option>
-						</select>
-					</div>
-				</div>
-					
-				<br/>
-					
-				<div class="filters-text-row3">
-					<h6 class="clothesfiltersubheadline text-grey">I'm feeling</h6>
-				</div>
-					
-				<div class="mood">
-					<select id="inputState" class="form-control-mood">
-						<option selected="">shiok</option>
-						<option>lupsup</option>
-						<option>rabak</option>
-						<option>sian</option>
-					</select>
-				</div>
-					
-					<br/><br/>
-					<a href="#" class="btn btn-green">Let us help you</a>
-					<br/><br/><br/>
-					
-				</div>
-			
+
 			</div>
+		</div>
+	</section>
+	<!-- FILTERS END -->
+
+
+	<!-- CLOTHES START -->
+	<section class=" section-content">
+							<div class="container clothes-result"></div>
+	</section>
+	<!-- CLOTHES END -->
+
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>
+		window.fbAsyncInit = function () {
+			FB.init({
+				xfbml: true,
+				version: 'v3.2'
+			});
+		};
+
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- Your customer chat code -->
+	<div class="fb-customerchat" attribution=setup_tool page_id="1930206990625698" theme_color="#81894e">
 	</div>
-</section>
-<!-- FILTERS END -->
-	
-	
-<!-- CLOTHES START -->	
-<section class="section-content">
-	<div class="container">
-		<!-- CLOTHES ROW #1 START -->	
-		<div class="row">
-			<div class="col-md-3">
-				<figure class="card card-product">
-					<div class="img-wrap"><img src="images/clothes/datenight/datenight_1.jpg"></div>
-					<figcaption class="info-wrap text-center">
-						<h5 class="title text-truncate"><a href="clothesdetails">Date night #1</a></h5>
-					</figcaption>
-				</figure>
-			</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_2.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #2</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_3.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #3</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_4.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #4</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		</div>
-		<!-- CLOTHES ROW #1 END -->
-		<br/>
-		<!-- CLOTHES ROW #2 START -->	
-		<div class="row">
-			<div class="col-md-3">
-				<figure class="card card-product">
-					<div class="img-wrap"><img src="images/clothes/datenight/datenight_5.jpg"></div>
-					<figcaption class="info-wrap text-center">
-						<h5 class="title text-truncate"><a href="clothesdetails">Date night #5</a></h5>
-					</figcaption>
-				</figure>
-			</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_6.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #6</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_7.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #7</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_1.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #8</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		</div>
-		<!-- CLOTHES ROW #2 END -->
-		<br/>
-		<!-- CLOTHES ROW #3 START -->	
-		<div class="row">
-			<div class="col-md-3">
-				<figure class="card card-product">
-					<div class="img-wrap"><img src="images/clothes/datenight/datenight_2.jpg"></div>
-					<figcaption class="info-wrap text-center">
-						<h5 class="title text-truncate"><a href="clothesdetails">Date night #9</a></h5>
-					</figcaption>
-				</figure>
-			</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_3.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #10</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_4.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #11</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		<div class="col-md-3">
-			<figure class="card card-product">
-				<div class="img-wrap"><img src="images/clothes/datenight/datenight_5.jpg"></div>
-				<figcaption class="info-wrap text-center">
-					<h5 class="title text-truncate"><a href="clothesdetails">Date night #12</a></h5>
-				</figcaption>
-			</figure>
-		</div>
-		</div>
-		<!-- CLOTHES ROW #3 END -->
-		<br/>
-		<div align="center">
-			<a href="#" class="btn btn-green">View more</a>
-		</div>
-		<br/><br/>
-	</div>	
-</section>
-<!-- CLOTHES END -->	
-	
 
-<!-- CLOTHES SLIDER
-<section class="section-content">
-	<div class="container">
-	
-
-	<h4 class="title-text">Date Night</h4>
-		<div class="slick-slider" data-slick='{"slidesToShow": 5, "slidesToScroll": 1}'>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_1.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Date night #1</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_2.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Date night #2</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_3.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Date night #3</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_4.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Date night #4</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_5.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Date night #5</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_6.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Date night #6</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/datenight/datenight_7.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Date night #7</a></h6>
-					</figcaption>
-				</figure>
-			</div>
+	<!-- FOOTER START -->
+	<footer class="section-footer bg-green">
+		<div class="container">
+			<section class="footer-bottom row text-white">
+				<div class="col-sm-6">
+					<p>Stylease is a clothes rental platform developed by G3-T4 <br>
+						(Bang, Huirong, Nicholas, Timothy, Xavier and Zuo Lin) for the IS213 project.
+					</p>
+				</div>
+			</section>
 		</div>
+	</footer>
+	<!-- FOOTER END -->
 
-		
-	<h4 class="title-text">Workwear</h4>
-		<div class="slick-slider" data-slick='{"slidesToShow": 5, "slidesToScroll": 1}'>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_1.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Workwear #1</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_2.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Workwear #2</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_3.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Workwear #3</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_4.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Workwear #4</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_5.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Workwear #5</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_6.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Workwear #6</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/workwear/workwear_7.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Workwear #7</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-	
-	<h4 class="title-text">Party</h4>
-		<div class="slick-slider" data-slick='{"slidesToShow": 5, "slidesToScroll": 1}'>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_1.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Party #1</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_2.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Party #2</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_3.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Party #3</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_4.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Party #4</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_5.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Party #5</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_6.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Party #6</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="item-slide p-2">
-				<figure class="card card-product">
-					<div class="img-wrap"> <img src="images/clothes/party/party_7.jpg"> </div>
-					<figcaption class="info-wrap text-center">
-						<h6 class="title text-truncate"><a href="clothesdetails">Party #7</a></h6>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
+	<script type="text/javascript">
+		var clothesContent = "";
+		var items = []
+		$(document).ready(function () {
 
-	</div>
-</section>
-<p></p>
--->
+            // Display cart size
+			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+			var cart_size = `<small>My Bag</small>
+							<span>${itemsArray.length} items</span>`
+			$(".cart-size").html(cart_size);
 
-	
-<!-- FOOTER START -->
-<footer class="section-footer bg-green">
-	<div class="container">
-		<section class="footer-bottom row text-white">
-			<div class="col-sm-6"> 
-				<p>Stylease is a clothes rental platform developed by G3-T4 <br>
-					(Bang, Huirong, Nicholas, Timothy, Xavier and Zuo Lin) for the IS213 project.
-				</p>
-			</div>
-		</section>
-	</div>
-</footer>
-<!-- FOOTER END -->
+			$('.searchDetails').submit(function (event) {
+
+				event.preventDefault();
+
+				var gender = $('#gender option:selected').val();
+				var event = $('#event option:selected').val();
+
+
+				// var host = "http://10.124.13.237:8080"
+				var host = "http://LAPTOP-M5IE8VM3:8080"
+
+				var body = "/Clothes/getClothesByGender/"
+				var url = host + body + gender
+
+				$.getJSON(url, function (data) {
+					var clothes = data.ClothesClass
+					clothes.forEach(function (item) {
+						if (item.function == event) {
+							items.push(item)
+						}
+					})
+					for (row = 0; row < 3; row++) {
+						clothesContent += `<div class="row">`
+						for (col = 0; col < 4; col++) {
+							var index = 4 * row + col
+							clothesContent += `<div class="col-md-3">
+						<figure class="card card-product">
+							<div class="img-wrap"><img src="${items[index].image_link}"></div>
+								<figcaption class="info-wrap text-center">
+									<h5 class="title text-truncate"><a href="/clothes-details?clothesid=${items[index].classid}">
+										${items[index].function} #${index + 1}</a>
+									</h5>
+								</figcaption>
+						</figure>
+					</div>`
+						}
+						clothesContent += `</div>`
+					}
+					clothesContent += `
+						<div align="center">
+							<a href="#" class="btn btn-green">View more</a>
+						</div>
+						<br /><br />`
+					$(".clothes-result").html(clothesContent);
+					clothesContent = "";
+				});
+			})
+		});
+
+	</script>
 
 </body>
+
 </html>
