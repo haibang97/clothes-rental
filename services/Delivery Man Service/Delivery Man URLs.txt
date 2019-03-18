@@ -1,0 +1,3 @@
+GET /deliveryman/getall -> get all data on the delivery man
+
+GET /deliveryman/getbyloc/{location} -> get all data on the delivery man which have the specified location
