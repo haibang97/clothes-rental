@@ -154,8 +154,8 @@ CREATE TABLE IF NOT EXISTS `clothesclass` (
 --
 
 INSERT INTO `clothesclass` (`classid`, `gender`, `type`, `function`, `image_link`, `mood`, `description`) VALUES
-(1, 'F', 'romper', 'date night', 'https://d41eu4npam9w0.cloudfront.net/900x1350/keepsake-stand-still-dress-3.jpg', 'sian', 'Satin quality floral romper to bring out colours in your dull dull life'),
-(2, 'F', 'playsuit', 'date night', 'https://d41eu4npam9w0.cloudfront.net/900x1350/juillet-valencia-front-knot-playsuit-3.jpg', 'lupsup', 'Never need to pick out top and bottoms which waste extra time - a romper will do. Feeling low and dull? Orange is definitely the colour for you!'),
+(1, 'F', 'Sleeveless Flared Midi Dress', 'date night', 'https://stylease.me/images/locations/model.png', 'shiok', 'Made of quality eyelet fabric, fully-lined, non-sheer and not stretchable at all. Features sweet eyelet details on a plum base, comes with a v neckline and non-functional front button details. Complete with a concealed back zipper. Worn in a flattering midi fit.'),
+(2, 'F', 'Dirjania Lola Romper', 'date night', 'https://d41eu4npam9w0.cloudfront.net/900x1350/juillet-valencia-front-knot-playsuit-3.jpg', 'lupsup', 'Never need to pick out top and bottoms which waste extra time - a romper will do. Feeling low and dull? Orange is definitely the colour for you! Keep the look sexy by pairing yours with nude pumps or add a touch vibrancy by wearing it with bright yellow slip-ons for a different take.'),
 (3, 'F', 'blazer', 'date night', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2018/11/26/goods-img/1545171383115279983.jpg', 'rabak', ''),
 (4, 'F', 'jacket', 'date night', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2018/08/31/goods-img/1548353958015343744.jpg', 'rabak', ''),
 (5, 'F', 'jacket', 'date night', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2018/10/18/goods-img/1540769186405824322.jpg', 'sian', ''),
@@ -165,7 +165,7 @@ INSERT INTO `clothesclass` (`classid`, `gender`, `type`, `function`, `image_link
 (9, 'F', 'midi dress', 'date night', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2019/01/21/goods-img/1550776746770333935.jpg', 'shiok', ''),
 (10, 'M', 'blazer', 'party', 'https://i.ebayimg.com/images/g/BeUAAOSwflBbsehF/s-l300.jpg', 'lupsup', ''),
 (11, 'M', 'jacket', 'date night', 'https://target.scene7.com/is/image/Target/GUEST_4f70886f-f0ad-4287-bd8f-eaf26d482888?wid=488&hei=488&fmt=pjpeg', 'shiok', ''),
-(12, 'F', 'maxi dress', 'workwear', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2018/08/07/goods-img/1533699688822759546.jpg', 'sian', ''),
+(12, 'F', 'Natalie Maxi Dress', 'date night', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2018/08/07/goods-img/1533699688822759546.jpg', 'sian', 'A lovely option whether you’re off to attend a wedding or prepping for prom, Natalie is both feminine and elegant, and features a ruch bustier that’s slightly elastic. This monochrome maxi dress will easily make you the belle of the ball with its soft material and flowy silhouette, and its design is best paired with simple heels. Dress is lined.'),
 (13, 'F', 'jacket', 'date night', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2018/11/13/goods-img/1542757559854981941.jpg', 'lupsup', ''),
 (14, 'M', 'tshirt', 'date night', 'https://dynamic.zacdn.com/WeZl9fbKzhhOem8geVFGoygT8YY=/fit-in/472x690/filters:quality(95):fill(ffffff)/http://static.sg.zalora.net/p/guess-4096-6656201-1.jpg', 'sian', ''),
 (15, 'F', 'mini dress', 'date night', 'https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2019/01/03/goods-img/1551154862804310291.jpg', 'shiok', ''),
