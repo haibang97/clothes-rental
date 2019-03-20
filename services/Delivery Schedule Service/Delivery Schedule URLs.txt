@@ -1,0 +1,8 @@
+POST /deliveryschedule -> 
+
+Example Value
+
+{
+	"deliverymanid":0,
+	"orderid":0
+}

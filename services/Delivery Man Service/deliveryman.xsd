@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Created with Liquid Studio 2018 (https://www.liquid-technologies.com) -->
+<schema xmlns:tns="http://www.amazing.com/Delivery" elementFormDefault="qualified" targetNamespace="http://www.amazing.com/Delivery" xmlns="http://www.w3.org/2001/XMLSchema">
+    
+    <complexType name="deliveryman">
+        <sequence>
+            <element name="deliverymanid" type="integer" minOccurs="1" />
+            <element name="name" type="string" minOccurs="1" />
+            <element name="location" type="string" minOccurs="1" />
+            <element name="phonenumber" type="integer" minOccurs="1" />
+            <element name="image_link" type="string" minOccurs="1" />
+        </sequence>
+    </complexType>
+    <element name="deliveryman" type="tns:deliveryman" />
+
+    <complexType name="deliverymans">
+        <sequence>
+            <element ref="tns:deliveryman" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="deliverymans" type="tns:deliverymans" />
+
+    <complexType name="deliveryschedule">
+        <sequence>
+            <element name="deliverymanid" type="integer" minOccurs="1" />
+            <element name="orderid" type="integer" minOccurs="1" />
+        </sequence>
+    </complexType>
+    <element name="deliveryschedule" type="tns:deliveryschedule" />
+
+    <complexType name="deliveryschedules">
+        <sequence>
+            <element ref="tns:deliveryschedule" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <element name="deliveryschedules" type="tns:deliveryschedules" />
+
+    
+
+</schema>

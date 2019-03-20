@@ -65,8 +65,8 @@ function fillForm() {
 
     FB.api("/me", {fields: "first_name,last_name,email,birthday,gender"}, function(response) {
         
-        document.getElementById("first_name").value = response.first_name;
-        document.getElementById("last_name").value = response.last_name;
+        document.getElementById("firstname").value = response.first_name;
+        document.getElementById("lastname").value = response.last_name;
         document.getElementById("email").value = response.email;
         document.getElementById("birthday").value = "24/12/1996";
         document.getElementById("maleRadioButton").checked = "checked";

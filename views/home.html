@@ -26,10 +26,11 @@
 	<link href="slickslider/slick-theme.css" rel="stylesheet" type="text/css" />
 	<script src="slickslider/slick.min.js"></script>
 	<script src="slickslider/script.js"></script>
+	<script src="js/facebook.js"></script>
 
 </head>
 
-<body>
+<body onload="initFB()">
 
 	<!-- HEADER START -->
 	<header class="section-header">
@@ -99,8 +100,8 @@
 									</form>
 									<hr class="dropdown-divider">
 									<!-- FACEBOOK LOGIN START -->
-									<a class="dropdown-item" href="http://www.facebook.com"><img class="logo"
-											src="images/facebooklogin.png" width="80%"></a>
+									<a class="dropdown-item"><img class="logo"
+											src="images/facebooklogin.png" width="80%" onclick="fbLogin()"></a>
 									<!-- FACEBOOK LOGIN END -->
 									<hr class="dropdown-divider">
 									<a class="dropdown-item" href="#">Not yet a member? Sign up.</a>
