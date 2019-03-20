@@ -64,7 +64,7 @@
 									<div class="icon-wrap icon-xs bg2 text-secondary"><i
 											class="fa fa-shopping-cart"></i></div>
 									<div class="text-wrap cart-size">
-										
+
 									</div>
 								</a>
 							</div>
@@ -139,6 +139,74 @@
 	</section>
 	<!-- USER'S ORDERS END -->
 
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="299401447397224"
+  theme_color="#81894e"
+  logged_in_greeting="Hello! How can we help you?"
+  logged_out_greeting="Hello! How can we help you?">
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="299401447397224"
+  theme_color="#81894e"
+  logged_in_greeting="Hello! How can we help you?"
+  logged_out_greeting="Hello! How can we help you?">
+</div>
+
+
+
+
+
+
+
 
 	<!-- FOOTER START -->
 	<footer class="section-footer bg-green">
@@ -176,7 +244,7 @@
 						<th scope="col" width="180" >Action:</th>
 					</tr>
 				</thead>
-				
+
 				<tbody>`
 			itemsArray.forEach(function (item) {
 				result += `<tr>
@@ -198,16 +266,16 @@
 									  <dd>${item.mood}</dd>
 									</dl>
 								</figcaption>
-							</figure> 
+							</figure>
 						</td>
-						
-						<td> 
+
+						<td>
 							<dl class="dlist-inline text-grey" style="margin-top:10px;">
 							  <dt>${item.function}</dt>
 							</dl>
 						</td>
-						<td class="text-left"> 
-							<a title="" href="" class="btn btn-outline-success" data-toggle="tooltip" data-original-title="Save to Wishlist"> <i class="fa fa-heart"></i></a> 
+						<td class="text-left">
+							<a title="" href="" class="btn btn-outline-success" data-toggle="tooltip" data-original-title="Save to Wishlist"> <i class="fa fa-heart"></i></a>
 							<a href="" class="btn btn-outline-danger remove_item" id="${item.clothesid}"> × Remove</a>
 						</td>
 					</tr>`
@@ -236,11 +304,11 @@
 											<dt>Delivery option:</dt>
 									  		<dd>Standard delivery. Items will be delivered within 3-5 working days.</dd><br/>
 											<button type="submit" class="btn btn-green">Confirm your order</button>
-										</form>	
+										</form>
 									  </dd>
 									</dl>
 								</figcaption>
-							</figure> 
+							</figure>
 						</td>
 					</tr>
 				</tbody>
