@@ -55,9 +55,11 @@ FB.logout(function (response){
     console.log("log out");
 });
 
+logout();
+
 </script>
 
-<body onmousemove="checkfill()">
+<body onmousemove="getLoginStatus()">
 
     <script>
         // logout();    
@@ -392,7 +394,7 @@ FB.logout(function (response){
 
 	<!-- <a href="http://desktop-tp220vs:8080/customers">LZL TESTING</a> -->
 
-<!-- <button id="lzl">LZL TESTING BUTTON</button> -->
+<button onclick="logout()">LZL TESTING BUTTON</button>
 
 
 </body>
