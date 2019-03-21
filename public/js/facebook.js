@@ -5,40 +5,34 @@ function sleep(miliseconds) {
     }
  }
 
-function initFB() {
-    // alert("lzl testing");
-    FB.init({
-        appId      : '555376054961251',
-        status     : true,
-        xfbml      : true,
-        version    : 'v3.2' // or v2.6, v2.5, v2.4, v2.3
-    });
-    logout();    
-}
+// function initFB() {
+//     // alert("lzl testing");
+//     FB.init({
+//         appId      : '555376054961251',
+//         status     : true,
+//         xfbml      : true,
+//         version    : 'v3.2' // or v2.6, v2.5, v2.4, v2.3
+//     });
+//     logout();    
+// }
 
-function test() {
-    alert("zuo lin");
-    FB.api("/me", {fields: "first_name"}, function(response) {
-        console.log(response.first_name)
-    });
-}
 
-function fbLogin() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
-        });
-        } else {
-        console.log('User cancelled login or did not fully authorize.');
-        }
-    }, {scope: "email,first_name,last_name,gender,birthday",
-        return_scopes: true});
-    fillForm();
-    getLoginStatus();
-    alert("testing");
-}
+// function fbLogin() {
+//     FB.login(function(response) {
+//         if (response.authResponse) {
+//         console.log('Welcome!  Fetching your information.... ');
+//         FB.api('/me', function(response) {
+//         console.log('Good to see you, ' + response.name + '.');
+//         });
+//         } else {
+//         console.log('User cancelled login or did not fully authorize.');
+//         }
+//     }, {scope: "email,first_name,last_name,gender,birthday",
+//         return_scopes: true});
+//     fillForm();
+//     getLoginStatus();
+//     alert("testing");
+// }
 
 function getLoginStatus() {
     // alert("get login status called");
@@ -85,10 +79,29 @@ function fillForm() {
 
 }
 
-function logout() {
-    FB.logout(function(response) {
-        getLoginStatus();
-    })
-}
+// function autoFill() {
+//     // FB.getLoginStatus(function(response) {
+//     //     if (response.status === 'connected') {
+//     //         fillForm();
+//     //     } else {
+//     //         console.log("not connected oops");
+//     //     }
 
+//     //     setTimeout(autoFill(), 500);
+//     // });
+//     function hi() {console.log("hi");}
+//     setTimeout(hi(), 2);
+
+// }
+
+// function logout() {
+//     FB.logout(function(response) {
+//         getLoginStatus();
+//     })
+// }
+
+// function start() {
+//     logout();
+//     autoFill();
+// }
 
