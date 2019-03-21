@@ -23,9 +23,9 @@ CREATE TABLE IF NOT EXISTS Background (
 --
 
 INSERT INTO Background (location, image) VALUES
-('Orchard Road', 'https://stylease.me/images/locations/orchard.jpg'),
-('SMU', 'https://stylease.me/images/locations/smu.jpg'),
-('Zouk', 'https://stylease.me/images/locations/zouk.jpg');
+('Orchard Road', '123'),
+('SMU', '234'),
+('Zouk', '212');
 COMMIT;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
