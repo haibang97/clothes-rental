@@ -70,7 +70,7 @@ function fillForm() {
 
 }
 
-function autoFill() {
+function checkfill() {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             fillForm();
@@ -84,5 +84,5 @@ function logout() {
     FB.logout(function(response) {
         getLoginStatus();
     })
-    alert("hi");
+    console.log("logout called");
 }
