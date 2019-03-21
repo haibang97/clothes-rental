@@ -72,12 +72,13 @@ function fillForm() {
 
 function checkfill() {
     FB.getLoginStatus(function(response) {
-        getLoginStatus();
-        // if (response.status === 'connected') {
-        //     fillForm();
-        // } else {
-        //     console.log("not connected oops");
-        // }
+        // getLoginStatus();
+        if (response.status === 'connected') {
+            // fillForm();
+            console.log("logged in");
+        } else {
+            console.log("not connected oops");
+        }
     });
 }
 
