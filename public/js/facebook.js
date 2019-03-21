@@ -74,7 +74,7 @@ function fillForm() {
 function checkfill() {
     FB.getLoginStatus(function(response) {
         // getLoginStatus();
-        if (response & response.status === 'connected') {
+        if (response.status === 'connected') {
             // fillForm();
             console.log("logged in");
         } else {
