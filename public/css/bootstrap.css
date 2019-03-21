@@ -1,4 +1,4 @@
-/* ========================
+../public/../public/../public/../public//* ========================
 Bootstrap with custom variables
 =================== */
 /*!
@@ -154,7 +154,7 @@ a:not([href]):not([tabindex]) {
   color: #ffffff;
   text-decoration: none; }
   a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
-    color: inherit;
+    color: #ffffff;
     text-decoration: none; }
   a:not([href]):not([tabindex]):focus {
     outline: 0; }
@@ -2245,6 +2245,15 @@ fieldset:disabled a.btn {
   background-color: #81894e;
   border-color: #81894e; }
   .btn-primary:hover {
+    color: #fff;
+    background-color: #595f36;
+    border-color: #595f36; }
+
+.btn-purchase {
+  color: #fff;
+  background-color: #81894e;
+  border-color: #81894e; }
+  .btn-purchase:hover {
     color: #fff;
     background-color: #595f36;
     border-color: #595f36; }
