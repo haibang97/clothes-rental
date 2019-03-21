@@ -38,11 +38,6 @@ function getLoginStatus() {
     // alert("get login status called");
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-            // The user is logged in and has authenticated your
-            // app, and response.authResponse supplies
-            // the user's ID, a valid access token, a signed
-            // request, and the time the access token 
-            // and signed request each expire.
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
             console.log(uid);
@@ -51,14 +46,8 @@ function getLoginStatus() {
             fillForm();
 
         } else if (response.status === 'not_authorized') {
-            // The user hasn't authorized your application.  They
-            // must click the Login button, or you must call FB.login
-            // in response to a user gesture, to launch a login dialog.
             console.log("not authorised buhuhu");
         } else {
-            // The user isn't logged in to Facebook. You can launch a
-            // login dialog with a user gesture, but the user may have
-            // to log in to Facebook before authorizing your application.
             console.log("you are not logged in to facebook");
         }
     });
@@ -94,11 +83,11 @@ function fillForm() {
 
 // }
 
-// function logout() {
-//     FB.logout(function(response) {
-//         getLoginStatus();
-//     })
-// }
+function logout() {
+    FB.logout(function(response) {
+        getLoginStatus();
+    })
+}
 
 // function start() {
 //     logout();
