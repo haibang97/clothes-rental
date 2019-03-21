@@ -10,10 +10,10 @@ function initFB() {
 }
 
 function test() {
+    alert("zuo lin");
     FB.api("/me", {fields: "first_name"}, function(response) {
         console.log(response.first_name)
     });
-
 }
 
 function fbLogin() {
