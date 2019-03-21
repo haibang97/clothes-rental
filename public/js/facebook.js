@@ -36,6 +36,7 @@ function sleep(miliseconds) {
 
 function getLoginStatus() {
     // alert("get login status called");
+    logout();
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             var uid = response.authResponse.userID;
