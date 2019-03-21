@@ -60,11 +60,12 @@ function fillForm() {
 
     FB.api("/me", {fields: "first_name,last_name,email,birthday,gender"}, function(response) {
         
-        document.getElementById("firstname").value = response.first_name;
-        document.getElementById("lastname").value = response.last_name;
-        document.getElementById("email").value = response.email;
-        document.getElementById("birthday").value = "24/12/1996";
-        document.getElementById("maleRadioButton").checked = "checked";
+        if (document.getElementById("firstname").value.length < 1) document.getElementById("firstname").value = response.first_name;
+        if (document.getElementById("lastname").value.length < 1) document.getElementById("lastname").value = response.last_name;
+        if (document.getElementById("lastname").value.length < 1 ) document.getElementById("email").value = response.email;
+        if (document.getElementById("lastname").value == "undefined" ) document.getElementById("email").value = "";
+        if (document.getElementById("lastname").value.length < 1) document.getElementById("birthday").value = "24/12/1996";
+        if (document.getElementById("lastname").value.length < 1) document.getElementById("maleRadioButton").checked = "checked";
         // document.getElementById("address").value = "25A zuo lin road";
         // document.getElementById("postal_code").value = "123456";
     });
