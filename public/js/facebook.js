@@ -88,9 +88,3 @@ function logout() {
         getLoginStatus();
     })
 }
-
-// function start() {
-//     logout();
-//     autoFill();
-// }
-
