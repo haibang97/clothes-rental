@@ -272,7 +272,7 @@
 							<!-- ADDRESS END -->
 
 							<div class="form-group">
-								<button class="btn btn-green" id="register" onclick="send()">Register2</button>
+								<button class="btn btn-green" id="register" onclick="send()">Register</button>
 							</div>
 							<small class="text-muted">By clicking the 'Register' button, you confirm that you accept our
 								<br>Terms of
@@ -318,7 +318,6 @@
 							}
 
 							$("#register").click(function () {
-								
 								var category = {
 									"firstname": $("#firstname").val(),
 									"lastname": $("#lastname").val(),
@@ -339,16 +338,13 @@
 									type: "POST",
 									data: JSON.stringify(category),
 									// data: category,
-									url: "http://DESKTOP-TP220VS:8080/customers1",
+									url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers1",
 									contentType: "application/json"
 								});
 							});
 
 
 						</script>
-
-
-
 
 					</article>
 				</div>
