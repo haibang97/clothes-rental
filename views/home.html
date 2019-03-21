@@ -23,13 +23,7 @@
 	<!-- Font Awesome -->
 	<link href="fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
 
-	<!-- Slickslider -->
-	<link href="slickslider/slick.css" rel="stylesheet" type="text/css" />
-	<link href="slickslider/slick-theme.css" rel="stylesheet" type="text/css" />
-	<script src="slickslider/slick.min.js">
-	</script>
-	<script src="slickslider/script.js">
-	</script>
+	<!-- Facebook -->
 	<script src="js/facebook.js">
 	</script>
 
@@ -46,7 +40,7 @@
 					<!-- LOGO START -->
 					<div class="col-lg-3">
 						<div class="brand-wrap">
-							<a href="/home"><img class="logo" src="images/logo.png"></a>
+							<a href="home"><img class="logo" src="images/logo.png"></a>
 						</div>
 					</div>
 					<!-- LOGO END -->
@@ -161,7 +155,7 @@
 					<header class="intro-wrap text-grey">
 						<h2 class="headline">A new style every <br />week awaits you.</h2>
 						<p class="subheadline">Rent an unlimited number of outfits from just $49/month.</p>
-						<a href="/register" class="btn btn-green">Become a member today</a>
+						<a href="register" class="btn btn-green">Become a member today</a>
 					</header>
 				</div>
 			</div>
@@ -178,51 +172,45 @@
 						<h2 class="headline">Discover your style</h2>
 						<p class="subheadline">Find the right outfit based on your needs.</p>
 					</header>
+					<br /><br />
+					
 					<form class="searchDetails" method="POST">
-						<div class="filters-text-row1">
-							<h2 class="clothesfilterheadline text-grey">I'm a</h2>
-						</div>
-
-						<div class="gender">
-							<div class="dropdown">
-								<select class="btn btn-secondary dropdown-toggle" id='gender'>
-									<option value="" disabled selected hidden>select your gender</option>
-									<option value="M">male</option>
-									<option value="F">female</option>
-								</select>
+						<div class="row justify-content-center">
+							<h2 class="clothesfilterheadline text-grey">I'm a 
+							</h2>
+							<div class="gender">
+								<div class="dropdown">
+									<select class="btn btn-secondary dropdown-toggle" id="gender">
+										<option value="" disabled selected hidden>select your gender</option>
+										<option value="M">male</option>
+										<option value="F">female</option>
+									</select>
+								</div>
+							</div>
+							<h2 class="clothesfilterheadline text-grey">looking for an
+							</h2>
+						</div><br/>
+						
+						<div class="row justify-content-center">
+							<h2 class="clothesfilterheadline text-grey">outfit for 
+							</h2>
+							<div class="event">
+								<div class="dropdown">
+									<select class="btn btn-secondary dropdown-toggle" id="event">
+										<option value="" disabled selected hidden>select your event</option>
+										<option>work wear</option>
+										<option>date night</option>
+										<option>party</option>
+									</select>
+								</div>
 							</div>
 						</div>
-
-						<div class="filters-text-row1">
-							<h2 class="clothesfilterheadline text-grey">looking for an</h2>
-						</div>
-
-						<br />
-
-						<div class="filters-text-row2">
-							<h2 class="clothesfilterheadline text-grey">outfit for</h2>
-						</div>
-
-						<div class="event">
-							<div class="dropdown">
-								<select class="btn btn-secondary dropdown-toggle" id='event'>
-									<option value="" disabled selected hidden>select your event</option>
-									<option>work wear</option>
-									<option>date night</option>
-									<option>party</option>
-								</select>
-							</div>
-						</div>
-
-						<br />
 
 						<br /><br />
-						<button type="submit" class="btn btn-green"">Let us help
-							you</button>
-
-						<br /><br /><br />
-
+						<button type="submit" class="btn btn-green">Let us help you</button>
 					</form>
+					
+					<br /><br /><br /><br />
 
 				</div>
 
@@ -234,7 +222,7 @@
 
 	<!-- CLOTHES START -->
 	<section class=" section-content">
-							<div class="container clothes-result"></div>
+		<div class="container clothes-result"></div>
 	</section>
 	<!-- CLOTHES END -->
 

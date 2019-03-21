@@ -10,7 +10,10 @@
             <element name="birthdate" type="date" minOccurs="1" />
             <element name="gender" type="string" minOccurs="1" />
             <element name="address" type="string" minOccurs="1" />
+            <element name="postalcode" type="integer" minOccurs="1" />
             <element name="email" type="string" minOccurs="1" />
+            <element name="username" type="string" minOccurs="1" />
+            <element name="password" type="string" minOccurs="1" />
         </sequence>
     </complexType>
     <element name="Add_Customer" type="tns:Add_Customer" />
@@ -24,7 +27,10 @@
             <element name="birthdate" type="date" minOccurs="1" />
             <element name="gender" type="string" minOccurs="1" />
             <element name="address" type="string" minOccurs="1" />
+            <element name="postalcode" type="integer" minOccurs="1" />         
             <element name="email" type="string" minOccurs="1" />
+            <element name="username" type="string" minOccurs="1" />
+            <element name="password" type="string" minOccurs="1" />
         </sequence>
     </complexType>
     <element name="Customer" type="tns:Customer" />
@@ -34,4 +40,11 @@
         </sequence>
     </complexType>
     <element name="Customers" type="tns:Customers" />
+    <complexType name="Update_Customer">
+        <sequence>
+            <element name="customerid" type="integer" minOccurs="1" />
+            <element name="tier" type="integer" minOccurs="1" />
+        </sequence>
+    </complexType>
+    <element name="Update_Customer" type="tns:Update_Customer" />
 </schema>
