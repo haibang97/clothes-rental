@@ -72,7 +72,8 @@
 							<!-- CART START -->
 							<div class="widget-header">
 								<a href="#" class="icontext">
-									<div class="icon-wrap icon-xs bg2 text-secondary"><i class="fa fa-shopping-cart"></i></div>
+									<div class="icon-wrap icon-xs bg2 text-secondary"><i
+											class="fa fa-shopping-cart"></i></div>
 									<div class="text-wrap">
 										<small>My Bag</small>
 										<span>4 items</span>
@@ -153,13 +154,16 @@
 					<div class="card mb-5 mb-lg-0">
 						<div class="card-body">
 							<h5 class="card-title text-muted text-uppercase text-center">Basic</h5>
-							<h6 class="card-price cart-total-price text-center text-grey">$49<span class="period">/month</span></h6>
+							<h6 class="card-price cart-total-price text-center text-grey">$49<span
+									class="period">/month</span></h6>
 							<hr>
 							<ul class="fa-ul">
-								<li><span class="fa-li"><i class="fas fa-check"></i></span>Selection of up to <strong>3</strong> outfits
+								<li><span class="fa-li"><i class="fas fa-check"></i></span>Selection of up to
+									<strong>3</strong> outfits
 									per week</li>
 								<li><span class="fa-li"><i class="fas fa-check"></i></span>Standard Delivery</li>
-								<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Exclusive invites to
+								<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Exclusive
+									invites to
 									Stylease's fashion events</li>
 							</ul>
 							<a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
@@ -172,13 +176,16 @@
 					<div class="card mb-5 mb-lg-0">
 						<div class="card-body">
 							<h5 class="card-title text-muted text-uppercase text-center">Premium</h5>
-							<h6 class="card-price cart-total-price text-center text-grey">$69<span class="period">/month</span></h6>
+							<h6 class="card-price cart-total-price text-center text-grey">$69<span
+									class="period">/month</span></h6>
 							<hr>
 							<ul class="fa-ul">
-								<li><span class="fa-li"><i class="fas fa-check"></i></span>Selection of up to <strong>5</strong> outfits
+								<li><span class="fa-li"><i class="fas fa-check"></i></span>Selection of up to
+									<strong>5</strong> outfits
 									per week</li>
 								<li><span class="fa-li"><i class="fas fa-check"></i></span>Express Delivery</li>
-								<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Exclusive invites to
+								<li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Exclusive
+									invites to
 									Stylease's fashion events</li>
 							</ul>
 							<a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
@@ -191,13 +198,16 @@
 					<div class="card mb-5 mb-lg-0">
 						<div class="card-body">
 							<h5 class="card-title text-muted text-uppercase text-center">Platinum</h5>
-							<h6 class="card-price cart-total-price text-center text-grey">$89<span class="period">/month</span></h6>
+							<h6 class="card-price cart-total-price text-center text-grey">$89<span
+									class="period">/month</span></h6>
 							<hr>
 							<ul class="fa-ul">
-								<li><span class="fa-li"><i class="fas fa-check"></i></span>Selection of up to <strong>7</strong> outfits
+								<li><span class="fa-li"><i class="fas fa-check"></i></span>Selection of up to
+									<strong>7</strong> outfits
 									per week</li>
 								<li><span class="fa-li"><i class="fas fa-check"></i></span>Same-day delivery</li>
-								<li><span class="fa-li"><i class="fas fa-check"></i></span>Exclusive invites to Stylease's fashion
+								<li><span class="fa-li"><i class="fas fa-check"></i></span>Exclusive invites to
+									Stylease's fashion
 									events</li>
 							</ul>
 							<a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
@@ -211,7 +221,8 @@
 			<hr /><br />
 			<!-- SKIP START -->
 			<div class="col-sm-9" style="float: none; margin: 0 auto;">
-				<p class="subheadline text-center">Still can't decide which plan best suits your needs? <br />Skip this step for
+				<p class="subheadline text-center">Still can't decide which plan best suits your needs? <br />Skip this
+					step for
 					now and <a href="home-user.html#filters">view all outfits.</a></p>
 			</div>
 			<!-- SKIP END -->
@@ -219,6 +230,31 @@
 	</section>
 	<!-- PRICING END -->
 
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="299401447397224"
+  theme_color="#81894e"
+  greeting_dialog_display="hide">
+</div>
 
 	<!-- FOOTER START -->
 	<footer class="section-footer bg-green">

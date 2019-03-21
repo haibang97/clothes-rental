@@ -33,15 +33,16 @@
 
 	<!-- clientID: 131327448649-tn5fbm9j9l6813bobvi4mnrch8qjutju.apps.googleusercontent.com -->
 	<!-- client secret: wrPljhVylHOm3eezJ1gr1UBu-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 
 </head>
 
 <body onload="initFB()">
 
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=555376054961251&autoLogAppEvents=1"></script>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=555376054961251&autoLogAppEvents=1"></script>
 
 	<script>
 		window.fbAsyncInit = function () {
@@ -92,7 +93,8 @@
 							<!-- CART START -->
 							<div class="widget-header">
 								<a href="#" class="icontext">
-									<div class="icon-wrap icon-xs bg2 text-secondary"><i class="fa fa-shopping-cart"></i></div>
+									<div class="icon-wrap icon-xs bg2 text-secondary"><i
+											class="fa fa-shopping-cart"></i></div>
 									<div class="text-wrap">
 										<small>My Bag</small>
 										<span>4 items</span>
@@ -118,16 +120,17 @@
 										</div>
 										<div class="form-group">
 											<label>Password</label>
-											<input type="password" class="form-control" placeholder="Password" id="password">
+											<input type="password" class="form-control" placeholder="Password"
+												id="password">
 										</div>
 										<button type="submit" class="btn btn-primary">Sign in</button>
 									</form>
 									<hr class="dropdown-divider">
 									<!-- FACEBOOK & GOOGLE LOGIN START -->
-									<a class="dropdown-item"></a><img class="logo"
-										src="images/facebooklogin.png" width="80%" onclick="fbLogin()"></a>
-									<a class="dropdown-item" href="http://www.google.com"><img class="logo" src="images/googlesignin.png"
-											width="75%"></a>
+									<a class="dropdown-item"></a><img class="logo" src="images/facebooklogin.png"
+										width="80%" onclick="fbLogin()"></a>
+									<a class="dropdown-item" href="http://www.google.com"><img class="logo"
+											src="images/googlesignin.png" width="75%"></a>
 									<!-- FACEBOOK & GOOGLE LOGIN END -->
 									<hr class="dropdown-divider">
 									<a class="dropdown-item" href="#">Not yet a member? Sign up.</a>
@@ -186,16 +189,18 @@
 						<!-- FACEBOOK & GOOGLE START -->
 						<p>
 							<!-- <a onclick="fbLogin()"><img src="images/facebooklogin.png" width="28%"></a> -->
-                            <div class="fb-login-button" data-width="80" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false" height="20"></div>
-                            <img src="images/googlesignin.png" width="25%" height="40">
+							<div class="fb-login-button" data-width="80" data-size="medium"
+								data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"
+								height="20"></div>
+							<img src="images/googlesignin.png" width="25%" height="40">
 
-                            <button onclick="getLoginStatus()">TEST FACEBOOK (ctrl shift i) </button>
-                            <button onclick="logout()">TEST FACEBOOK LOGOUT</button>
+							<button onclick="getLoginStatus()">TEST FACEBOOK (ctrl shift i) </button>
+							<button onclick="logout()">TEST FACEBOOK LOGOUT</button>
 						</p>
 						<!-- FACEBOOK & GOOGLE END -->
 						<hr>
 						<!-- FORM START -->
-						<form >
+						<form>
 							<!-- NAME START -->
 							<div class="form-row">
 								<div class="col form-group">
@@ -213,7 +218,8 @@
 							<div class="form-group">
 								<label>Email address:</label>
 								<input type="email" class="form-control" placeholder="" id="email">
-								<small class="form-text text-muted">We'll never share your email with anyone else.</small>
+								<small class="form-text text-muted">We'll never share your email with anyone
+									else.</small>
 							</div>
 							<!-- EMAIL END -->
 
@@ -240,13 +246,13 @@
 								<div class="col form-group">
 									<label>Gender:</label><br />
 									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="gender" value="male" id="maleRadioButton"
-											checked>
+										<input class="form-check-input" type="radio" name="gender" value="male"
+											id="maleRadioButton" checked>
 										<span class="form-check-label"> Male </span>
 									</label>
 									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="gender" value="female" id="femaleRadioButton"
-											checked>
+										<input class="form-check-input" type="radio" name="gender" value="female"
+											id="femaleRadioButton" checked>
 										<span class="form-check-label"> Female</span>
 									</label>
 								</div>
@@ -257,11 +263,13 @@
 							<div class="form-row">
 								<div class="col form-group">
 									<label>Address:</label>
-									<input class="form-control" type="text" , id="address" onblur="fillPostal()" value="">
+									<input class="form-control" type="text" , id="address" onblur="fillPostal()"
+										value="">
 								</div>
 								<div class="col form-group">
 									<label>Postal Code:</label>
-									<input class="form-control" type="text" , id="postal_code" onblur="fillAddress()" value="">
+									<input class="form-control" type="text" , id="postal_code" onblur="fillAddress()"
+										value="">
 								</div>
 							</div>
 							<!-- ADDRESS END -->
@@ -269,67 +277,78 @@
 							<div class="form-group">
 								<button class="btn btn-green" id="register" onclick="send()">Register2</button>
 							</div>
-							<small class="text-muted">By clicking the 'Register' button, you confirm that you accept our <br>Terms of
+							<small class="text-muted">By clicking the 'Register' button, you confirm that you accept our
+								<br>Terms of
 								use and Privacy Policy.</small>
 						</form>
-                        <!-- FORM END -->
-                        
-                        <!-- {
-                            "customerid": 1,
-                            "firstname": "Carrot",
-                            "lastname": "Tan",
-                            "tier": 3,
-                            "phonenumber": 93456384,
-                            "birthdate": "2000-09-08+08:00",
-                            "gender": "Female",
-                            "address": "10 Amber Road",
-                            "postalcode": 123456,
-                            "email": "carrot@yahoo.com",
-                            "username": "carrottan",
-                            "password": "lovecarrot"
-                        } -->
-                
+						<!-- FORM END -->
 
-                        <script>
+						<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
 
-                                function transform(bday) {
-                                    var lis = bday.split("/");
-                                    return lis[2] + "-" + lis[1] + "-" + lis[0] + "+08:00";
-                                }
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-                                hashCode = function(s){
-                                    return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);              
-                                }
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="299401447397224"
+  theme_color="#81894e"
+  greeting_dialog_display="hide">
+</div>
 
-                                $("#register").click(function () {
-  
-                                    var category = {
-                                        "firstname": $("#firstname").val(),
-                                        "lastname": $("#lastname").val(),
-                                        "tier": 0,
-                                        "phonenumber": 93456384,
-                                        "birthdate": transform($("#birthday").val()),
-                                        "gender": $("input[name='gender']:radio").val(),
-                                        "address": $("#address").val(),
-                                        "postalcode": $("#postal_code").val(),
-                                        "email": $("#email").val(),
-                                        "username": "carrottan",
-                                        "password": $("#password").val()
-                                    }
+						<script>
 
-                                    console.log(category);
-                                    console.log(JSON.stringify(category))
-                                    $.ajax({
-                                        type: "POST",
-                                        data :JSON.stringify(category),
-                                        // data: category,
-                                        url: "http://DESKTOP-TP220VS:8080/customers1",
-                                        contentType: "application/json"
-                                    });
-                                });
+							function transform(bday) {
+								var lis = bday.split("/");
+								return lis[2] + "-" + lis[1] + "-" + lis[0] + "+08:00";
+							}
+
+							hashCode = function (s) {
+								return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
+							}
+
+							$("#register").click(function () {
+								
+								var category = {
+									"firstname": $("#firstname").val(),
+									"lastname": $("#lastname").val(),
+									"tier": 0,
+									"phonenumber": 93456384,
+									"birthdate": transform($("#birthday").val()),
+									"gender": $("input[name='gender']:radio").val(),
+									"address": $("#address").val(),
+									"postalcode": $("#postal_code").val(),
+									"email": $("#email").val(),
+									"username": "carrottan",
+									"password": $("#password").val()
+								}
+
+								console.log(category);
+								console.log(JSON.stringify(category))
+								$.ajax({
+									type: "POST",
+									data: JSON.stringify(category),
+									// data: category,
+									url: "http://DESKTOP-TP220VS:8080/customers1",
+									contentType: "application/json"
+								});
+							});
 
 
-                         </script>
+						</script>
 
 
 
@@ -356,7 +375,7 @@
 	</footer>
 	<!-- FOOTER END -->
 
-<!-- <a href="http://desktop-tp220vs:8080/customers">LZL TESTING</a> -->
+	<a href="http://desktop-tp220vs:8080/customers">LZL TESTING</a>
 
 <button id="lzl">LZL TESTING BUTTON</button>
 

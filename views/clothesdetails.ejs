@@ -68,7 +68,7 @@
 									<div class="icon-wrap icon-xs bg2 text-secondary"><i
 											class="fa fa-shopping-cart"></i></div>
 									<div class="text-wrap cart-size">
-										
+
 									</div>
 								</a>
 							</div>
@@ -204,7 +204,7 @@
 								<!-- POPUP START -->
 								<div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="popup"
 									aria-hidden="true">
-									<div class="modal-dialog" role="document">
+									<div class="modal-dialog modal-dialog-centered" role="document">
 										<div class="modal-content">
 											<div class="modal-header">
 												<h5 class="modal-title" id="exampleModalLabel">Success!</h5>
@@ -270,6 +270,31 @@
 	</section>
 	<!-- CLOTHES DETAILS END -->
 
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="299401447397224"
+  theme_color="#81894e"
+  greeting_dialog_display="hide">
+</div>
 
 	<!-- FOOTER START -->
 	<footer class="section-footer bg-green">
@@ -292,7 +317,7 @@
 	$(document).ready(function () {
 
 		var rows = <%- JSON.stringify(data) %>
-		
+
 		console.log("Start adding items and add in localStorage")
 
 		var clothesBySize = []
@@ -335,7 +360,7 @@
 
 				var image = data.image
 
-				result += `				
+				result += `
 							<p class="subheadline">This is how this outfit would look like in <strong>${place}</strong>.</p>
 							<div class="location">
 								<img src="https://stylease.me/images/locations/model.png" width="15%" class="model_location" />
