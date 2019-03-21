@@ -84,4 +84,5 @@ function logout() {
     FB.logout(function(response) {
         getLoginStatus();
     })
+    alert("hi");
 }
