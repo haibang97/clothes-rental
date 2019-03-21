@@ -48,6 +48,12 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=555376054961251&autoLogAppEvents=1"></script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
+<script>
+FB.Event.subscribe("auth.login",function(response){
+    fillForm();
+})
+</script>
+
 <body onload="logout()">
 	<div id="fb-root" onclick="fillForm()"></div>
 
@@ -180,12 +186,14 @@
 						<h4 class="card-title mt-2">Sign up as a Stylease member today</h4>
 					</header>
 					<article class="card-body">
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 						<!-- FACEBOOK & GOOGLE START -->
 						<p>
 							<div class="fb-login-button" data-width="80" data-size="medium"
 								data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"
                                 height="20"></div>
-<!-- 
+<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+						
                             <img src="images/facebooklogin.png" width="28%" onclick="test()"></a> -->
 
                             <img src="images/googlesignin.png" width="25%" height="40" onclick="getLoginStatus()">
@@ -345,7 +353,7 @@
 									contentType: "application/json"
                                 });
                                 // alert("check swagger");
-                                sleep(2000);
+                                sleep(2500);
 							});
 
 						</script>
