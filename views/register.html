@@ -38,23 +38,24 @@
 
 </head>
 
-<body onload="initFB()">
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '555376054961251',
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: 'v3.2'
+        });
+    };
+</script>
+
+<body onload="fbLogin()">
 
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous"
 		src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=555376054961251&autoLogAppEvents=1"></script>
 
-	<script>
-		window.fbAsyncInit = function () {
-			FB.init({
-				appId: '555376054961251',
-				autoLogAppEvents: true,
-				xfbml: true,
-				version: 'v3.2'
-			});
-        };
-        logout();
-	</script>
+
 	<script async defer src="https://connect.facebook.net/en_US/sdk.js">
 	</script>
 
@@ -192,8 +193,8 @@
 							<!-- <a onclick="fbLogin()"><img src="images/facebooklogin.png" width="28%"></a> -->
 							<div class="fb-login-button" data-width="80" data-size="medium"
 								data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"
-                                height="20" onclick="alert('hello')"></div>
-							<img src="images/googlesignin.png" width="25%" height="40">
+                                height="20"></div>
+							<img src="images/googlesignin.png" width="25%" height="40" onclick="getLoginStatus()">
 
 							<!-- <button onclick="getLoginStatus()">TEST FACEBOOK (ctrl shift i) </button>
 							<button onclick="logout()">TEST FACEBOOK LOGOUT</button> -->

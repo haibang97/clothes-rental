@@ -30,6 +30,7 @@ function fbLogin() {
         return_scopes: true});
     fillForm();
     getLoginStatus();
+    alert("testing");
 }
 
 function getLoginStatus() {
