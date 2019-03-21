@@ -49,19 +49,10 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=555376054961251&autoLogAppEvents=1"></script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
-<script>
 
-FB.logout(function (response){
-    FB.Auth.setAuthResponse(null, 'unknown');
-    console.log("log out");
-});
 
-logout();
-
-</script>
-
-<body onmousemove="getLoginStatus()">
-
+<!-- <body onmousemove="getLoginStatus()"> -->
+<body onload="fbLogoutUser()" onmousemove="checkfill()">
     <script>
         // logout();    
     </script>
@@ -395,7 +386,7 @@ logout();
 
 	<!-- <a href="http://desktop-tp220vs:8080/customers">LZL TESTING</a> -->
 
-<button onclick="logout()">LZL TESTING BUTTON</button>
+<button onclick="getLoginStatus()">LZL TESTING BUTTON</button>
 
 
 </body>

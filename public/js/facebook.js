@@ -36,7 +36,7 @@ function sleep(miliseconds) {
 
 function getLoginStatus() {
     // alert("get login status called");
-    logout();
+    // logout();
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             var uid = response.authResponse.userID;
@@ -74,7 +74,7 @@ function fillForm() {
 function checkfill() {
     FB.getLoginStatus(function(response) {
         // getLoginStatus();
-        if (response.status === 'connected') {
+        if (response & response.status === 'connected') {
             // fillForm();
             console.log("logged in");
         } else {
@@ -83,9 +83,13 @@ function checkfill() {
     });
 }
 
-function logout() {
-    FB.logout(function(response) {
-        getLoginStatus();
-    })
-    console.log("logout called");
+
+function fbLogoutUser() {
+    FB.getLoginStatus(function(response) {
+        if (response && response.status === 'connected') {
+            FB.logout(function(response) {
+                document.location.reload();
+            });
+        }
+    });
 }
