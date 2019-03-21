@@ -40,8 +40,8 @@ function getLoginStatus() {
         if (response.status === 'connected') {
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
-            console.log(uid);
-            console.log(accessToken);
+            // console.log(uid);
+            // console.log(accessToken);
             console.log("you are connected to facebook");
             // fillForm();
 
