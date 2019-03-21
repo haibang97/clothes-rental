@@ -272,7 +272,7 @@
 							<!-- ADDRESS END -->
 
 							<div class="form-group">
-								<button class="btn btn-green" id="register" onclick="alert('test')">Register</button>
+								<button class="btn btn-green" id="register">Register</button>
 							</div>
 							<small class="text-muted">By clicking the 'Register' button, you confirm that you accept our
 								<br>Terms of
@@ -282,7 +282,7 @@
                         
 
 
-                        <!-- <button id="register">SIGN IN LZL TEST</button> -->
+                        <button id="register">SIGN IN LZL TEST</button>
 
 						<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
@@ -344,7 +344,8 @@
 									// data: category,
 									url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers1",
 									contentType: "application/json"
-								});
+                                });
+                                alert("check swagger");
 							});
 
 
