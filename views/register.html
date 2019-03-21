@@ -54,7 +54,7 @@ FB.Event.subscribe("auth.login",function(response){
 })
 </script>
 
-<body onload="logout()">
+<body onload="logout()" onmousemove="autoFill()">
 	<div id="fb-root" onclick="fillForm()"></div>
 
 	<!-- HEADER START -->
@@ -189,12 +189,14 @@ FB.Event.subscribe("auth.login",function(response){
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 						<!-- FACEBOOK & GOOGLE START -->
 						<p>
-							<div class="fb-login-button" data-width="80" data-size="medium"
-								data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"
+                                <div class="fb-login-button" data-width="80" data-size="medium"
+                                data-button-type="login_with" data-auto-logout-link="false" 
+                                data-use-continue-as="false"
                                 height="20"></div>
+
 <!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 						
-                            <img src="images/facebooklogin.png" width="28%" onclick="test()"></a> -->
+                            <!-- <img src="images/facebooklogin.png" width="28%" onclick="test()"></a> --> 
 
                             <img src="images/googlesignin.png" width="25%" height="40" onclick="getLoginStatus()">
 

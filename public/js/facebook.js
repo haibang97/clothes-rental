@@ -43,7 +43,7 @@ function getLoginStatus() {
             console.log(uid);
             console.log(accessToken);
             console.log("you are connected to facebook");
-            fillForm();
+            // fillForm();
 
         } else if (response.status === 'not_authorized') {
             console.log("not authorised buhuhu");
@@ -70,20 +70,15 @@ function fillForm() {
 
 }
 
-// function autoFill() {
-//     // FB.getLoginStatus(function(response) {
-//     //     if (response.status === 'connected') {
-//     //         fillForm();
-//     //     } else {
-//     //         console.log("not connected oops");
-//     //     }
-
-//     //     setTimeout(autoFill(), 500);
-//     // });
-//     function hi() {console.log("hi");}
-//     setTimeout(hi(), 2);
-
-// }
+function autoFill() {
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            fillForm();
+        } else {
+            console.log("not connected oops");
+        }
+    });
+}
 
 function logout() {
     FB.logout(function(response) {
