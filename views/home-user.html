@@ -299,11 +299,10 @@
 				var event = $('#event option:selected').val();
 
 
-				// var host = "http://10.124.13.237:8080"
-				var host = "http://LAPTOP-M5IE8VM3:8080"
-
+				var host = "http://liuzuolin1996-eval-test.apigee.net/ "
+				var service = "clothes"
 				var body = "/Clothes/getClothesByGender/"
-				var url = host + body + gender
+				var url = host + service + body + gender
 
 				$.getJSON(url, function (data) {
 					var clothes = data.ClothesClass

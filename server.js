@@ -31,10 +31,10 @@ app.get('/clothes-details', async function (req, res) {
   var clothesid = req.query.clothesid
 
   // var host = 'http://10.124.13.237:8080'
-  var host = 'http://LAPTOP-M5IE8VM3:8080'
-  
+  var host = "https://liuzuolin1996-eval-test.apigee.net/"
+  var service = "clothes"
   var body = '/Clothes/getSpecificClothes/'
-  var url = host + body + clothesid
+  var url = host + service + body + clothesid
   var clothesDetails = await getClothesDetails(url)
   res.render('clothesdetails.ejs', {data : JSON.parse(clothesDetails)})
 })
