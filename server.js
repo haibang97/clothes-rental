@@ -83,11 +83,12 @@ app.post('/purchase', function (req, res) {
     source: req.body.stripeTokenId,
     currency: 'sgd'
   }).then(function () {
-    console.log('Charge Successful')
+    console.log('Charge Successful');
     // res.json({
     //   message: 'Successfully purchased items'
     // })
-    res.redirect('/payment-success')
+    // res.redirect('/payment-success');
+    res.render("/payment-success.html")
   }).catch(function () {
     console.log('Charge Fail')
     res.status(500).end()
