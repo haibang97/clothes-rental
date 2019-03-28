@@ -7,6 +7,9 @@ const stripePublicKey = process.env.STRIPE_PUBLIC_KEY
 const express = require('express')
 const app = express()
 const stripe = require('stripe')(stripeSecretKey)
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs')
 app.engine('html', require('ejs').renderFile);
@@ -30,11 +33,14 @@ app.get('/home-user', function (req, res) {
 app.get('/clothes-details', async function (req, res) {
   var clothesid = req.query.clothesid
 
-  // var host = 'http://10.124.13.237:8080'
-  var host = "https://liuzuolin1996-eval-test.apigee.net/"
-  var service = "clothes"
+  // var host = 'http://LAPTOP-M5IE8VM3:8081'
+  var host = 'http://10.124.13.237:8081'
+  // var host = "https://liuzuolin1996-eval-test.apigee.net/"
+  // var service = "clothes"
   var body = '/Clothes/getSpecificClothes/'
-  var url = host + service + body + clothesid
+  // var url = host + service + body + clothesid
+  var url = host + body + clothesid
+
   var clothesDetails = await getClothesDetails(url)
   res.render('clothesdetails.ejs', {data : JSON.parse(clothesDetails)})
 })
@@ -72,8 +78,24 @@ app.get('/orders', function (req, res) {
   res.render('orders.html')
 })
 
-app.get('/orders-success', function (req, res) {
-  res.render('orders-success.html')
+app.post('/orders-success', function (req, res) {
+
+  var name = req.body.name;
+  var phone = req.body.phone;
+  var address = req.body.address;
+  var postalcode = req.body.postalcode;
+  var customerInfo = {
+    name : name,
+    phone : phone,
+    address : address,
+    postalcode : postalcode
+  }
+  console.log(customerInfo)
+  res.render('orders-success.ejs', {data : customerInfo})
+})
+
+app.get('/delivery', function (req, res) {
+  res.render('delivery.html')
 })
 
 app.post('/purchase', function (req, res) {
