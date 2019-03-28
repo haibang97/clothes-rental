@@ -194,9 +194,7 @@ INSERT INTO `clothesclass` (`classid`, `gender`, `type`, `function`, `image_link
 (30, 'M', 'jacket', 'date night', 'https://image1.superdry.com/static/images/optimised/upload9223368955665492963.jpg', 'shiok', '');
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 
 
@@ -262,17 +260,6 @@ SET time_zone = "+00:00";
 
 
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 drop database if exists delivery;
 create database if not exists delivery;
 use delivery;
@@ -297,9 +284,6 @@ CREATE TABLE IF NOT EXISTS `delivery_schedule` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 
@@ -311,9 +295,6 @@ COMMIT;
 
 
 
-set time_zone = "+08:00";
-
-drop database if exists zuozuo;
 drop database if exists orders;
 create database if not exists orders;
 use orders;
