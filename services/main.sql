@@ -1,10 +1,8 @@
 -- ASGGREGATE OF ALL SQL FILES OF ALL SERVICES
 
-
-
 --------------------------------------------------------------------------------------------------------
 -- SQL STATEMENT FOR BACKGROUND SERVICE
---------------------------------------------------------------------------------------------------------
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -386,8 +384,9 @@ set time_zone = "+08:00";
 -- database: zuzouo
 
 drop database if exists zuozuo;
-create database if not exists zuozuo;
-use zuozuo;
+drop database if exists orders;
+create database if not exists orders;
+use orders;
 
 create table if not exists orders(
   order_id int not null auto_increment primary key,
