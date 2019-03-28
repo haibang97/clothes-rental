@@ -63,7 +63,7 @@
                   <div class="icon-wrap icon-xs bg2 text-secondary"><i class="fa fa-shopping-cart"></i></div>
                   <div class="text-wrap">
                     <small>My Bag</small>
-                    <span>4 items</span>
+                    <span>0 items</span>
                   </div>
                 </a>
               </div>
@@ -207,6 +207,7 @@
           <p>Stylease is a clothes rental platform developed by G3-T4 <br>
             (Bang, Huirong, Nicholas, Timothy, Xavier and Zuo Lin) for the IS213 project.
           </p>
+          <% data %>
         </div>
       </section>
     </div>
@@ -214,9 +215,10 @@
   <!-- FOOTER END -->
 
   <script type="text/javascript">
+    // Get Customer's info and 
     $(document).ready(function() {
-      var info = <%- JSON.stringify(data) %>
-      console.log(info)
+      var rows = <%- JSON.stringify(data) %>
+      console.log(rows)
     })
   </script>
 
