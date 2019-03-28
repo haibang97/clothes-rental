@@ -3,7 +3,7 @@ function sleep(miliseconds) {
  
     while (currentTime + miliseconds >= new Date().getTime()) {
     }
- }
+}
 
 // function initFB() {
 //     // alert("lzl testing");
