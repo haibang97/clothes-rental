@@ -106,12 +106,7 @@ app.post('/purchase', function (req, res) {
     currency: 'sgd'
   }).then(function () {
     console.log('Charge Successful');
-    // REDIRECT TO PAYMENT-SUCCESS.HTML HERE
-
-    res.writeHead(301, { "Location": "http://" + req.headers['host'] + '/payment-success' });
-
-    console.log("End of charge succesful");
-    // END OF REDIRECTING TO PAYMENT-SUCCESS
+    
   }).catch(function () {
     console.log('Charge Fail')
     res.status(500).end()
