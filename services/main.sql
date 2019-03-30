@@ -40,6 +40,7 @@ SET time_zone = "+00:00";
 
 
 
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -154,11 +155,11 @@ DROP TABLE IF EXISTS `clothesclass`;
 CREATE TABLE IF NOT EXISTS `clothesclass` (
   `classid` int(10) DEFAULT NULL,
   `gender` varchar(1) DEFAULT NULL,
-  `type` varchar(10) DEFAULT NULL,
+  `type` TEXT DEFAULT NULL,
   `function` varchar(25) DEFAULT NULL,
   `image_link` varchar(255) DEFAULT NULL,
   `mood` varchar(6) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL
+  `description` TEXT DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `clothesclass` (`classid`, `gender`, `type`, `function`, `image_link`, `mood`, `description`) VALUES
