@@ -222,7 +222,7 @@
 							</div>
 							<!-- NAME END -->
 
-							<!-- EMAIL & MOBILE START -->
+							<!-- EMAIL & PHONE START -->
 							<div class="form-row">
 								<div class="col form-group">
 									<div class="form-group">
@@ -232,12 +232,12 @@
 								</div>
 								<div class="col form-group">
 									<div class="form-group">
-										<label>Mobile number:</label>
-										<input type="text" class="form-control" placeholder="" id="mobile">
+										<label>Phone number:</label>
+										<input type="text" class="form-control" placeholder="" id="phonenumber">
 									</div>
 								</div>
 							</div>
-							<!-- EMAIL & MOBILE END -->
+							<!-- EMAIL & PHONE END -->
 							
 							<!-- USERNAME START -->
 							<div class="form-row">
@@ -352,25 +352,25 @@
 							}
 
 						$("#register").click(function () {	
-								var category = {
+								var customer = {
 									"firstname": $("#firstname").val(),
 									"lastname": $("#lastname").val(),
 									"tier": 0,
-									"phonenumber": 93456384,
+									"phonenumber": $("#phonenumber").val(),
 									"birthdate": transform($("#birthday").val()),
 									"gender": $("input[name='gender']:radio").val(),
 									"address": $("#address").val(),
 									"postalcode": $("#postal_code").val(),
 									"email": $("#email").val(),
-									"username": "carrottan",
+									"username": $("#username").val(),
 									"password": $("#password").val()
 								}
 
-								console.log(category);
-								console.log(JSON.stringify(category))
+								console.log(customer);
+								console.log(JSON.stringify(customer))
 								$.ajax({
 									type: "POST",
-									data: JSON.stringify(category),
+									data: JSON.stringify(customer),
 									// data: category,
 									url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers1",
 									contentType: "application/json"

@@ -161,7 +161,9 @@
 									invites to
 									Stylease's fashion events</li>
 							</ul>
-							<a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
+                            <a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
+                            <!-- ############################################################# -->
+                            <div class="magic" onmouseover="console.log('mouse is over')"></div>
 						</div>
 					</div>
 				</div>
@@ -183,8 +185,10 @@
 									invites to
 									Stylease's fashion events</li>
 							</ul>
-							<a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
-						</div>
+                            <a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
+                            <!-- ############################################################# -->
+                            <div class="magic" onmouseover="window.location.href = 'payment-success'"></div>
+						</div> 
 					</div>
 				</div>
 				<!-- PREMIUM TIER END -->
@@ -205,7 +209,9 @@
 									Stylease's fashion
 									events</li>
 							</ul>
-							<a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
+                            <a class="btn btn-block btn-primary btn-purchase text-uppercase">Subscribe</a>
+                            <!-- ############################################################# -->
+                            <div class="magic" onmouseover="console.log('mouse is over')"></div>
 						</div>
 					</div>
 				</div>
@@ -266,5 +272,22 @@
 	<!-- FOOTER END -->
 
 </body>
+
+<script>
+    function space(n) {
+        var output = "";
+        for (var i=0; i<= n; i++) {
+            output += "&nbsp;";
+        } return output;
+    }
+
+    var magics = document.getElementsByClassName("magic");
+    for (var i=0; i<magics.length; i++) {
+        magic = magics[i];
+        magic.innerHTML = space(40)+"<br/>"+space(40);
+    }
+    
+    
+    </script>
 
 </html>

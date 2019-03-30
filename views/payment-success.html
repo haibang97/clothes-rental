@@ -23,8 +23,8 @@
 
 </head>
 
-<body>
 
+<body>
 	<!-- HEADER START -->
 	<header class="section-header">
 		<section class="header-main">
@@ -191,8 +191,51 @@
 			</section>
 		</div>
 	</footer>
-	<!-- FOOTER END -->
+    <!-- FOOTER END -->
+<script>
+
+    function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+            
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+    var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers";
+    $.getJSON(url, function (data) {
+        console.log("getting customers");
+        customerid = data["Customer"][data["Customer"].length-1]["customerid"];
+        console.log(data["Customer"])
+        console.log(typeof customerid);
+        console.log(customerid);
+        console.log("putting");
+        $.ajax({
+        headers: {
+            "Accept":"application/json",
+            "Content-Type": "application/json"
+            },
+            type: "PUT",
+            data: JSON.stringify({"customerid":customerid, "tier":3}),
+            url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers2",
+            success: function() {
+                console.log("success");
+                var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers1/"+window.customerid;
+                $.getJSON(url, function (data) {
+                    console.log(data);
+                });
+                }
+        });
+    });
+
+
+
+
+    
+
+</script>
 
 </body>
+
+
 
 </html>

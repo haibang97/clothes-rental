@@ -1,15 +1,7 @@
--- ASGGREGATE OF ALL SQL FILES OF ALL SERVICES
-
---------------------------------------------------------------------------------------------------------
--- SQL STATEMENT FOR BACKGROUND SERVICE
-
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-
--- Database: `Background`
 
 CREATE DATABASE IF NOT EXISTS `Background` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `Background`;
@@ -20,7 +12,6 @@ CREATE TABLE IF NOT EXISTS Background (
   image varchar(100) NOT NULL,
   PRIMARY KEY (`location`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 INSERT INTO Background (location, image) VALUES
 ('Orchard Road', 'https://stylease.me/images/locations/orchard.jpg'),
@@ -40,31 +31,20 @@ SET time_zone = "+00:00";
 
 
 
---------------------------------------------------------------------------------------------------------
--- SQL STATEMENT FOR CLOTHES SERVICE
---------------------------------------------------------------------------------------------------------
 
--- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 10, 2019 at 06:52 AM
--- Server version: 5.7.24
--- PHP Version: 7.2.14
+
+
+
+
+
+
+
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
--- Database: `clothesclass`
 
 drop database if exists clothesclass;
 create database if not exists clothesclass;
@@ -77,10 +57,6 @@ CREATE TABLE IF NOT EXISTS `clothes` (
   `status` varchar(255) DEFAULT NULL,
   `size` varchar(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `clothes`
---
 
 INSERT INTO `clothes` (`clothesid`, `classid`, `status`, `size`) VALUES
 (1, 1, 'available', 'S'),
@@ -174,26 +150,17 @@ INSERT INTO `clothes` (`clothesid`, `classid`, `status`, `size`) VALUES
 (89, 30, 'available', 'M'),
 (90, 30, 'available', 'L');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `clothesclass`
---
 
 DROP TABLE IF EXISTS `clothesclass`;
 CREATE TABLE IF NOT EXISTS `clothesclass` (
   `classid` int(10) DEFAULT NULL,
   `gender` varchar(1) DEFAULT NULL,
-  `type` varchar(10) DEFAULT NULL,
+  `type` TEXT DEFAULT NULL,
   `function` varchar(25) DEFAULT NULL,
   `image_link` varchar(255) DEFAULT NULL,
   `mood` varchar(6) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL
+  `description` TEXT DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `clothesclass`
---
 
 INSERT INTO `clothesclass` (`classid`, `gender`, `type`, `function`, `image_link`, `mood`, `description`) VALUES
 (1, 'F', 'Sleeveless Flared Midi Dress', 'date night', 'https://stylease.me/images/locations/model.png', 'shiok', 'Made of quality eyelet fabric, fully-lined, non-sheer and not stretchable at all. Features sweet eyelet details on a plum base, comes with a v neckline and non-functional front button details. Complete with a concealed back zipper. Worn in a flattering midi fit.'),
@@ -228,9 +195,6 @@ INSERT INTO `clothesclass` (`classid`, `gender`, `type`, `function`, `image_link
 (30, 'M', 'jacket', 'date night', 'https://image1.superdry.com/static/images/optimised/upload9223368955665492963.jpg', 'shiok', '');
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 
@@ -239,25 +203,20 @@ COMMIT;
 
 
 
---------------------------------------------------------------------------------------------------------
--- SQL STATEMENT FOR CUSTOMERS SERVICE
---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
---
--- Database: `Customers`
---
 CREATE DATABASE IF NOT EXISTS `Customers` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `Customers`;
-
--- --------------------------------------------------------
---
--- Table structure for table `Customers`
---
 
 DROP TABLE IF EXISTS Customers;
 CREATE TABLE IF NOT EXISTS Customers (
@@ -276,10 +235,6 @@ CREATE TABLE IF NOT EXISTS Customers (
   PRIMARY KEY (`customerid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `Customers`
---
-
 INSERT INTO Customers (firstname, lastname, tier, phonenumber, birthdate, gender, address, postalcode, email, username, password) VALUES
 ("Carrot", "Tan", 3, 93456384, "2000-09-08", "Female", "10 Amber Road", 512512, "carrot@yahoo.com", "carrot123", "buhuhu"),
 ("Timothy", "Soh", 3, 93456543,"1995-11-14", "Male", "75 Loyand Rise", 564536, "timothy@gmail.com", "fook", "kekeke"),
@@ -297,43 +252,18 @@ SET time_zone = "+00:00";
 
 
 
---------------------------------------------------------------------------------------------------------
--- SQL STATEMENT FOR DELIVERY SERVICE
---------------------------------------------------------------------------------------------------------
-
--- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 18, 2019 at 07:38 AM
--- Server version: 5.7.24
--- PHP Version: 7.2.14
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `delivery`
---
+
+
+
+
+
 
 drop database if exists delivery;
 create database if not exists delivery;
 use delivery;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `deliveryman`
---
 
 DROP TABLE IF EXISTS `deliveryman`;
 CREATE TABLE IF NOT EXISTS `deliveryman` (
@@ -344,19 +274,9 @@ CREATE TABLE IF NOT EXISTS `deliveryman` (
   `image_link` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `deliveryman`
---
-
 INSERT INTO `deliveryman` (`deliverymanid`, `name`, `location`, `phonenumber`, `image_link`) VALUES
 (1, 'ahmad', 'Boon Lay', 85932132, 'http:google.com'),
 (2, 'john', 'Orchard', 91234123, 'asdf');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `delivery_schedule`
---
 
 DROP TABLE IF EXISTS `delivery_schedule`;
 CREATE TABLE IF NOT EXISTS `delivery_schedule` (
@@ -365,9 +285,6 @@ CREATE TABLE IF NOT EXISTS `delivery_schedule` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 
@@ -375,15 +292,10 @@ COMMIT;
 
 
 
---------------------------------------------------------------------------------------------------------
--- SQL STATEMENT FOR ORDERS SERVICE
---------------------------------------------------------------------------------------------------------
 
-set time_zone = "+08:00";
 
--- database: zuzouo
 
-drop database if exists zuozuo;
+
 drop database if exists orders;
 create database if not exists orders;
 use orders;
