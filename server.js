@@ -34,7 +34,7 @@ app.get('/clothes-details', async function (req, res) {
   var clothesid = req.query.clothesid
 
   // var host = 'http://LAPTOP-M5IE8VM3:8081'
-  var host = 'http://10.124.13.237:8081'
+  var host = 'http://10.124.1.237:8081'
   // var host = "https://liuzuolin1996-eval-test.apigee.net/"
   // var service = "clothes"
   var body = '/Clothes/getSpecificClothes/'
@@ -42,10 +42,10 @@ app.get('/clothes-details', async function (req, res) {
   var url = host + body + clothesid
 
   var clothesDetails = await getClothesDetails(url)
-  res.render('clothesdetails.ejs', {data : JSON.parse(clothesDetails)})
+  res.render('clothesdetails.ejs', { data: JSON.parse(clothesDetails) })
 })
 
-function getClothesDetails (url) {
+function getClothesDetails(url) {
   return new Promise((resolve, reject) => {
     try {
       const request = require('request')
@@ -78,21 +78,95 @@ app.get('/orders', function (req, res) {
   res.render('orders.html')
 })
 
-app.post('/orders-success', function (req, res) {
+app.get('/orders-success', async function (req, res) {
+  // var amqp = require('amqplib/callback_api');
 
-  var name = req.body.name;
-  var phone = req.body.phone;
-  var address = req.body.address;
-  var postalcode = req.body.postalcode;
-  var customerInfo = {
-    name : name,
-    phone : phone,
-    address : address,
-    postalcode : postalcode
+  // amqp.connect('amqp://localhost:5672', function (err, conn) {
+
+  //   conn.createChannel(function (err, ch) {
+  //     var queue = 'orders'
+  //     var input = ""
+
+  //     ch.assertQueue(queue, { durable: false });
+  //     console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
+
+  //     ch.consume(queue, function (msg) {
+
+  //       // var msg = msg.content.toString()
+  //       // console.log(" [x] Received %s", msg.content.toString())
+
+  //       input = msg.content.toString('utf8')
+
+  //       console.log("starttttt")
+  //       console.log(input)
+  //       console.log(typeof input)
+
+  //       // res.render('orders-success.ejs')
+  //     }, { noAck: true });
+
+  var input = await sendOrder()
+  // res.render('orders-success.ejs', { data: JSON.parse(input) }); 
+  try {
+    console.log("sending to front end");
+    console.log(input)
+    console.log(typeof input)
+    res.render('orders-success.ejs', { data: JSON.parse(input) });
+
+    // res.redirect('home')
+    console.log("sent to front line wuhu")
   }
-  console.log(customerInfo)
-  res.render('orders-success.ejs', {data : customerInfo})
-})
+  catch (err) { console.log(err) }
+
+});
+
+
+function sendOrder() {
+  return new Promise((resolve, reject) => {
+    try {
+      var amqp = require('amqplib/callback_api');
+
+      amqp.connect('amqp://localhost:5672', function (err, conn) {
+
+        conn.createChannel(function (err, ch) {
+          var queue = 'orders'
+          var input = ""
+
+          ch.assertQueue(queue, { durable: false });
+          console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
+
+          ch.consume(queue, function (msg) {
+
+            // var msg = msg.content.toString()
+            // console.log(" [x] Received %s", msg.content.toString())
+
+            input = msg.content.toString('utf8')
+
+            console.log("starttttt")
+            console.log(input)
+            console.log(typeof input)
+            
+            try{
+              resolve(input);
+              console.log("success")
+              return ch.close()
+            } catch (err) {
+              console.log(err)
+              return ch.close()
+            }
+
+              res.render('orders-success.ejs')
+          }, { noAck: true });
+        })
+      })
+    }
+    catch (error) {
+      reject(error)
+    }
+  })
+  console.log("send order function has finished");
+}
+
+
 
 app.get('/delivery', function (req, res) {
   res.render('delivery.html')

@@ -155,7 +155,8 @@
 			js = d.createElement(s); js.id = id;
 			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
 			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat" attribution=setup_tool page_id="299401447397224" theme_color="#81894e"
@@ -243,15 +244,14 @@
 									<h4 class="title text-truncate">Kindly confirm your delivery details: </h4><br/>
 									<dl class="dlist-inline">
 									  <dd>
-										<form action="/orders-success" method="POST">
 											<div class="form-row">
 												<div class="col form-group">
 													<label><strong>Name:</strong></label>
-													<input class="form-control" type="text" name="name" value="Lou Rach Soh">
+													<input class="form-control" type="text" name="name" value="Lou Lou" id="name">
 												</div>
 												<div class="col form-group">
 													<label><strong>Phone Number:</strong></label>
-													<input class="form-control" type="text" value="6591242335" name="phone">
+													<input class="form-control" type="text" value="6591242335" name="phone" id="phone">
 												</div>
 											</div>
 											<div class="form-row">
@@ -261,14 +261,13 @@
 												</div>
 												<div class="col form-group">
 													<label><strong>Postal Code:</strong></label>
-													<input class="form-control" type="text" name="postalcode" value="188065" >
+													<input class="form-control" type="text" name="postalcode" value="188065" id="postalcode">
 												</div>
 											</div>
 
 											<dt>Delivery option:</dt>
 									  		<dd>Standard delivery. Items will be delivered within 3-5 working days.</dd><br/>
 											<button type="submit" class="btn btn-green" id="confirm">Confirm your order</button>
-										</form>
 									  </dd>
 									</dl>
 								</figcaption>
@@ -277,6 +276,8 @@
 					</tr>
 				</tbody>
 			</table>`
+
+			
 
 			$(".cart").on('click', '.remove_item', function (event) {
 				// $(".remove_item").click(function () {
@@ -299,18 +300,47 @@
 		result = "";
 
 		$("#confirm").click(function () {
+
+			// add customer info into local storage
+			var customerArray = localStorage.getItem('customer') ? JSON.parse(localStorage.getItem('customer')) : []
+			localStorage.setItem('customer', JSON.stringify(customerArray))
+
+			customerArray = {
+								"name": $("#name").val(),
+								"phone": $("#phone").val(),
+								"address": $("#address").val(),
+								"postalcode": $("#postalcode").val(),
+							}
+			
+			localStorage.setItem('customer', JSON.stringify(customerArray))
+
+			// add clothes from localstorage into order info
 			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
 			var add_order_items = []
+
+			console.log("itemsArray here:")
+			console.log(itemsArray)
+
 			itemsArray.forEach(function (item) {
-				var orderID = { "clothesid": item }
+				var item_string = item.clothesid + ''
+				var orderID = { "clothesid": item_string }
 				add_order_items.push(orderID)
 			})
+
+			console.log("add_order_items here:")
+			console.log(add_order_items)
 			var orderInfo = {
-				"customerid": 16666666,
+				"customerid": 39999,
 				"add_order_items": add_order_items,
 			}
-			// var url = 'http://LAPTOP-M5IE8VM3:8084/order';
-			var url = "http://10.124.13.237:8084/order"
+
+			console.log("orderInfo here:")
+			console.log(orderInfo)
+
+			// THIS THING STOPS HERE FOR SOME REASON
+
+			// var url = 'http://LAPTOP-M5IE8VM3:8085/order';
+			var url = "http://10.124.1.237:8085/order"
 
 			$.ajax({
 				type: "POST",
@@ -319,7 +349,19 @@
 				contentType: "application/json"
 			});
 
+			console.log("testing 123")
+
 			// localStorage.clear();
+			
+			try {window.location.href = 'orders-success'}
+			catch (err) {console.log(err)}
+
+			console.log("testing 456")
+			console.log(window.location.href)
+			console.log("testing 789")
+
+			try {$(location).attr('href', '/orders-success')}
+			catch (err) {console.log(err)}
 			
 		});
 	})
