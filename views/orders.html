@@ -235,6 +235,53 @@
 						</td>
 					</tr>`
 			})
+
+			// Get customer 
+			var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers";
+
+			$.getJSON(url, function (data) {
+				console.log("getting latest customer");
+				var customer = data["Customer"][data["Customer"].length - 1];
+				console.log(typeof customer);
+				console.log(customer);
+
+				var firstname = customer["firstname"]
+				var lastname = customer["lastname"]
+				var phonenumber = customer["phonenumber"]
+				var address = customer["address"]
+				var postalcode = customer["postalcode"]
+
+				// console.log("DEBUGGING: "+firstname+" "+lastname+" "+phonenumber+" "+address+" "+postalcode)
+
+				document.getElementById("input-name").value = firstname + " " + lastname
+				document.getElementById("phonenumber").value = phonenumber
+				document.getElementById("address").value = address
+				document.getElementById("postalcode").value = postalcode
+
+
+				// console.log("testetstetsetst")
+
+
+				//add customer info into local storage
+				var customerArray = localStorage.getItem('customer') ? JSON.parse(localStorage.getItem('customer')) : []
+				localStorage.setItem('customer', JSON.stringify(customerArray))
+
+				var name = firstname + " " + lastname
+
+				customerArray = {
+					"name": name,
+					"phonenumber": phonenumber,
+					"address": address,
+					"postalcode": postalcode,
+				}
+
+				localStorage.setItem('customer', JSON.stringify(customerArray))
+
+				
+			});
+
+			console.log(localStorage)
+
 			result += `</tbody>
 				<tbody>
 					<tr>
@@ -247,21 +294,21 @@
 											<div class="form-row">
 												<div class="col form-group">
 													<label><strong>Name:</strong></label>
-													<input class="form-control" type="text" name="name" value="Lou Lou" id="name">
+													<input class="form-control" type="text" name="name" value="" id="input-name">
 												</div>
 												<div class="col form-group">
 													<label><strong>Phone Number:</strong></label>
-													<input class="form-control" type="text" value="6591242335" name="phone" id="phone">
+													<input class="form-control" type="text" value="" name="phone" id="phonenumber">
 												</div>
 											</div>
 											<div class="form-row">
 												<div class="col form-group">
 													<label><strong>Address:</strong></label>
-													<input class="form-control" type="text" name="address" value="81 Victoria St, Singapore Management University" id="address">
+													<input class="form-control" type="text" name="address" value="" id="address">
 												</div>
 												<div class="col form-group">
 													<label><strong>Postal Code:</strong></label>
-													<input class="form-control" type="text" name="postalcode" value="188065" id="postalcode">
+													<input class="form-control" type="text" name="postalcode" value="" id="postalcode">
 												</div>
 											</div>
 
@@ -277,7 +324,7 @@
 				</tbody>
 			</table>`
 
-			
+
 
 			$(".cart").on('click', '.remove_item', function (event) {
 				// $(".remove_item").click(function () {
@@ -301,18 +348,6 @@
 
 		$("#confirm").click(function () {
 
-			// add customer info into local storage
-			var customerArray = localStorage.getItem('customer') ? JSON.parse(localStorage.getItem('customer')) : []
-			localStorage.setItem('customer', JSON.stringify(customerArray))
-
-			customerArray = {
-								"name": $("#name").val(),
-								"phone": $("#phone").val(),
-								"address": $("#address").val(),
-								"postalcode": $("#postalcode").val(),
-							}
-			
-			localStorage.setItem('customer', JSON.stringify(customerArray))
 
 			// add clothes from localstorage into order info
 			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
@@ -349,20 +384,15 @@
 				contentType: "application/json"
 			});
 
-			console.log("testing 123")
 
 			// localStorage.clear();
-			
-			try {window.location.href = 'orders-success'}
-			catch (err) {console.log(err)}
 
-			console.log("testing 456")
-			console.log(window.location.href)
-			console.log("testing 789")
+			// try {window.location.href = 'orders-success'}
+			// catch (err) {console.log(err)}
 
-			try {$(location).attr('href', '/orders-success')}
-			catch (err) {console.log(err)}
-			
+			try { $(location).attr('href', '/orders-success') }
+			catch (err) { console.log(err) }
+
 		});
 	})
 </script>

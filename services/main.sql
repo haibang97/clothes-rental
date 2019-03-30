@@ -236,9 +236,9 @@ CREATE TABLE IF NOT EXISTS Customers (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO Customers (firstname, lastname, tier, phonenumber, birthdate, gender, address, postalcode, email, username, password) VALUES
-("Carrot", "Tan", 3, 93456384, "2000-09-08", "Female", "10 Amber Road", 512512, "carrot@yahoo.com", "carrot123", "buhuhu"),
-("Timothy", "Soh", 3, 93456543,"1995-11-14", "Male", "75 Loyand Rise", 564536, "timothy@gmail.com", "fook", "kekeke"),
-("Bobby", "Lim", 3, 92227384,"1997-10-21", "Make", "19 Bedok View", 909090, "bobby@gmail.com", "lailailai", "baldy");
+("Carrot", "Tan", 3, 13456384, "2000-09-08", "Female", "10 Amber Road", 512512, "carrot@yahoo.com", "carrot123", "buhuhu"),
+("Timothy", "Soh", 3, 33456543,"1995-11-14", "Male", "75 Loyand Rise", 564536, "timothy@gmail.com", "fook", "kekeke"),
+("Bobby", "Lim", 3, 54227384,"1997-10-21", "Make", "19 Bedok View", 909090, "bobby@gmail.com", "lailailai", "baldy");
 COMMIT;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -275,8 +275,10 @@ CREATE TABLE IF NOT EXISTS `deliveryman` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `deliveryman` (`deliverymanid`, `name`, `location`, `phonenumber`, `image_link`) VALUES
-(1, 'ahmad', 'Boon Lay', 85932132, 'http:google.com'),
-(2, 'john', 'Orchard', 91234123, 'asdf');
+(1, 'Muhhamad Ahmad Rahmad', '010000', 91242335, 'http:google.com'),
+(2, 'John Doe', '310000', 98003331, 'asdf'),
+(3, 'Paul Briffin', '540000', 98475578, 'asdf')
+(4, 'Lee sian long', '', 91234123, 'asdf');
 
 DROP TABLE IF EXISTS `delivery_schedule`;
 CREATE TABLE IF NOT EXISTS `delivery_schedule` (

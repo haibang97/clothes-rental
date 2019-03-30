@@ -42,6 +42,8 @@ app.get('/clothes-details', async function (req, res) {
   var url = host + body + clothesid
 
   var clothesDetails = await getClothesDetails(url)
+  console.log(typeof clothesDetails)
+  console.log(clothesDetails)
   res.render('clothesdetails.ejs', { data: JSON.parse(clothesDetails) })
 })
 
@@ -79,48 +81,30 @@ app.get('/orders', function (req, res) {
 })
 
 app.get('/orders-success', async function (req, res) {
-  // var amqp = require('amqplib/callback_api');
 
-  // amqp.connect('amqp://localhost:5672', function (err, conn) {
-
-  //   conn.createChannel(function (err, ch) {
-  //     var queue = 'orders'
-  //     var input = ""
-
-  //     ch.assertQueue(queue, { durable: false });
-  //     console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
-
-  //     ch.consume(queue, function (msg) {
-
-  //       // var msg = msg.content.toString()
-  //       // console.log(" [x] Received %s", msg.content.toString())
-
-  //       input = msg.content.toString('utf8')
-
-  //       console.log("starttttt")
-  //       console.log(input)
-  //       console.log(typeof input)
-
-  //       // res.render('orders-success.ejs')
-  //     }, { noAck: true });
-
-  var input = await sendOrder()
+  // var input = await sendOrder()
   // res.render('orders-success.ejs', { data: JSON.parse(input) }); 
   try {
+    var input = await getMessage()
     console.log("sending to front end");
     console.log(input)
     console.log(typeof input)
+
     res.render('orders-success.ejs', { data: JSON.parse(input) });
 
     // res.redirect('home')
     console.log("sent to front line wuhu")
   }
-  catch (err) { console.log(err) }
+  catch (err) {
+    var input = "nothing"
+    console.log(input)
+    res.render('orders-success.ejs', { data: input })
+  }
 
 });
 
 
-function sendOrder() {
+function getMessage() {
   return new Promise((resolve, reject) => {
     try {
       var amqp = require('amqplib/callback_api');
@@ -135,26 +119,19 @@ function sendOrder() {
           console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
 
           ch.consume(queue, function (msg) {
-
-            // var msg = msg.content.toString()
-            // console.log(" [x] Received %s", msg.content.toString())
-
-            input = msg.content.toString('utf8')
-
-            console.log("starttttt")
-            console.log(input)
-            console.log(typeof input)
-            
-            try{
+            try {
+              input = msg.content.toString('utf8')
+              console.log("starttttt")
+              console.log(input)
+              console.log(typeof input)
               resolve(input);
-              console.log("success")
-              return ch.close()
-            } catch (err) {
+            }
+            catch (err) {
               console.log(err)
+            }
+            finally {
               return ch.close()
             }
-
-              res.render('orders-success.ejs')
           }, { noAck: true });
         })
       })
@@ -180,7 +157,7 @@ app.post('/purchase', function (req, res) {
     currency: 'sgd'
   }).then(function () {
     console.log('Charge Successful');
-    
+
   }).catch(function () {
     console.log('Charge Fail')
     res.status(500).end()

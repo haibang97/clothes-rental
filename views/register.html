@@ -34,28 +34,30 @@
 </head>
 
 <script>
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '555376054961251',
-            autoLogAppEvents: true,
-            xfbml: true,
-            version: 'v3.2'
-        });
-        FB.logout(function (response){});
-    };
+	window.fbAsyncInit = function () {
+		FB.init({
+			appId: '555376054961251',
+			autoLogAppEvents: true,
+			xfbml: true,
+			version: 'v3.2'
+		});
+		FB.logout(function (response) { });
+	};
 </script>
 
 
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=555376054961251&autoLogAppEvents=1"></script>
+<script async defer crossorigin="anonymous"
+	src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=555376054961251&autoLogAppEvents=1"></script>
 <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 
 
 <!-- <body onmousemove="getLoginStatus()"> -->
+
 <body onload="fbLogoutUser()" onmousemove="checkfill()">
-    <script>
+	<script>
         // logout();    
-    </script>
+	</script>
 
 	<div id="fb-root"></div>
 
@@ -130,7 +132,7 @@
 									<hr class="dropdown-divider">
 									<!-- FACEBOOK & GOOGLE LOGIN START -->
 									<a class="dropdown-item"><img class="logo" src="images/facebooklogin.png"
-										width="80%" onclick="fbLogin()"></a>
+											width="80%" onclick="fbLogin()"></a>
 									<a class="dropdown-item" href="http://www.google.com"><img class="logo"
 											src="images/googlesignin.png" width="75%"></a>
 									<!-- FACEBOOK & GOOGLE LOGIN END -->
@@ -188,19 +190,18 @@
 						<h4 class="card-title mt-2">Sign up as a Stylease member today</h4>
 					</header>
 					<article class="card-body">
-<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+						<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 						<!-- FACEBOOK & GOOGLE START -->
 						<p>
-                                <div class="fb-login-button" data-width="80" data-size="medium"
-                                data-button-type="login_with" data-auto-logout-link="false" 
-                                data-use-continue-as="false"
-                                height="20"></div>
+							<div class="fb-login-button" data-width="80" data-size="medium"
+								data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"
+								height="20"></div>
 
-<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-						
-                            <!-- <img src="images/facebooklogin.png" width="28%" onclick="test()"></a> --> 
+							<!--  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
-                            <img src="images/googlesignin.png" width="25%" height="40" onclick="getLoginStatus()">
+							<!-- <img src="images/facebooklogin.png" width="28%" onclick="test()"></a> -->
+
+							<img src="images/googlesignin.png" width="25%" height="40" onclick="getLoginStatus()">
 
 							<!-- <button onclick="getLoginStatus()">TEST FACEBOOK (ctrl shift i) </button>
 							<button onclick="logout()">TEST FACEBOOK LOGOUT</button> -->
@@ -238,7 +239,7 @@
 								</div>
 							</div>
 							<!-- EMAIL & PHONE END -->
-							
+
 							<!-- USERNAME START -->
 							<div class="form-row">
 								<div class="col form-group">
@@ -291,7 +292,7 @@
 								<div class="col form-group">
 									<label>Postal Code:</label>
 									<input class="form-control" type="text" , id="postal_code" onblur="fillAddress()"
-										value=""><br/>
+										value=""><br />
 									<button class="btn btn-green" id="generateaddress">Generate Address</button>
 								</div>
 								<div class="col form-group">
@@ -301,8 +302,8 @@
 								</div>
 							</div>
 							<!-- ADDRESS END -->
-							
-							<br/>
+
+							<br />
 							<div class="form-group">
 								<button class="btn btn-green" id="register">Register</button>
 							</div>
@@ -310,76 +311,33 @@
 								<br>Terms of
 								use and Privacy Policy.</small>
 						</form>
-                        <!-- FORM END -->
+						<!-- FORM END -->
 
-                        <!-- <button id="register2">SIGN IN LZL TEST</button> -->
+						<!-- <button id="register2">SIGN IN LZL TEST</button> -->
 
 						<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v3.2'
-    });
-  };
-
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="299401447397224"
-  theme_color="#81894e"
-  greeting_dialog_display="hide">
-</div>
-
+						<div id="fb-root"></div>
 						<script>
+							window.fbAsyncInit = function () {
+								FB.init({
+									xfbml: true,
+									version: 'v3.2'
+								});
+							};
 
-							function transform(bday) {
-								var lis = bday.split("/");
-								return lis[2] + "-" + lis[1] + "-" + lis[0] + "+08:00";
-							}
+							(function (d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0];
+								if (d.getElementById(id)) return;
+								js = d.createElement(s); js.id = id;
+								js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+								fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
 
-							hashCode = function (s) {
-								return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
-							}
+						<!-- Your customer chat code -->
+						<div class="fb-customerchat" attribution=setup_tool page_id="299401447397224"
+							theme_color="#81894e" greeting_dialog_display="hide">
+						</div>
 
-						$("#register").click(function () {	
-								var customer = {
-									"firstname": $("#firstname").val(),
-									"lastname": $("#lastname").val(),
-									"tier": 0,
-									"phonenumber": $("#phonenumber").val(),
-									"birthdate": transform($("#birthday").val()),
-									"gender": $("input[name='gender']:radio").val(),
-									"address": $("#address").val(),
-									"postalcode": $("#postal_code").val(),
-									"email": $("#email").val(),
-									"username": $("#username").val(),
-									"password": $("#password").val()
-								}
-
-								console.log(customer);
-								console.log(JSON.stringify(customer))
-								$.ajax({
-									type: "POST",
-									data: JSON.stringify(customer),
-									// data: category,
-									url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers1",
-									contentType: "application/json"
-                                });
-                                alert("Thank you for signing up with Stylease!");
-                                sleep(1000);
-							});
-
-						</script>
 
 					</article>
 				</div>
@@ -405,10 +363,54 @@
 
 	<!-- <a href="http://desktop-tp220vs:8080/customers">LZL TESTING</a> -->
 
-<!-- <button onclick="getLoginStatus()">LZL TESTING BUTTON</button> -->
+	<!-- <button onclick="getLoginStatus()">LZL TESTING BUTTON</button> -->
 
 
 </body>
 
-</html>
 
+<script>
+
+	function transform(bday) {
+		var lis = bday.split("/");
+		return lis[2] + "-" + lis[1] + "-" + lis[0] + "+08:00";
+	}
+
+	hashCode = function (s) {
+		return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
+	}
+
+	$("#register").click(function () {
+		var customer = {
+			"firstname": $("#firstname").val(),
+			"lastname": $("#lastname").val(),
+			"tier": 0,
+			"phonenumber": $("#phonenumber").val(),
+			"birthdate": transform($("#birthday").val()),
+			"gender": $("input[name='gender']:radio").val(),
+			"address": $("#address").val(),
+			"postalcode": $("#postal_code").val(),
+			"email": $("#email").val(),
+			"username": $("#username").val(),
+			"password": $("#password").val()
+		}
+
+		console.log(customer);
+		console.log(JSON.stringify(customer))
+		$.ajax({
+			type: "POST",
+			data: JSON.stringify(customer),
+			// data: category,
+			url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers1",
+			contentType: "application/json"
+		});
+		alert("Thank you for signing up with Stylease!");
+		sleep(1000);
+	});
+
+	
+
+
+</script>
+
+</html>
