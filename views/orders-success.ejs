@@ -128,7 +128,7 @@
   <section id="intro">
     <div class="container deliveryman">
       <!-- ORDER SUCCESS INTRO START -->
-      
+
       <!-- HAVING TROUBLE END -->
       <!-- HAVING TROUBLE END -->
     </div>
@@ -176,52 +176,86 @@
 
 <script type="text/javascript">
   $(document).ready(function () {
-
-    var customerArray = localStorage.getItem('customer') ? JSON.parse(localStorage.getItem('customer')) : []
-    var postalcode_location = {
-      1:1, 2:1, 3:1, 4:1, 5:1, 6:1, 7:2, 8:2, 9:4, 10:4,
-      11:5, 12:5, 13:5, 14:3, 15:3, 16:3, 17:6, 18:7, 19:7, 20:8,
-      21:8, 22:9, 23:9, 24:10, 25:10, 26:10, 27:10, 28:11, 29:11, 30:11,
-      31:12, 32:12, 33:12, 34:13, 35:13, 36:13, 37:13, 38:14, 39:14, 40:14,
-      41:14, 42:15, 43:15, 44:15, 45:15, 46:16, 47:16, 48:16, 49:17, 50:17,
-      51:18, 52:18, 53:19, 54:19, 55:19, 56:20, 57:20, 58:21, 59:21, 60:22,
-      61:22, 62:22, 63:22, 64:22, 65:23, 66:23, 67:23, 68:23, 69:24, 70:24,
-      71:24, 72:25, 73:25, 74:25, 75:27, 76:27, 77:26, 78:26, 79:28, 80:28,
-      81:17, 82:19 
-    }
-
-    var url = "	http://liuzuolin1996-eval-test.apigee.net/deliveryman/deliveryman/getall"
-    $.getJSON(url, function (data) {
-      console.log("getting deliverymen");
-      console.log(data)
-      var deliverymen = []
-    })
-
-    var availableDeliveryMenDistricts = []
-
-    
-
-    console.log(customerArray)
-
-    // var delivery
-    
-    var info = <%- JSON.stringify(data) %>
+    console.log("test")
     var result = ''
-    
-    if (info == "nothing") {
+    // GET DELIVERY MAN
+    var info = <%- JSON.stringify(data) %>
+    console.log("info is:")
+    console.log(info)
+    console.log("info.order'-id!!!")
+    if (info.order_id == 0) {
       result += `
       <div class="col-sm-9" style="float: none; margin: 0 auto; margin-top:60px;">
             <h2 class="headline text-grey text-center">Success!</h2><br />
-            <p class="subheadline text-center">Your order was successful and your order ID is <strong>#<%= data.order_id %></strong>.
-          <br />You will be receiving a confirmation via SMS shortly.</p>
+            <p class="subheadline text-center">Your order is successful and a delivery man will be assigned to deliver your clothes to you soon.</p>
         <br />
             <hr /><br /><br />
         <main class="card-clothesdetails">
-              <h1 class="text-grey text-center">Paiseh paiseh, we are still looking for your delivery man!</h1><br /><br />
+              <h1 class="text-grey text-center">Do hang in there.</h1><br /><br />
             </main>
         <br />
-          </div>`    
-  } else {
+          </div>`
+
+    } else {
+      console.log("delviery man service is on")
+
+      var postalcode_location = {
+      1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 2, 8: 2, 9: 4, 10: 4,
+      11: 5, 12: 5, 13: 5, 14: 3, 15: 3, 16: 3, 17: 6, 18: 7, 19: 7, 20: 8,
+      21: 8, 22: 9, 23: 9, 24: 10, 25: 10, 26: 10, 27: 10, 28: 11, 29: 11, 30: 11,
+      31: 12, 32: 12, 33: 12, 34: 13, 35: 13, 36: 13, 37: 13, 38: 14, 39: 14, 40: 14,
+      41: 14, 42: 15, 43: 15, 44: 15, 45: 15, 46: 16, 47: 16, 48: 16, 49: 17, 50: 17,
+      51: 18, 52: 18, 53: 19, 54: 19, 55: 19, 56: 20, 57: 20, 58: 21, 59: 21, 60: 22,
+      61: 22, 62: 22, 63: 22, 64: 22, 65: 23, 66: 23, 67: 23, 68: 23, 69: 24, 70: 24,
+      71: 24, 72: 25, 73: 25, 74: 25, 75: 27, 76: 27, 77: 26, 78: 26, 79: 28, 80: 28,
+      81: 17, 82: 19, 90: 1
+    }
+    var customerArray = localStorage.getItem('customer') ? JSON.parse(localStorage.getItem('customer')) : []
+    var customer_postalcode = parseInt((customerArray.postalcode + "").slice(0, 2))
+    var district = postalcode_location[customer_postalcode] + "0000"
+    if (district.length == 5) district = "0" + district
+
+    console.log(district)
+
+    var url = "	http://liuzuolin1996-eval-test.apigee.net/deliveryman/deliveryman/getbyloc/" + district
+    
+    $.getJSON(url, function (data) {
+      console.log("getting deliveryman");
+      console.log(data)
+      var name = data["deliveryman"][0]["name"]
+      var phonenumber = data["deliveryman"][0]["phonenumber"]
+      document.getElementById("name").innerHTML = name
+      document.getElementById("phonenumber").innerHTML = phonenumber
+
+      var message = 
+`Hi ${name}, 
+You have a new order ready for delivery. Kindly check the details below. 
+
+Order ID: ${<%= data.order_id %>} 
+Name: ${customerArray.name}
+Address: ${customerArray.address} ${customerArray.postalcode}
+Phone.no: ${customerArray.phonenumber} `
+                  
+      console.log(message)
+      $.ajax({
+      url: 'https://rest.textmagic.com/api/v2/messages',
+      type: 'post',
+      data: {
+        text: message,
+        phones: phonenumber,
+
+      },
+      headers: {
+        "X-TM-Username": 'nicholasfranslay',   //If your header name has spaces or any other char not appropriate
+        "X-TM-Key": 'IRfylkmjNpPtK3CmVakvhiPy5RLcA4'  //for object property name, use quoted notation shown in second
+      },
+      dataType: 'json',
+      success: function (data) {
+        console.info(data);
+      }
+    });
+    })
+
       result += `<div class="col-sm-9" style="float: none; margin: 0 auto; margin-top:60px;">
         <h2 class="headline text-grey text-center">Success!</h2><br />
         <p class="subheadline text-center">Your order was successful and your order ID is
@@ -245,11 +279,11 @@
               <aside class="col-sm-6">
                 <dl class="dlist-inline">
                   <dt>Deliveryman Name:</dt>
-                  <dd>Xavier Lur</dd>
+                  <dd id='name'><finding...dd>
                 </dl>
                 <dl class="dlist-inline">
                   <dt>Mobile Number</dt>
-                  <dd>9123 4567</dd>
+                  <dd id='phonenumber'>finding...</dd>
                 </dl>
                 <dl class="dlist-inline">
                   <dt>Delivery:</dt>
@@ -263,11 +297,19 @@
         <!-- DELIVERYMAN DETAILS END -->
         <br />
       </div>`
+
+
+    // Sending SMS
+    function sleep(miliseconds) {
+    var currentTime = new Date().getTime();
+ 
+    while (currentTime + miliseconds >= new Date().getTime()) {
+      }
+    }
   }
-  
-  $(".deliveryman").html(result)
-		result = ""
-})
+    $(".deliveryman").html(result)
+    result = ""
+  })
 
 </script>
 

@@ -293,7 +293,7 @@
 									<label>Postal Code:</label>
 									<input class="form-control" type="text" , id="postal_code" onblur="fillAddress()"
 										value=""><br />
-									<button class="btn btn-green" id="generateaddress">Generate Address</button>
+									<!-- <button class="btn btn-green" id="generateaddress">Generate Address</button> -->
 								</div>
 								<div class="col form-group">
 									<label>Address:</label>
@@ -397,11 +397,17 @@
 
 		console.log(customer);
 		console.log(JSON.stringify(customer))
+
+		var host = "http://liuzuolin1996-eval-test.apigee.net/"
+		var service = "customers"
+		var body = "/customers1/"
+		var url = host + service + body
+
 		$.ajax({
 			type: "POST",
 			data: JSON.stringify(customer),
 			// data: category,
-			url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers1",
+			url: url,
 			contentType: "application/json"
 		});
 		alert("Thank you for signing up with Stylease!");

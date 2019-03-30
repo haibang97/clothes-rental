@@ -82,8 +82,6 @@ app.get('/orders', function (req, res) {
 
 app.get('/orders-success', async function (req, res) {
 
-  // var input = await sendOrder()
-  // res.render('orders-success.ejs', { data: JSON.parse(input) }); 
   try {
     var input = await getMessage()
     console.log("sending to front end");
@@ -97,6 +95,27 @@ app.get('/orders-success', async function (req, res) {
   }
   catch (err) {
     var input = "nothing"
+    console.log(input)
+    res.render('orders-success.ejs', { data: input })
+  }
+
+});
+
+app.get('/orders-success-no-rabbit', async function (req, res) {
+
+  try {
+    // var input = await getMessage()
+    console.log("sending to front end");
+    console.log(input)
+    console.log(typeof input)
+
+    res.render('orders-success.ejs', { data: JSON.parse(input) });
+
+    // res.redirect('home')
+    console.log("sent to front line wuhu")
+  }
+  catch (err) {
+    var input = {"order_id":0,"customerid":0}
     console.log(input)
     res.render('orders-success.ejs', { data: input })
   }

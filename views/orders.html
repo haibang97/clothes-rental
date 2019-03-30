@@ -277,7 +277,7 @@
 
 				localStorage.setItem('customer', JSON.stringify(customerArray))
 
-				
+
 			});
 
 			console.log(localStorage)
@@ -315,6 +315,7 @@
 											<dt>Delivery option:</dt>
 									  		<dd>Standard delivery. Items will be delivered within 3-5 working days.</dd><br/>
 											<button type="submit" class="btn btn-green" id="confirm">Confirm your order</button>
+											<button type="submit" class="btn btn-blue" id="confirm-no-rabbit">AMQPReceive not running</button>
 									  </dd>
 									</dl>
 								</figcaption>
@@ -346,6 +347,8 @@
 		$(".cart").html(result);
 		result = "";
 
+
+		// PASS TEST CASE
 		$("#confirm").click(function () {
 
 
@@ -391,6 +394,56 @@
 			// catch (err) {console.log(err)}
 
 			try { $(location).attr('href', '/orders-success') }
+			catch (err) { console.log(err) }
+
+		});
+
+		// NO TEST CASE 
+		$("#confirm-no-rabbit").click(function () {
+
+
+			// add clothes from localstorage into order info
+			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+			var add_order_items = []
+
+			console.log("itemsArray here:")
+			console.log(itemsArray)
+
+			itemsArray.forEach(function (item) {
+				var item_string = item.clothesid + ''
+				var orderID = { "clothesid": item_string }
+				add_order_items.push(orderID)
+			})
+
+			console.log("add_order_items here:")
+			console.log(add_order_items)
+			var orderInfo = {
+				"customerid": 39999,
+				"add_order_items": add_order_items,
+			}
+
+			console.log("orderInfo here:")
+			console.log(orderInfo)
+
+			// THIS THING STOPS HERE FOR SOME REASON
+
+			// var url = 'http://LAPTOP-M5IE8VM3:8085/order';
+			var url = "http://10.124.1.237:8085/order"
+
+			$.ajax({
+				type: "POST",
+				data: JSON.stringify(orderInfo),
+				url: url,
+				contentType: "application/json"
+			});
+
+
+			// localStorage.clear();
+
+			// try {window.location.href = 'orders-success'}
+			// catch (err) {console.log(err)}
+
+			try { $(location).attr('href', '/orders-success-no-rabbit') }
 			catch (err) { console.log(err) }
 
 		});
