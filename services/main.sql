@@ -275,10 +275,34 @@ CREATE TABLE IF NOT EXISTS `deliveryman` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `deliveryman` (`deliverymanid`, `name`, `location`, `phonenumber`, `image_link`) VALUES
-(1, 'Muhhamad Ahmad Rahmad', '010000', 91242335, 'http:google.com'),
-(2, 'John Doe', '310000', 98003331, 'asdf'),
-(3, 'Paul Briffin', '540000', 98475578, 'asdf')
-(4, 'Lee sian long', '', 91234123, 'asdf');
+(1, 'Ahmad Rahul', '010000', 6598003331, 'http:google.com'),
+(2, 'Ahmad Rahul', '020000', 6598003331, 'http:google.com'),
+(3, 'Ahmad Rahul', '030000', 6598003331, 'http:google.com'),
+(4, 'Ahmad Rahul', '040000', 6598003331, 'http:google.com'),
+(5, 'Ahmad Rahul', '050000', 6598003331, 'http:google.com'),
+(6, 'Ahmad Rahul', '060000', 6598003331, 'http:google.com'),
+(7, 'Ahmad Rahul', '070000', 6598003331, 'http:google.com'),
+(8, 'Ahmad Rahul', '080000', 6598003331, 'http:google.com'),
+(9, 'Ahmad Rahul', '090000', 6598003331, 'http:google.com'),
+(10, 'Ahmad Rahul', '100000', 6598003331, 'http:google.com'),
+(11, 'Ahmad Rahul', '110000', 6598003331, 'http:google.com'),
+(12, 'Ahmad Rahul', '120000', 6598003331, 'http:google.com'),
+(13, 'Ahmad Rahul', '130000', 6598003331, 'http:google.com'),
+(14, 'Ahmad Rahul', '140000', 6598003331, 'http:google.com'),
+(15, 'Ahmad Rahul', '150000', 6598003331, 'http:google.com'),
+(16, 'Ahmad Rahul', '160000', 6598003331, 'http:google.com'),
+(17, 'Ahmad Rahul', '170000', 6598003331, 'http:google.com'),
+(18, 'Ahmad Rahul', '180000', 6598003331, 'http:google.com'),
+(19, 'Ahmad Rahul', '190000', 6598003331, 'http:google.com'),
+(20, 'Ahmad Rahul', '200000', 6598003331, 'http:google.com'),
+(21, 'Ahmad Rahul', '210000', 6598003331, 'http:google.com'),
+(22, 'Ahmad Rahul', '220000', 6598003331, 'http:google.com'),
+(23, 'Ahmad Rahul', '230000', 6598003331, 'http:google.com'),
+(24, 'Ahmad Rahul', '240000', 6598003331, 'http:google.com'),
+(25, 'Ahmad Rahul', '250000', 6598003331, 'http:google.com'),
+(26, 'Ahmad Rahul', '260000', 6598003331, 'http:google.com'),
+(27, 'Ahmad Rahul', '270000', 6598003331, 'http:google.com'),
+(28, 'John Doe', '280000', 6598003331, 'asdf');
 
 DROP TABLE IF EXISTS `delivery_schedule`;
 CREATE TABLE IF NOT EXISTS `delivery_schedule` (
