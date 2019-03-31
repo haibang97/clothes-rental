@@ -128,6 +128,7 @@ function getMessage() {
     try {
       var amqp = require('amqplib/callback_api');
 
+      console.log("fuck")
       amqp.connect('amqp://localhost:5672', function (err, conn) {
 
         conn.createChannel(function (err, ch) {
