@@ -88,7 +88,7 @@ app.get('/orders-success', async function (req, res) {
     console.log(input)
     console.log(typeof input)
 
-    // res.render('orders-success.ejs', { data: JSON.parse(input) });
+    res.render('orders-success.ejs', { data: JSON.parse(input) });
 
     // res.redirect('home')
     console.log("sent to front line wuhu")
@@ -96,7 +96,7 @@ app.get('/orders-success', async function (req, res) {
   catch (err) {
     var input = "nothing"
     console.log(input)
-    // res.render('orders-success.ejs', { data: input })
+    res.render('orders-success.ejs', { data: input })
   }
 
 });
