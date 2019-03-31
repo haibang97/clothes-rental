@@ -279,12 +279,6 @@
 							<span>${itemsArray.length} items</span>`
 			$(".cart-size").html(cart_size);
 
-			// Display cart size
-			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
-			var cart_size = `<small>My Bag</small>
-							<span>${itemsArray.length} items</span>`
-			$(".cart-size").html(cart_size);
-
 			$('.searchDetails').submit(function (event) {
 
 				event.preventDefault();
