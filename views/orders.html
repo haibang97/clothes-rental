@@ -387,9 +387,6 @@
 				contentType: "application/json"
 			});
 
-            //##################################################################################################
-            // UNCOMMENT THIS WHEN PRESENTING
-			// localStorage.removeItem('items')
 
 
 
@@ -438,13 +435,13 @@
 			});
 
 
-			// localStorage.clear();
+		
+			//##################################################################################################
+			// UNCOMMENT THIS WHEN PRESENTING
+			// localStorage.removeItem('items')
 
-			// try {window.location.href = 'orders-success'}
-			// catch (err) {console.log(err)}
-
-			try { $(location).attr('href', '/orders-success-no-rabbit') }
-			catch (err) { console.log(err) }
+			// try { $(location).attr('href', '/orders-success-no-rabbit') }
+			// catch (err) { console.log(err) }
 
 		});
 	})
