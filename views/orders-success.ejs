@@ -223,7 +223,7 @@
       console.log("getting deliveryman");
       console.log(data)
       var name = data["deliveryman"][0]["name"]
-      var phonenumber = data["deliveryman"][0]["phonenumber"]
+      var phonenumber = 6500000000 + data["deliveryman"][0]["phonenumber"] 
       document.getElementById("name").innerHTML = name
       document.getElementById("phonenumber").innerHTML = phonenumber
 
