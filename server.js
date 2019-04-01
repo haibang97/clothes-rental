@@ -130,6 +130,8 @@ function getMessage() {
     try {
       console.log("connecting to rabbit mq cloud shit")
       var amqp = require('amqplib/callback_api');
+
+    //   amqp://lwusqzxn:DXsQ8U1Ct4wfmRC9iLP6MdLGlKpDDSDP@woodpecker.rmq.cloudamqp.com/lwusqzxn
       amqp.connect('amqp://lwusqzxn:DXsQ8U1Ct4wfmRC9iLP6MdLGlKpDDSDP@woodpecker.rmq.cloudamqp.com/lwusqzxn', function (err, conn) {
         console.log("amqp.connect has finished")
         
