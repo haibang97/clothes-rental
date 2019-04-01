@@ -240,7 +240,6 @@
 			// Get customer 
             var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers";
             
-            var idlist = []
 
 			$.getJSON(url, function (data) {
 				console.log("getting latest customer");
@@ -289,10 +288,7 @@
 
             console.log(localStorage)
             
-            var customerid = idlist[0]
-            console.log("HERE IS THE CUSTOMER ID:")
-            console.log(customerid)
-
+ 
 			result += `</tbody>
 				<tbody>
 					<tr>
