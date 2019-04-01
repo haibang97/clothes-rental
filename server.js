@@ -83,7 +83,7 @@ app.get('/orders', function (req, res) {
 app.get('/orders-success', async function (req, res) {
 
   try {
-    console.log("doing getMessage now!!!")
+    console.log("getting getMessage now!!!")
     var input = await getMessage()
     console.log("sending to front end");
     console.log(input)
@@ -130,9 +130,9 @@ function getMessage() {
     try {
       console.log("connecting to rabbit mq cloud shit")
       var amqp = require('amqplib/callback_api');
+      
 
-    //   amqp://lwusqzxn:DXsQ8U1Ct4wfmRC9iLP6MdLGlKpDDSDP@woodpecker.rmq.cloudamqp.com/lwusqzxn
-      amqp.connect('amqp://lwusqzxn:DXsQ8U1Ct4wfmRC9iLP6MdLGlKpDDSDP@woodpecker.rmq.cloudamqp.com/lwusqzxn', function (err, conn) {
+      amqp.connect('amqp://lwusqzxn:qiJFcj2pT25OMadSPd4h-wcZdVGKu3pD@woodpecker.rmq.cloudamqp.com/lwusqzxn', function (err, conn) {
         console.log("amqp.connect has finished")
         
         conn.createChannel(function (err, ch) {
