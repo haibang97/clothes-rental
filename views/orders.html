@@ -456,7 +456,15 @@
 				console.log(err) 
 			}
 
-		});
+        });
+        
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+        
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
 
 
         // FAIL TEST CASE
@@ -518,8 +526,8 @@
 			});
 
 
-            alert("pass case pause: click to redirect")
-
+            
+            sleep(5000)
 		
 			//##################################################################################################
 			// UNCOMMENT THIS WHEN PRESENTING
