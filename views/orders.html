@@ -437,13 +437,15 @@
 			// UNCOMMENT THIS WHEN PRESENTING
 			// localStorage.removeItem('items')
 
+
+
             console.log("redirecting now")
-							try { 
+            try { 
                 console.log("redirecting to orders-success")
-								try ($(location).attr('href', '/orders-success') )
-								 catch (err) {console.log(err)} 
-                console.log("this should really show on the conosle") 
-							}
+                // $(location).attr('href', '/orders-success')
+                window.location.replace("/orders-success")
+                console.log("redirect line is over") 
+			}
 			catch (err) { 
                 console.log("erorrrrrrrrr")
 				console.log(err) 
