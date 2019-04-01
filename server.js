@@ -139,7 +139,7 @@ function getMessage() {
           var queue = 'orders'
           var input = ""
 
-          ch.assertQueue(queue, { durable: false });
+          ch.assertQueue(queue, { durable: true });
           console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
 
           ch.consume(queue, function (msg) {
