@@ -116,6 +116,7 @@ app.get('/orders-success-no-rabbit', async function (req, res) {
     console.log("sent to front line wuhu")
   }
   catch (err) {
+    console.log("error caught")
     var input = {"order_id":0,"customerid":0}
     console.log(input)
     res.render('orders-success.ejs', { data: input })
