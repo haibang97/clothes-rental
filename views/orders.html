@@ -248,7 +248,6 @@
 				console.log(customer);
 
                 var cid = customer["customerid"]
-                idlist[0] = cid
 				var firstname = customer["firstname"]
 				var lastname = customer["lastname"]
 				var phonenumber = customer["phonenumber"]
@@ -281,7 +280,8 @@
 				}
 
 				localStorage.setItem('customer', JSON.stringify(customerArray))
-				console.log("local storage has been set")
+                console.log("local storage has been set:")
+                console.log(customerArray)
 
 
 			});
