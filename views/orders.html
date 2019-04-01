@@ -380,9 +380,11 @@
             console.log(localStorage)
             console.log("logging customer!!!!!!!!!!!!!!!!!!!!!!!!!!")
             console.log(customer)
+            var customerid = customer["customerid"]
+            console.log(customerid)
 
 			var orderInfo = {
-                "customerid":  localStorage.getItem('customer').customerid,
+                "customerid": customerid ,
 				"add_order_items": add_order_items,
 			}
 
