@@ -375,14 +375,13 @@
 			console.log("add_order_items here:")
             console.log(add_order_items)
             
-            var customer = localStorage.getItem("customer")
-            console.log("ENTIRE LOCAL STORGAE")
-            console.log(localStorage)
-            console.log("logging customer!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            console.log(customer)
+            var customer = JSON.parse(localStorage.getItem("customer"))
             var customerid = customer["customerid"]
-            console.log(customerid)
 
+            if (typeof customerid == "undefined" ) {
+                customerid = 3
+            }
+        
 			var orderInfo = {
                 "customerid": customerid ,
 				"add_order_items": add_order_items,
