@@ -128,13 +128,11 @@ app.get('/orders-success-no-rabbit', async function (req, res) {
 function getMessage() {
   return new Promise((resolve, reject) => {
     try {
-      console.log("connecting to amqplib thing")
+      console.log("connecting to rabbit mq cloud shit")
       var amqp = require('amqplib/callback_api');
-
-      console.log("fuck")
-      // amqp.connect('amqp://localhost:5672', function (err, conn) {
       amqp.connect('amqp://lwusqzxn:DXsQ8U1Ct4wfmRC9iLP6MdLGlKpDDSDP@woodpecker.rmq.cloudamqp.com/lwusqzxn', function (err, conn) {
-
+        console.log("amqp.connect has finished")
+        
         conn.createChannel(function (err, ch) {
           var queue = 'orders'
           var input = ""
@@ -152,6 +150,7 @@ function getMessage() {
             }
             catch (err) {
               console.log(err)
+              console.log("AMQP could not get message")
             }
             finally {
               return ch.close()
