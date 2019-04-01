@@ -440,7 +440,8 @@
             console.log("redirecting now")
 							try { 
                 console.log("redirecting to orders-success")
-                $(location).attr('href', '/orders-success')
+								try ($(location).attr('href', '/orders-success') )
+								 catch (err) {console.log(err)} 
                 console.log("this should really show on the conosle") 
 							}
 			catch (err) { 
