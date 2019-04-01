@@ -24,6 +24,7 @@
 </head>
 
 <body>
+    
 
 	<!-- HEADER START -->
 	<header class="section-header">
@@ -273,6 +274,7 @@
 				var name = firstname + " " + lastname
 
 				customerArray = {
+                    "customerid":cid,
 					"name": name,
 					"phonenumber": phonenumber,
 					"address": address,
@@ -377,7 +379,7 @@
 			console.log("add_order_items here:")
 			console.log(add_order_items)
 			var orderInfo = {
-				"customerid": 3,
+                "customerid":  localStorage.getItem('customer').customerid,
 				"add_order_items": add_order_items,
 			}
 
@@ -448,7 +450,7 @@
 
 		// FAIL TEST CASE 
 		$("#confirm-no-rabbit").click(function () {
-
+            
 
 			// add clothes from localstorage into order info
 			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
@@ -466,7 +468,7 @@
 			console.log("add_order_items here:")
 			console.log(add_order_items)
 			var orderInfo = {
-				"customerid": 3,
+				"customerid":  localStorage.getItem('customer').customerid,
 				"add_order_items": add_order_items,
 			}
 
@@ -487,7 +489,7 @@
 				contentType: "application/json"
 			});
 
-
+            alert("pause")
 		
 			//##################################################################################################
 			// UNCOMMENT THIS WHEN PRESENTING
