@@ -438,9 +438,15 @@
 			// localStorage.removeItem('items')
 
             console.log("redirecting now")
-			try { $(location).attr('href', '/orders-success') }
-			catch (err) { console.log(err) }
-
+							try { 
+                console.log("redirecting to orders-success")
+                $(location).attr('href', '/orders-success')
+                console.log("this should really show on the conosle") 
+							}
+			catch (err) { 
+                console.log("erorrrrrrrrr")
+				console.log(err) 
+			}
 
 		});
 
