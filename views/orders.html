@@ -425,6 +425,7 @@
 			// PASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
                     
             
+            alert("click to allow $.ajax")
             
             $.ajax({
 				type: "POST",
@@ -434,7 +435,7 @@
 			});
 
 
-            // alert("pass case pause")
+            alert("pass case pause: click to redirect")
 
 		
 			//##################################################################################################
@@ -445,7 +446,6 @@
 
             console.log("redirecting now")
             try { 
-                alert("click to continue redirecting")
                 console.log("redirecting to orders-success")
                 $(location).attr('href', '/orders-success')
                 // window.location.replace("/orders-success")
