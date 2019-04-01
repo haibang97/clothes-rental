@@ -272,7 +272,7 @@
 				var name = firstname + " " + lastname
 
 				customerArray = {
-                    "customerid":cid,
+          "customerid":cid,
 					"name": name,
 					"phonenumber": phonenumber,
 					"address": address,
@@ -359,6 +359,9 @@
 
             console.log("pass case")
 
+            console.log("local storage")
+            console.log(localStorage)
+
 			// add clothes from localstorage into order info
 			var itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
 			var add_order_items = []
@@ -389,8 +392,7 @@
 
 			console.log("orderInfo here:")
             console.log(orderInfo)
-            
-            alert("test")
+        
 
 			// THIS THING STOPS HERE FOR SOME REASON
 
@@ -503,7 +505,8 @@
 			//##################################################################################################
 			// UNCOMMENT THIS WHEN PRESENTING
 			// localStorage.removeItem('items')
-			console.log("redirecting to orders success no rabit")
+            console.log("redirecting to orders success no rabit")
+            alert("redirecting")
 			try { $(location).attr('href', '/orders-success-no-rabbit') }
 			catch (err) { console.log(err) }
 
