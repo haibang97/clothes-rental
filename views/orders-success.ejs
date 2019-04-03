@@ -21,6 +21,11 @@
   <!-- Font Awesome -->
   <link href="fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
 
+  <script>
+    $(document).ready(function() {
+        $('#deliverydetails').delay(5010).fadeIn(400);
+    });	
+  </script>
 
 </head>
 
@@ -269,14 +274,8 @@ Phone.no: ${customerArray.phonenumber} `
         <br />
         <hr /><br /><br />
 
-        <div id="lookingdeliveryman">
-        <main class="card-clothesdetails">
-        <h2 class="text-grey text-center">We are looking for your deliveryman...</h2><br /><br />
-        </main>
-      </div>
-
-
         <!-- DELIVERYMAN DETAILS START -->
+        <div id="deliverydetails">
         <main class="card-clothesdetails">
           <h1 class="text-grey text-center">Your delivery details</h1><br /><br />
           <div class="col-sm-9" style="float: none; margin: 0 auto;">
@@ -306,6 +305,7 @@ Phone.no: ${customerArray.phonenumber} `
           </div>
           <br /><br />
         </main>
+        </div>
         <!-- DELIVERYMAN DETAILS END -->
         <br />
       </div>`
