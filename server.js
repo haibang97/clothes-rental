@@ -163,6 +163,7 @@ function getMessage() {
             }
           }, { noAck: true });
         })
+        conn.close()
       })
     }
     catch (error) {
