@@ -309,13 +309,8 @@ section.pricing {
     margin: auto;
 }
 
-<<<<<<< HEAD
 #lookingdeliveryman {
   -moz-animation: cssAnimation 0s ease-in 5s forwards;
-=======
-#hideMe {
-  -moz-animation: cssAnimation 0s ease-in 3s forwards;
->>>>>>> c265692e41dbc373bce535b9eb16da188c200ecd
   /* Firefox */
   -webkit-animation: cssAnimation 0s ease-in 3s forwards;
   /* Safari and Chrome */
