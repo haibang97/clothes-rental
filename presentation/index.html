@@ -11,25 +11,27 @@
 <body>
 
 <ul id="menu">
-	<li data-menuanchor="firstPage" class="active"><a href="#firstPage">First slide</a></li>
-	<li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
-	<li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
+	<li data-menuanchor="intro" class="active"><a href="#intro">INTRO</a></li>
+	<li data-menuanchor="demo"><a href="#demo">DEMO</a></li>
+	<li data-menuanchor="qa"><a href="#qa">QUESTIONS?</a></li>
 	<li data-menuanchor="4thpage"><a href="#4thpage">Fourth slide</a></li>
 </ul>
 
 <div id="fullpage">
-	<div class="section" id="section0" style="background-image: url(images/1.png); background-repeat: no-repeat; background-size: 100% auto;"></div>
-	<div class="section" id="section1" style="background-image: url(images/2.png); background-repeat: no-repeat; background-size: 100% auto;"></div>
-	<div class="section" id="section2" style="background-image: url(images/3.png); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section0" style="background-image: url(images/1.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section1" style="background-image: url(images/2.jpg); background-repeat: no-repeat; background-size: 100% auto;">
+		<div class="centered"><a href="https://www.stylease.me" class="styleaselink" target="_blank">https://www.stylease.me</a></div>
+	</div>
+	<div class="section" id="section2" style="background-image: url(images/3.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
 	<div class="section" id="section3" style="background-image: url(images/4.png); background-repeat: no-repeat; background-size: 100% auto;"></div>
 </div>
 
 <script type="text/javascript" src="js/fullpage.js"></script>
-<script type="text/javascript" src="js/examples.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-      anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+      anchors: ['intro', 'demo', 'qa', '4thpage', 'lastPage'],
       menu: '#menu',
       continuousVertical: true,
       afterLoad: function(anchorLink, index){

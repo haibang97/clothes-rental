@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Stylease - an outfit rental platform</title>
+  <meta name="Description" CONTENT="Stylease is a clothes rental platform based in Singapore.">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+  <!-- jQuery -->
+  <script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+  <link href="css/bootstrap.css?v=1.0" rel="stylesheet" type="text/css" />
+
+  <!-- Styles -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+  <!-- Font Awesome -->
+  <link href="fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
+
+<!--TO ADD -->
+<script>
+$(document).ready(function() {
+    $('#deliverydetails').delay(5010).fadeIn(400);
+});	
+</script>
+<!--TO ADD -->
+
+</head>
+
+<body>
+  <!-- HEADER START -->
+  <header class="section-header">
+    <section class="header-main">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <!-- LOGO START -->
+          <div class="col-lg-3">
+            <div class="brand-wrap">
+              <a href="home"><img class="logo" src="images/logo.png"></a>
+            </div>
+          </div>
+          <!-- LOGO END -->
+
+          <!-- SEARCH BAR START -->
+          <div class="col-lg-6 col-sm-6">
+            <form action="#" class="search-wrap">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="I am looking for...">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- SEARCH BAR END -->
+
+          <!-- CART / ACCOUNT START -->
+          <div class="col-lg-3 col-sm-6">
+            <div class="widgets-wrap d-flex justify-content-end">
+
+              <!-- CART START -->
+              <div class="widget-header">
+                <a href="#" class="icontext">
+                  <div class="icon-wrap icon-xs bg2 text-secondary"><i class="fa fa-shopping-cart"></i></div>
+                  <div class="text-wrap">
+                    <small>My Bag</small>
+                    <span>0 items</span>
+                  </div>
+                </a>
+              </div>
+              <!-- CART END -->
+
+              <!-- ACCOUNT START -->
+              <div class="widget-header dropdown">
+                <a href="#" class="ml-3 icontext" data-toggle="dropdown" data-offset="20,10">
+                  <div class="icon-wrap icon-xs bg2 text-secondary"><i class="fa fa-user"></i></div>
+                  <div class="text-wrap">
+                    <small>Hello,</small>
+                    <span>Lou <i class="fa fa-caret-down"></i></span>
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="home-user">Manage my account</a>
+                  <a class="dropdown-item" href="home-user">My orders</a>
+                  <a class="dropdown-item" href="home-user">My reviews</a>
+                  <a class="dropdown-item" href="home">Logout</a>
+                </div>
+              </div>
+              <!-- ACCOUNT END -->
+            </div>
+          </div>
+          <!-- CART / ACCOUNT END -->
+        </div>
+      </div>
+    </section>
+
+    <!-- NAV BAR START -->
+    <nav class="navbar navbar-expand navbar-dark bg-green">
+      <div class="container">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="main_nav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="home">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="home">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="home">SUPPORT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="home">CONTACT US</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV BAR END -->
+
+  </header>
+  <!-- HEADER END -->
+
+  <!-- ORDERS SUCCESS START -->
+  <section id="intro">
+    <div class="container deliveryman">
+      <div class="col-sm-9" style="float: none; margin: 0 auto; margin-top:60px;">
+            <h2 class="headline text-grey text-center">Success!</h2><br />
+            <p class="subheadline text-center">Your order is successful and a delivery man will be assigned to deliver your clothes to you soon.</p>
+        <br />
+            <hr /><br /><br />
+        <!--TO ADD --><div id="lookingdeliveryman"><!--TO ADD -->
+			<main class="card-clothesdetails">
+              <h2 class="text-grey text-center">We are looking for your deliveryman...</h2><br /><br />
+            </main>
+        <br />
+          </div>
+		</div>
+    </div>
+	  <!-- DELIVERYMAN DETAILS START -->
+	  <!--TO ADD --><div id="deliverydetails"><!--TO ADD -->
+        <main class="card-clothesdetails">
+          <h1 class="text-grey text-center">Your delivery details</h1><br /><br />
+          <div class="col-sm-9" style="float: none; margin: 0 auto;">
+
+            <div class="row">
+              <aside class="col-sm-6">
+                <div align="center">
+                  <img src="images/deliveryman/tom.jpg" width="90%" />
+                </div>
+              </aside>
+
+              <aside class="col-sm-6">
+                <dl class="dlist-inline">
+                  <dt>Deliveryman Name:</dt>
+                  <dd id="name">Xavier Lur</dd>
+                </dl>
+                <dl class="dlist-inline">
+                  <dt>Mobile Number</dt>
+                  <dd id="phonenumber">9090 2356</dd>
+                </dl>
+                <dl class="dlist-inline">
+                  <dt>Delivery:</dt>
+                  <dd>Your items will be delivered in 3-5 working days.</dd>
+                </dl>
+              </aside>
+            </div>
+          </div>
+          <br /><br />
+        </main>
+		 </div>
+        <!-- DELIVERYMAN DETAILS END -->
+  </section>
+  <!-- ORDERS SUCCESS END -->
+
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v3.2'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your customer chat code -->
+  <div class="fb-customerchat" attribution=setup_tool page_id="299401447397224" theme_color="#81894e"
+    greeting_dialog_display="hide">
+  </div>
+
+  <!-- FOOTER START -->
+  <footer class="section-footer bg-green">
+    <div class="container">
+      <section class="footer-bottom row text-white">
+        <div class="col-sm-6">
+          <p>Stylease is a clothes rental platform developed by G3-T1 <br>
+            (Bang, Huirong, Nicholas, Timothy, Xavier and Zuo Lin) for the IS213 project.
+          </p>
+        </div>
+      </section>
+    </div>
+  </footer>
+  <!-- FOOTER END -->
+
+</body>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    console.log("test")
+    var result = ''
+    // GET DELIVERY MAN
+    var info = <%- JSON.stringify(data) %>
+    console.log("info is:")
+    console.log(info)
+    console.log("info.order'-id!!!")
+    if (info.order_id == 0) {
+      result += `
+      <div class="col-sm-9" style="float: none; margin: 0 auto; margin-top:60px;">
+            <h2 class="headline text-grey text-center">Success!</h2><br />
+            <p class="subheadline text-center">Your order is successful and a delivery man will be assigned to deliver your clothes to you soon.</p>
+        <br />
+            <hr /><br /><br />
+        <main class="card-clothesdetails">
+              <h1 class="text-grey text-center">Do hang in there.</h1><br /><br />
+            </main>
+        <br />
+          </div>`
+
+    } else {
+      console.log("delviery man service is on")
+
+      var postalcode_location = {
+      1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 2, 8: 2, 9: 4, 10: 4,
+      11: 5, 12: 5, 13: 5, 14: 3, 15: 3, 16: 3, 17: 6, 18: 7, 19: 7, 20: 8,
+      21: 8, 22: 9, 23: 9, 24: 10, 25: 10, 26: 10, 27: 10, 28: 11, 29: 11, 30: 11,
+      31: 12, 32: 12, 33: 12, 34: 13, 35: 13, 36: 13, 37: 13, 38: 14, 39: 14, 40: 14,
+      41: 14, 42: 15, 43: 15, 44: 15, 45: 15, 46: 16, 47: 16, 48: 16, 49: 17, 50: 17,
+      51: 18, 52: 18, 53: 19, 54: 19, 55: 19, 56: 20, 57: 20, 58: 21, 59: 21, 60: 22,
+      61: 22, 62: 22, 63: 22, 64: 22, 65: 23, 66: 23, 67: 23, 68: 23, 69: 24, 70: 24,
+      71: 24, 72: 25, 73: 25, 74: 25, 75: 27, 76: 27, 77: 26, 78: 26, 79: 28, 80: 28,
+      81: 17, 82: 19, 90: 1
+    }
+    var customerArray = localStorage.getItem('customer') ? JSON.parse(localStorage.getItem('customer')) : []
+    var customer_postalcode = parseInt((customerArray.postalcode + "").slice(0, 2))
+    var district = postalcode_location[customer_postalcode] + "0000"
+    if (district.length == 5) district = "0" + district
+
+    console.log(district)
+
+    var url = "https://liuzuolin1996-eval-test.apigee.net/deliveryman/deliveryman/getbyloc/" + district
+    
+    $.getJSON(url, function (data) {
+      console.log("getting deliveryman");
+      console.log(data)
+      var name = data["deliveryman"][0]["name"]
+      var phonenumber = 6500000000 + data["deliveryman"][0]["phonenumber"] 
+      document.getElementById("name").innerHTML = name
+      document.getElementById("phonenumber").innerHTML = phonenumber
+
+      var message = 
+`Hi ${name}, 
+You have a new order ready for delivery. Kindly check the details below. 
+
+Order ID: ${<%= data.order_id %>} 
+Name: ${customerArray.name}
+Address: ${customerArray.address} ${customerArray.postalcode}
+Phone.no: ${customerArray.phonenumber} `
+                  
+      console.log(message)
+      $.ajax({
+      url: 'https://rest.textmagic.com/api/v2/messages',
+      type: 'post',
+      data: {
+        text: message,
+        phones: 6591242335,
+
+      },
+      headers: {
+        "X-TM-Username": 'nicholasfranslay',   //If your header name has spaces or any other char not appropriate
+        "X-TM-Key": 'IRfylkmjNpPtK3CmVakvhiPy5RLcA4'  //for object property name, use quoted notation shown in second
+      },
+      dataType: 'json',
+      success: function (data) {
+        console.info(data);
+      }
+    });
+    })
+
+      result += `<div class="col-sm-9" style="float: none; margin: 0 auto; margin-top:60px;">
+        <h2 class="headline text-grey text-center">Success!</h2><br />
+        <p class="subheadline text-center">Your order was successful and your order ID is
+          <strong>#<%= data.order_id %></strong>.
+        <!-- ORDER SUCCESS INTRO END -->
+        <br />
+        <hr /><br /><br />
+        <!-- DELIVERYMAN DETAILS START -->
+        <main class="card-clothesdetails">
+          <h1 class="text-grey text-center">Your delivery details</h1><br /><br />
+          <div class="col-sm-9" style="float: none; margin: 0 auto;">
+
+            <div class="row">
+              <aside class="col-sm-6">
+                <div align="center">
+                  <img src="images/deliveryman/tom.jpg" width="90%" />
+                </div>
+              </aside>
+
+              <aside class="col-sm-6">
+                <dl class="dlist-inline">
+                  <dt>Deliveryman Name:</dt>
+                  <dd id='name'><finding...dd>
+                </dl>
+                <dl class="dlist-inline">
+                  <dt>Mobile Number</dt>
+                  <dd id='phonenumber'>finding...</dd>
+                </dl>
+                <dl class="dlist-inline">
+                  <dt>Delivery:</dt>
+                  <dd>Your items will be delivered in 3-5 working days.</dd>
+                </dl>
+              </aside>
+            </div>
+          </div>
+          <br /><br />
+        </main>
+        <!-- DELIVERYMAN DETAILS END -->
+        <br />
+      </div>`
+
+
+    // Sending SMS
+    function sleep(miliseconds) {
+    var currentTime = new Date().getTime();
+ 
+    while (currentTime + miliseconds >= new Date().getTime()) {
+      }
+    }
+  }
+    $(".deliveryman").html(result)
+    result = ""
+  })
+
+</script>
+
+</html>
