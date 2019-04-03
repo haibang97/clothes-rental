@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>G3-T1 Presentation</title>
+
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="css/stylesppt.css" />
+</head>
+<body>
+
+<div align="center">
+	<ul id="menu">
+		<li data-menuanchor="intro" class="active"><a href="#intro">INTRO</a></li>
+		<li data-menuanchor="about"><a href="#about">ABOUT</a></li>
+		<li data-menuanchor="demo"><a href="#demo">DEMO</a></li>
+		<li data-menuanchor="overview"><a href="#overview">OVERVIEW</a></li>
+		<li data-menuanchor="scenario1"><a href="#scenario1">SCENARIO 1</a></li>
+		<li data-menuanchor="scenario2"><a href="#scenario2">SCENARIO 2</a></li>
+		<li data-menuanchor="scenario3"><a href="#scenario3">SCENARIO 3</a></li>
+		<li data-menuanchor="scenario4"><a href="#scenario4">SCENARIO 4</a></li>
+		<li data-menuanchor="tibco"><a href="#tibco">TIBCO</a></li>
+		<li data-menuanchor="beyondlabs"><a href="#beyondlabs">BEYOND THE LABS</a></li>
+		<li data-menuanchor="cloudamqp"><a href="#cloudamqp">CLOUDAMQP</a></li>
+		<li data-menuanchor="chatbot"><a href="#chatbot">CHATBOT</a></li>
+		<li data-menuanchor="q-a"><a href="#q-a">Q&A</a></li>
+	</ul>
+</div>
+
+<div id="fullpage">
+	<div class="section" id="section0" style="background-image: url(images/ppt/1.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section1" style="background-image: url(images/ppt/2.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section2" style="background-image: url(images/ppt/3.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section3" style="background-image: url(images/ppt/4.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section4" style="background-image: url(images/ppt/5.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section5" style="background-image: url(images/ppt/6.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section6" style="background-image: url(images/ppt/7.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section7" style="background-image: url(images/ppt/8.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section8" style="background-image: url(images/ppt/9.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section9" style="background-image: url(images/ppt/10.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section10" style="background-image: url(images/ppt/11.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section11" style="background-image: url(images/ppt/12.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+	<div class="section" id="section12" style="background-image: url(images/ppt/13.jpg); background-repeat: no-repeat; background-size: 100% auto;"></div>
+</div>
+
+<script type="text/javascript" src="js/fullpage.js"></script>
+<script type="text/javascript" src="js/scriptppt.js"></script>
+
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+      anchors: ['intro', 'about', 'demo', 'overview', 'scenario1', 'scenario2', 'scenario3', 'scenario4', 'tibco', 'beyondlabs', 'cloudamqp', 'chatbot', 'q-a'],
+      menu: '#menu',
+      continuousVertical: true,
+      afterLoad: function(anchorLink, index){
+            console.log("AFTER LOAD - anchorLink:" +anchorLink + " index:" +index );
+        },
+        onLeave: function(index, nextIndex, direction){
+            console.log("ONLEAVE - index:" +index + " nextIndex:" +nextIndex  + " direction:" + direction);
+
+        },
+    });
+</script>
+
+</body>
+</html>
