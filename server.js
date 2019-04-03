@@ -18,6 +18,10 @@ app.use(express.json())
 app.use(express.static('public'))
 
 app.get('/', function (req, res) {
+  res.render('presentation.html')
+})
+
+app.get('/', function (req, res) {
   res.render('home.html')
 })
 
