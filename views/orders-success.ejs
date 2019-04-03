@@ -230,6 +230,8 @@
     var url = "https://liuzuolin1996-eval-test.apigee.net/deliveryman/deliveryman/getbyloc/" + district
     
     $.getJSON(url, function (data) {
+
+      // Get message to send to delivery man
       console.log("getting deliveryman");
       console.log(data)
       var name = data["deliveryman"][0]["name"]
@@ -246,6 +248,7 @@ Name: ${customerArray.name}
 Address: ${customerArray.address} ${customerArray.postalcode}
 Phone.no: ${customerArray.phonenumber} `
                   
+      // sending to delivery man
       console.log(message)
       $.ajax({
       url: 'https://rest.textmagic.com/api/v2/messages',
@@ -264,6 +267,25 @@ Phone.no: ${customerArray.phonenumber} `
         console.info(data);
       }
     });
+
+    // UPDATING DELIVERY SCHEDULE
+    var delivery_schedule_info = {
+      "deliverymanid": name ,
+			"orderid": <%= data.order_id %>,
+			}
+
+
+    $.ajax({
+				type: "POST",
+				data: JSON.stringify(delivery_schedule_info),
+				url: "https://liuzuolin1996-eval-test.apigee.net/deliveryschedule/deliverymanschedule",
+				contentType: "application/json"
+			});
+
+
+
+
+
     })
 
       result += `<div class="col-sm-9" style="float: none; margin: 0 auto; margin-top:60px;">
@@ -321,9 +343,12 @@ Phone.no: ${customerArray.phonenumber} `
     }
   }
     $(".deliveryman").html(result)
-    result = ""
 
-    
+
+
+
+    result = ""
+    localStorage.removeItem("items")
 
   })
 
