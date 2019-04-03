@@ -159,10 +159,11 @@ function getMessage() {
               console.log("AMQP could not get message")
             }
             finally {
-              return conn.close()
+              return ch.close()
             }
           }, { noAck: true });
         })
+        conn.close()
       })
     }
     catch (error) {
