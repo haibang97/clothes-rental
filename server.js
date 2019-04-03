@@ -17,7 +17,7 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.json())
 app.use(express.static('public'))
 
-app.get('/', function (req, res) {
+app.get('/presentation', function (req, res) {
   res.render('presentation.html')
 })
 
