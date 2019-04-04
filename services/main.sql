@@ -236,9 +236,9 @@ CREATE TABLE IF NOT EXISTS Customers (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO Customers (firstname, lastname, tier, phonenumber, birthdate, gender, address, postalcode, email, username, password) VALUES
-("Carrot", "Tan", 3, 13456384, "2000-09-08", "Female", "10 Amber Road", 512512, "carrot@yahoo.com", "carrot123", "buhuhu"),
-("Timothy", "Soh", 3, 33456543,"1995-11-14", "Male", "75 Loyand Rise", 564536, "timothy@gmail.com", "fook", "kekeke"),
-("Bobby", "Lim", 3, 54227384,"1997-10-21", "Make", "19 Bedok View", 909090, "bobby@gmail.com", "lailailai", "baldy");
+("Carrot", "Tan", 3, 90011009, "2000-09-08", "Female", "10 Amber Road", 512512, "carrot@yahoo.com", "carrot123", "buhuhu"),
+("Timothy", "Soh", 2, 96771222,"1995-11-14", "Male", "75 Loyand Rise", 564536, "timothy@gmail.com", "fook", "kekeke"),
+("Lou", "Rachess", 3, 90902356,"1996-12-24", "Female", "19 Bedok View", 541014, "lourachess@gmail.com", "lourachess", "lourachess123");
 COMMIT;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
