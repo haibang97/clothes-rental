@@ -247,7 +247,7 @@ Order ID: ${<%= data.order_id %>}
 Name: ${customerArray.name}
 Address: ${customerArray.address} ${customerArray.postalcode}
 Phone.no: ${customerArray.phonenumber} `
-                  
+      
       // sending to delivery man
       console.log(message)
       $.ajax({
@@ -255,7 +255,7 @@ Phone.no: ${customerArray.phonenumber} `
       type: 'post',
       data: {
         text: message,
-        phones: customerArray.phonenumber,
+        phones: phonenumber,
 
       },
       headers: {
