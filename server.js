@@ -128,7 +128,7 @@ app.get('/orders-success-no-rabbit', async function (req, res) {
   
 });
 
-
+// consume messahe
 function getMessage() {
   return new Promise((resolve, reject) => {
     try {
