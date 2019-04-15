@@ -28,9 +28,12 @@ How our application runs:
     5) the person whose computer is used to run the services can verify that the services are working by checking his swagger UI/ database
     6) do drop zuolin a telegram message at @zuolin for the apigee part for testing and verification purposes
 
-Additional Notes:
-    - our Facebook API is likely no longer working, as we have "violated facebook's user policy" in some way, and they have taken down our Facebook login API since the presentation
-    
-    - to verify that the stripe API is working, we need bang's stripe testing account. feel free to drop bang a telegram message at @bangbaangbaaang to access his stripe testing account
+ 
+    Additional Notes:
+        - our Facebook API is likely no longer working, as we have "violated facebook's user policy" in some way, and they have taken down our Facebook login API since the presentation
+        
+        - to verify that the stripe API is working, we need bang's stripe testing account. feel free to drop bang a telegram message at @bangbaangbaaang to access his stripe testing account
 
+        - our onemap API automatically fills in the address when the user keys in a postal code
+            - to make this work, press tab after filling in your postal code (the API call is triggered by an "onblur" event (the user leaves the field))
     
