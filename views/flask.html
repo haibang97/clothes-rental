@@ -12,14 +12,47 @@
 </head>
 <body>
     <h1>LZL TESTING FOR PYTHON FLASK</h1>
+    <h2>open console log to see results</h2><br><br>
 
+    main function <br>
     <button id="main">main</button><br>
+    <br>
+
+    background service <br>
     <button id="background">get backgrounds</button><br>
+    location: <input type="text" id="location">image url: <input type="text", id="image-url"><br>
+    <button id="add-background">add background</button><br>
+    <br>
+
+    clothes service <br>
     <button id="clothes">get clothes</button><br>
     <button id="clothesclass">get clothes classes</button><br>
-    <button id="customers">get customers</button><br>
-    <button id="deliveryman">get deliverymen</button><br>
+    <br>
 
+    customers service <br>
+    <button id="customers">get customers</button><br>
+    <input type="text" id="customerid_input">
+    <button id="get-customer-by-id">get customer by id</button><br>
+    <strong>add new customer</strong> <br>
+    first name: <input type="text" id="firstname" value="zuo lin"><br>
+    last name: <input type="text" id="lastname" value="liew"><br>
+    phone number: <input type="text", id="phonenumber" value="98003331"><br>
+    birth date: <input type="text", id="birthdate" value="24/12/1996"><br>
+    gender: <input type="text" id="gender" value="Male"><br>
+    address: <input type="text" id="address" value="80 stanford road"><br>
+    postalcode: <input type="text" id="postalcode" value="135790"><br>
+    email: <input type="text" id="email" value="zu@lin.liu"><br>
+    username: <input type="text" id="username" value="zuolinusername"><br>
+    password: <input type="text" id="password" value="zuolinpassword"><br>
+    <button id="add-new-customer">add new customer</button><br>
+    <strong>update customer tier</strong>
+    customerid: <input type="text" id="customerid"> tier: <input type="text", id="tier"><br>
+    <button id="update-customer-tier">update customer tier</button><br>
+    <br>
+
+    deliveryman service <br>
+    <button id="deliveryman">get deliverymen</button><br>
+    <br>
 
     <script>
     
@@ -34,30 +67,102 @@
             console.log(result)
         })
     })
+    
+    $("#add-background").on("click", function() {
+        var background = {"location":$("#location").val(), "image":$("#image-url").val()}
+        console.log("background:")
+        console.log(background)
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:5000/add_background",
+            data: background,
+            success: function (data, textStatus) {
+                console.log(data)
+                console.log(textStatus)
+            },
+            dataType: "json"
+        });
+    })
 
     $("#clothes").on("click", function() {
-        $.getJSON("http://localhost:5000/get_all_clothes", function(result){
+        $.getJSON("http://localhost:5000/get_clothes", function(result){
             console.log(result)
         })
     })
 
     $("#clothesclass").on("click", function() {
-        $.getJSON("http://localhost:5000/get_all_clothesclasses", function(result){
+        $.getJSON("http://localhost:5000/get_clothesclasses", function(result){
             console.log(result)
         })
     })
 
     $("#customers").on("click", function() {
-        $.getJSON("http://localhost:5000/get_all_customers", function(result){
+        $.getJSON("http://localhost:5000/get_customers", function(result){
             console.log(result)
         })
     })
 
-    $("#deliveryman").on("click", function() {
-        $.getJSON("http://localhost:5000/get_all_deliveryman", function(result){
+    $("#get-customer-by-id").on("click", function() {
+        var customerid = $("#customerid_input").val()
+        console.log(customerid)
+        var url = "http://localhost:5000/get_customer_by_id" + "?customerid=" + customerid
+        console.log(url)
+        $.getJSON(url, function(result){
             console.log(result)
         })
     })
+
+    $("#add-new-customer").on("click", function() {
+        var customer = {
+            "firstname":$("#firstname").val(),
+            "lastname":$("#lastname").val(),
+            "tier":0,
+            "phonenumber":$("#phonenumber").val(),
+            "birthdate":$("#birthdate").val(),
+            "gender":$("#gender").val(),
+            "address":$("#address").val(),
+            "postalcode":$("#postalcode").val(),
+            "email":$("#email").val(),
+            "username":$("#username").val(),
+            "password":$("#password").val()
+        }
+        console.log(customer)
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:5000/add_customer",
+            data: customer,
+            success: function (data, textStatus) {
+                console.log(data)
+                console.log(textStatus)
+            },
+            dataType: "json"
+        })
+    })
+
+    $("#update-customer-tier").on("click", function() {
+        var parameters = {
+            "customerid":$("#customerid").val(),
+            "tier":$("#tier").val()
+        }
+        console.log(parameters)
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:5000/update_customer_tier",
+            data: parameters,
+            success: function (data, textStatus) {
+                console.log(data)
+                console.log(textStatus)
+            },
+            dataType: "json"
+        })
+    })
+
+    $("#deliveryman").on("click", function() {
+        $.getJSON("http://localhost:5000/get_deliverymen", function(result){
+            console.log(result)
+        })
+    })
+
     </script>
     
 </body>
