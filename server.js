@@ -172,7 +172,9 @@ function getMessage() {
   console.log("send order function has finished");
 }
 
-
+app.get("/flask", function(req,res){
+    res.render("flask.html")
+})
 
 app.get('/delivery', function (req, res) {
   res.render('delivery.html')
