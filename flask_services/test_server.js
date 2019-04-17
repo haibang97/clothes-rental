@@ -1,9 +1,13 @@
-var http = require('http');
-var fs = require('fs');
-var index = fs.readFileSync('views/index.html');
+const express = require('express')
+const app = express()
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end(index);
-}).listen(3000);
+  
+const port = 3000
 
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.get('/', function(req, res) {
+    res.render("index.html")
+})
+
+app.listen(port, () => console.log(`Example app listening on port ${port}`))
