@@ -80,10 +80,31 @@ def get_all_clothes_():
 def get_all_clothesclasses_():
     return jsonify(get_clothesclasses())
 
+@app.route("/get_clothes_by_gender")        # /get_clothes_by_gender?gender=F
+def get_clothes_by_gender_():
+    gender = request.args.get("gender").upper()
+    return jsonify(get_clothes_by_gender(gender))
+
+@app.route("/get_clothes_by_mood")          # /get_clothes_by_mood?mood=rabak
+def get_clothes_by_mood_():
+    mood = request.args.get("mood")
+    return jsonify(get_clothes_by_mood(mood))
+
+@app.route("/get_clothes_by_function")      # /get_clothes_by_function?function=date night
+def get_clothes_by_function_():
+    func = request.args.get("function")
+    return jsonify(get_clothes_by_function(func))
+
+
 # DELIVERY SERVICE
 @app.route("/get_deliverymen")
 def get_all_deliveryman_():
     return jsonify(get_deliverymen())
+
+@app.route("/get_deliveryman_by_location")
+def get_deliveryman_by_location_():
+    loc = request.args.get("location")
+    return jsonify(get_deliveryman_by_location(loc))
 
 # DELIVERY SCHEDULE SERVICE
 
