@@ -153,6 +153,14 @@ function getMessage() {
           ch.consume(queue, function (msg) {
             try {
               input = msg.content.toString('utf8')
+              msg = {
+                content:{
+                  order_id: '',
+                morder: '', 
+                  user: ''
+
+                }
+              }
               console.log("starttttt")
               console.log(input)
               console.log(typeof input)
