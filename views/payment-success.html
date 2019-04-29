@@ -216,10 +216,10 @@
             },
             type: "PUT",
             data: JSON.stringify({"customerid":customerid, "tier":3}),
-            url: "http://hbtruong2017-eval-test.apigee.net/customers/customers2",
+            url: "https://hbtruong2017-eval-test.apigee.net/customers/customers2",
             success: function() {
                 console.log("success");
-                var url = "http://hbtruong2017-eval-test.apigee.net/customers/customers1/"+window.customerid;
+                var url = "https://hbtruong2017-eval-test.apigee.net/customers/customers1/"+window.customerid;
                 $.getJSON(url, function (data) {
                     console.log(data);
                 });
