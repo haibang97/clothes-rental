@@ -399,11 +399,10 @@
 		console.log(customer);
 		console.log(JSON.stringify(customer))
 
-		var host = "https://liuzuolin1996-eval-test.apigee.net/"
+		var host = "http://hbtruong2017-eval-test.apigee.net/"
 		var service = "customers"
 		var body = "/customers1/"
 		var url = host + service + body
-
 		$.ajax({
 			type: "POST",
 			data: JSON.stringify(customer),

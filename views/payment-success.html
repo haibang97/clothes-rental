@@ -201,7 +201,7 @@
             }
         }
 
-    var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers";
+    var url = "https://hbtruong2017-eval-test.apigee.net/customers/customers";
     $.getJSON(url, function (data) {
         console.log("getting customers");
         customerid = data["Customer"][data["Customer"].length-1]["customerid"];
@@ -216,10 +216,10 @@
             },
             type: "PUT",
             data: JSON.stringify({"customerid":customerid, "tier":3}),
-            url: "https://liuzuolin1996-eval-test.apigee.net/customers/customers2",
+            url: "http://hbtruong2017-eval-test.apigee.net/customers/customers2",
             success: function() {
                 console.log("success");
-                var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers1/"+window.customerid;
+                var url = "http://hbtruong2017-eval-test.apigee.net/customers/customers1/"+window.customerid;
                 $.getJSON(url, function (data) {
                     console.log(data);
                 });
