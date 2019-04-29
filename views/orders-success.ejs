@@ -227,7 +227,7 @@
 
     console.log(district)
 
-    var url = "https://liuzuolin1996-eval-test.apigee.net/deliveryman/deliveryman/getbyloc/" + district
+    var url = "https://hbtruong2017-eval-test.apigee.net/deliveryman/getbyloc/" + district
     
     $.getJSON(url, function (data) {
 
@@ -279,7 +279,7 @@ Phone.no: ${customerArray.phonenumber} `
     $.ajax({
 				type: "POST",
 				data: JSON.stringify(delivery_schedule_info),
-				url: "https://liuzuolin1996-eval-test.apigee.net/deliveryschedule/deliveryschedule",
+				url: "https://hbtruong2017-eval-test.apigee.net/deliveryschedule",
 				contentType: "application/json"
 			});
 

@@ -362,10 +362,11 @@
 
 			var location = $('#location option:selected').val();
 			console.log(location)
-			var host = "https://liuzuolin1996-eval-test.apigee.net/"
-			var service = "background"
-			var body = "/background/"
-			var url = host + service + body + location
+			// var host = "https://liuzuolin1996-eval-test.apigee.net/"
+			// var service = "background"
+			// var body = "/background/"
+			// var url = host + service + body + location
+			var url = "https://hbtruong2017-eval-test.apigee.net/background/" + location
 			console.log(url)
 			var result = ''
 			$.getJSON(url, function (data) {

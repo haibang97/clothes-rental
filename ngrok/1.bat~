@@ -1,0 +1,3 @@
+mode con:cols=87 lines=12
+echo "background service"
+ngrok http desktop-tp220vs:8080

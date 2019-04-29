@@ -238,8 +238,9 @@
 			})
 
 			// Get customer 
-            var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers";
-            
+            // var url = "https://liuzuolin1996-eval-test.apigee.net/customers/customers";
+			var url = "https://hbtruong2017-eval-test.apigee.net/customers/customers";
+
 
 			$.getJSON(url, function (data) {
 				console.log("getting latest customer");
@@ -272,7 +273,7 @@
 				var name = firstname + " " + lastname
 
 				customerArray = {
-          "customerid":cid,
+         			"customerid":cid,
 					"name": name,
 					"phonenumber": phonenumber,
 					"address": address,
@@ -410,7 +411,7 @@
 									
 			// var url = 'http://LAPTOP-M5IE8VM3:8080/order';
 			// var url = "http://10.124.1.237:8080/order"
-			var url ="https://liuzuolin1996-eval-test.apigee.net/orders/order"
+			var url ="https://hbtruong2017-eval-test.apigee.net/orders/order"
 			// var url = "http://a1c158e8.ngrok.io/order"
 
 			// PASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
@@ -512,7 +513,8 @@
 	
 			// var url = 'http://LAPTOP-M5IE8VM3:8080/order';
 			// var url = "http://10.124.1.237:8080/order"
-			var url ="https://liuzuolin1996-eval-test.apigee.net/orders/order"
+			// var url ="https://liuzuolin1996-eval-test.apigee.net/orders/order"
+			var url ="https://hbtruong2017-eval-test.apigee.net/orders/order"
 			// var url = "http://a1c158e8.ngrok.io/order"
 
             
