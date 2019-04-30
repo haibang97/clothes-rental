@@ -21,6 +21,10 @@ app.get('/presentation', function (req, res) {
   res.render('presentation.html')
 })
 
+app.get('/presentation2', function (req, res) {
+  res.render('presentation2.html')
+})
+
 app.get('/ar', function (req, res) {
   res.render('ar.html')
 })
