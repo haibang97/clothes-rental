@@ -93,6 +93,10 @@ app.get('/orders', function (req, res) {
   res.render('orders.html')
 })
 
+app.get('/orders-done', function (req, res) {
+  res.render('orders.html')
+})
+
 app.get('/orders-success', async function (req, res) {
 
   try {
@@ -158,14 +162,6 @@ function getMessage() {
           ch.consume(queue, function (msg) {
             try {
               input = msg.content.toString('utf8')
-              msg = {
-                content:{
-                  order_id: '',
-                morder: '', 
-                  user: ''
-
-                }
-              }
               console.log("starttttt")
               console.log(input)
               console.log(typeof input)
